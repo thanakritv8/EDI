@@ -1,0 +1,904 @@
+<application snapshot="false" xmlns="urn:schemas-codeontime-com:data-aquarium-application" xmlns:m="urn:codeontime:data-map" xmlns:dm="urn:schemas-codeontime-com:data-model">
+  <pages xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+    <page name="Home" title="^HomeTitle^Start^HomeTitle^" description="^HomeDesc^Application home page^HomeDesc^" path="^HomePath^Home^HomePath^" style="HomePage" customStyle="Wide" index="1000">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <controls>
+        <control id="control1" name="TableOfContents" container="container1" />
+      </controls>
+    </page>
+    <page name="FILES_IMPORT" title="Files Import" description="View Files Import" index="1010" path="Files Import" style="Generic">
+      <containers>
+        <container id="container1" flow="NewRow" />
+        <container id="container2" flow="NewRow" style="padding-top:8px" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="FILES_IMPORT" view="grid1" showInSummary="true" container="container1" activator="None" text="" />
+        <dataView id="view2" controller="HATC_ORDER" view="grid1" text="Hatc Order" filterSource="view1" container="container2" filterFields="FileId" activator="Tab" autoHide="Container" pageSize="5" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows files import management.</about>
+    </page>
+    <page name="HATC_ORDER" title="Hatc Order" description="View Hatc Order" index="1020" path="Files Import | Hatc Order" style="Generic">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HATC_ORDER" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows hatc order management.</about>
+    </page>
+    <page name="Membership" title="^MembershipTitle^Membership Manager^MembershipTitle^" description="^MembershipDesc^User and role manager^MembershipDesc^" roles="Administrators" path="^MembershipPath^Membership^MembershipPath^" style="UsersPage" index="1030">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <about>^MembershipAbout^This page allows to manage roles and users.^MembershipAbout^</about>
+      <controls>
+        <control id="control1" name="MembershipManager" container="container1" />
+      </controls>
+    </page>
+    <page name="p170228074357" title="New Pages" externalUrl="about:blank" index="1130" path="New Pages" />
+    <page name="ORDER_IMPORT" title="Order Import" description="View Order Import" index="1230" path="New Pages | Order Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="ORDER_IMPORT" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows order import management.</about>
+    </page>
+    <page name="p170228084404" title="New Pages" externalUrl="about:blank" index="1330" path="New Pages" />
+    <page name="HATC_ORDER_IMPORT" title="Hatc Order Import" description="View Hatc Order Import" index="1430" path="New Pages | Hatc Order Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HATC_ORDER_IMPORT" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows hatc order import management.</about>
+    </page>
+    <page name="p170228084835" title="New Pages" externalUrl="about:blank" index="1530" path="New Pages" />
+    <page name="FilesImport" title="Files Import" description="View Files Import" index="1630" path="New Pages | Files Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+        <container id="container2" flow="NewRow" style="padding-top:8px" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="FilesImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" />
+        <dataView id="view2" controller="HATCOrderImport" view="grid1" text="HATC Order Import" filterSource="view1" container="container2" filterFields="FileId" activator="Tab" autoHide="Container" pageSize="5" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows files import management.</about>
+    </page>
+    <page name="HATCOrderImport" title="HATC Order Import" description="View HATC Order Import" index="1730" path="New Pages | HATC Order Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HATCOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows hatc order import management.</about>
+    </page>
+    <page name="p170228113836" title="New Pages" externalUrl="about:blank" index="1830" path="New Pages" />
+    <page name="HATCForcastImport" title="HATC Forcast Import" description="View HATC Forcast Import" index="1930" path="New Pages | HATC Forcast Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HATCForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows hatc forcast import management.</about>
+    </page>
+    <page name="HATCForcastMonthImport" title="HATC Forcast Month Import" description="View HATC Forcast Month Import" index="2030" path="New Pages | HATC Forcast Month Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HATCForcastMonthImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows hatc forcast month import management.</about>
+    </page>
+    <page name="Orders" title="Orders" description="View Orders" index="2130" path="New Pages | Orders" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="Orders" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows orders management.</about>
+    </page>
+    <page name="OrdersForcast" title="Orders Forcast" description="View Orders Forcast" index="2230" path="New Pages | Orders Forcast" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="OrdersForcast" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows orders forcast management.</about>
+    </page>
+    <page name="OrdersForcastMonth" title="Orders Forcast Month" description="View Orders Forcast Month" index="2330" path="New Pages | Orders Forcast Month" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="OrdersForcastMonth" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows orders forcast month management.</about>
+    </page>
+    <page name="vw_T08" title="vw T08" description="View vw T08" index="2430" path="New Pages | vw T08" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="vw_T08" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows vw t08 management.</about>
+    </page>
+    <page name="p170228115651" title="New Pages" externalUrl="about:blank" index="2530" path="New Pages" />
+    <page name="AATOrderImport" title="AAT Order Import" description="View AAT Order Import" index="2630" path="New Pages | AAT Order Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="AATOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows aat order import management.</about>
+    </page>
+    <page name="APCOrderImport" title="APC Order Import" description="View APC Order Import" index="2730" path="New Pages | APC Order Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="APCOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows apc order import management.</about>
+    </page>
+    <page name="IMCTOrderImport" title="IMCT Order Import" description="View IMCT Order Import" index="2830" path="New Pages | IMCT Order Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="IMCTOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows imct order import management.</about>
+    </page>
+    <page name="KMTForcastImport" title="KMT Forcast Import" description="View KMT Forcast Import" index="2930" path="New Pages | KMT Forcast Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="KMTForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows kmt forcast import management.</about>
+    </page>
+    <page name="KMTOrderImport" title="KMT Order Import" description="View KMT Order Import" index="3030" path="New Pages | KMT Order Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="KMTOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows kmt order import management.</about>
+    </page>
+    <page name="KYBForcastImport" title="KYB Forcast Import" description="View KYB Forcast Import" index="3130" path="New Pages | KYB Forcast Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="KYBForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows kyb forcast import management.</about>
+    </page>
+    <page name="KYBOrderImport" title="KYB Order Import" description="View KYB Order Import" index="3230" path="New Pages | KYB Order Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="KYBOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows kyb order import management.</about>
+    </page>
+    <page name="MMTHOrderImport" title="MMTH Order Import" description="View MMTH Order Import" index="3330" path="New Pages | MMTH Order Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="MMTHOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows mmth order import management.</about>
+    </page>
+    <page name="THMForcastImport" title="THM Forcast Import" description="View THM Forcast Import" index="3430" path="New Pages | THM Forcast Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="THMForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows thm forcast import management.</about>
+    </page>
+    <page name="THMOrderImport" title="THM Order Import" description="View THM Order Import" index="3530" path="New Pages | THM Order Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="THMOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows thm order import management.</about>
+    </page>
+    <page name="TSMOrderImport" title="TSM Order Import" description="View TSM Order Import" index="3630" path="New Pages | TSM Order Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="TSMOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows tsm order import management.</about>
+    </page>
+    <page name="TYMForcastImport" title="TYM Forcast Import" description="View TYM Forcast Import" index="3730" path="New Pages | TYM Forcast Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="TYMForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows tym forcast import management.</about>
+    </page>
+    <page name="TYMOrderImport" title="TYM Order Import" description="View TYM Order Import" index="3830" path="New Pages | TYM Order Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="TYMOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows tym order import management.</about>
+    </page>
+    <page name="p170301120119" title="New Pages" externalUrl="about:blank" index="3930" path="New Pages" />
+    <page name="APCForcastMonthImport" title="APC Forcast Month Import" description="View APC Forcast Month Import" index="4030" path="New Pages | APC Forcast Month Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="APCForcastMonthImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows apc forcast month import management.</about>
+    </page>
+    <page name="THMForcastMonthImport" title="THM Forcast Month Import" description="View THM Forcast Month Import" index="4130" path="New Pages | THM Forcast Month Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="THMForcastMonthImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows thm forcast month import management.</about>
+    </page>
+    <page name="TSMForcastMonthImport" title="TSM Forcast Month Import" description="View TSM Forcast Month Import" index="4230" path="New Pages | TSM Forcast Month Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="TSMForcastMonthImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows tsm forcast month import management.</about>
+    </page>
+    <page name="p170316011639" title="New Pages" externalUrl="about:blank" index="4330" path="New Pages" />
+    <page name="MaterialNumber" title="Material Number" description="View Material Number" index="4430" path="New Pages | Material Number" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="MaterialNumber" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows material number management.</about>
+    </page>
+    <page name="p170316044452" title="New Pages" externalUrl="about:blank" index="4530" path="New Pages" />
+    <page name="Customer" title="Customer" description="View Customer" index="4630" path="New Pages | Customer" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="Customer" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows customer management.</about>
+    </page>
+    <page name="vw_SA_T05" title="vw SA T05" description="View vw SA T05" index="4730" path="New Pages | vw SA T05" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="vw_SA_T05" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows vw sa t05 management.</about>
+    </page>
+    <page name="vw_SD_T05" title="vw SD T05" description="View vw SD T05" index="4830" path="New Pages | vw SD T05" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="vw_SD_T05" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows vw sd t05 management.</about>
+    </page>
+    <page name="vw_SD_T08" title="vw SD T08" description="View vw SD T08" index="4930" path="New Pages | vw SD T08" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="vw_SD_T08" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows vw sd t08 management.</about>
+    </page>
+    <page name="p600328105841" title="New Pages" externalUrl="about:blank" index="5030" path="New Pages" />
+    <page name="ForcastManual" title="Forcast Manual" description="View Forcast Manual" index="5130" path="New Pages | Forcast Manual" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="ForcastManual" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows forcast manual management.</about>
+    </page>
+    <page name="ForcastMonthManual" title="Forcast Month Manual" description="View Forcast Month Manual" index="5230" path="New Pages | Forcast Month Manual" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="ForcastMonthManual" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows forcast month manual management.</about>
+    </page>
+    <page name="OrderManual" title="Order Manual" description="View Order Manual" index="5330" path="New Pages | Order Manual" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="OrderManual" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows order manual management.</about>
+    </page>
+    <page name="p600329101932" title="New Pages" externalUrl="about:blank" index="5430" path="New Pages" />
+    <page name="NMTForcastImport" title="NMT Forcast Import" description="View NMT Forcast Import" index="5530" path="New Pages | NMT Forcast Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="NMTForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows nmt forcast import management.</about>
+    </page>
+    <page name="p600329102753" title="New Pages" externalUrl="about:blank" index="5630" path="New Pages" />
+    <page name="WorkingDate" title="Working Date" description="View Working Date" index="5730" path="New Pages | Working Date" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="WorkingDate" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows working date management.</about>
+    </page>
+    <page name="p600406033627" title="New Pages" externalUrl="about:blank" index="5830" path="New Pages" />
+    <page name="TYMForcastMonthImport" title="TYM Forcast Month Import" description="View TYM Forcast Month Import" index="5930" path="New Pages | TYM Forcast Month Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="TYMForcastMonthImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows tym forcast month import management.</about>
+    </page>
+    <page name="p600406034601" title="New Pages" externalUrl="about:blank" index="6030" path="New Pages" />
+    <page name="APCForcastMonthTextImport" title="APC Forcast Month Text Import" description="View APC Forcast Month Text Import" index="6130" path="New Pages | APC Forcast Month Text Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="APCForcastMonthTextImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows apc forcast month text import management.</about>
+    </page>
+    <page name="p600406042313" title="New Pages" externalUrl="about:blank" index="6230" path="New Pages" />
+    <page name="HATCForcastMonthExcelImport" title="HATC Forcast Month Excel Import" description="View HATC Forcast Month Excel Import" index="6330" path="New Pages | HATC Forcast Month Excel Import" style="Generic" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HATCForcastMonthExcelImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows hatc forcast month excel import management.</about>
+    </page>
+    <page name="p170827082815" title="New Pages" externalUrl="about:blank" index="6430" path="New Pages" />
+    <page name="CalDateType" title="Cal Date Type" description="View Cal Date Type" index="6530" path="New Pages | Cal Date Type" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="CalDateType" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows cal date type management.</about>
+    </page>
+    <page name="MaterialNumberImport" title="Material Number Import" description="View Material Number Import" index="6630" path="New Pages | Material Number Import" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="MaterialNumberImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows material number import management.</about>
+    </page>
+    <page name="p170829012655" title="New Pages" externalUrl="about:blank" index="6730" path="New Pages" />
+    <page name="CustomerImport" title="Customer Import" description="View Customer Import" index="6830" path="New Pages | Customer Import" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="CustomerImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows customer import management.</about>
+    </page>
+    <page name="CustomerImportLog" title="Customer Import Log" description="View Customer Import Log" index="6930" path="New Pages | Customer Import Log" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="CustomerImportLog" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows customer import log management.</about>
+    </page>
+    <page name="WorkingType" title="Working Type" description="View Working Type" index="7030" path="New Pages | Working Type" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="WorkingType" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows working type management.</about>
+    </page>
+    <page name="p170829022525" title="New Pages" externalUrl="about:blank" index="7130" path="New Pages" />
+    <page name="MaterialNumberImportLog" title="Material Number Import Log" description="View Material Number Import Log" index="7230" path="New Pages | Material Number Import Log" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="MaterialNumberImportLog" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows material number import log management.</about>
+    </page>
+    <page name="p170911013719" title="New Pages" externalUrl="about:blank" index="7330" path="New Pages" />
+    <page name="AATForcastImport" title="AAT Forcast Import" description="View AAT Forcast Import" index="7430" path="New Pages | AAT Forcast Import" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="AATForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows aat forcast import management.</about>
+    </page>
+    <page name="NMTOrderImport" title="NMT Order Import" description="View NMT Order Import" index="7530" path="New Pages | NMT Order Import" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="NMTOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows nmt order import management.</about>
+    </page>
+    <page name="NPTForcastImport" title="NPT Forcast Import" description="View NPT Forcast Import" index="7630" path="New Pages | NPT Forcast Import" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="NPTForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows npt forcast import management.</about>
+    </page>
+    <page name="NPTOrderImport" title="NPT Order Import" description="View NPT Order Import" index="7730" path="New Pages | NPT Order Import" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="NPTOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows npt order import management.</about>
+    </page>
+    <page name="TSMForcastImport" title="TSM Forcast Import" description="View TSM Forcast Import" index="7830" path="New Pages | TSM Forcast Import" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="TSMForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows tsm forcast import management.</about>
+    </page>
+    <page name="p181114030734" title="New Pages" externalUrl="about:blank" index="7930" path="New Pages" />
+    <page name="CalDate" title="Cal Date" description="View Cal Date" index="8030" path="New Pages | Cal Date" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="CalDate" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows cal date management.</about>
+    </page>
+    <page name="CustomerLog" title="Customer Log" description="View Customer Log" index="8130" path="New Pages | Customer Log" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="CustomerLog" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows customer log management.</about>
+    </page>
+    <page name="ForcastImportLog" title="Forcast Import Log" description="View Forcast Import Log" index="8230" path="New Pages | Forcast Import Log" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="ForcastImportLog" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows forcast import log management.</about>
+    </page>
+    <page name="ForcastMonthImportLog" title="Forcast Month Import Log" description="View Forcast Month Import Log" index="8330" path="New Pages | Forcast Month Import Log" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="ForcastMonthImportLog" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows forcast month import log management.</about>
+    </page>
+    <page name="MaterialNumberLog" title="Material Number Log" description="View Material Number Log" index="8430" path="New Pages | Material Number Log" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="MaterialNumberLog" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows material number log management.</about>
+    </page>
+    <page name="MMTHForcastImport" title="MMTH Forcast Import" description="View MMTH Forcast Import" index="8530" path="New Pages | MMTH Forcast Import" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="MMTHForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows mmth forcast import management.</about>
+    </page>
+    <page name="OrderImportLog" title="Order Import Log" description="View Order Import Log" index="8630" path="New Pages | Order Import Log" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="OrderImportLog" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows order import log management.</about>
+    </page>
+    <page name="p181126104216" title="New Pages" externalUrl="about:blank" index="8730" path="New Pages" />
+    <page name="IMCTForcastImport" title="IMCT Forcast Import" description="View IMCT Forcast Import" index="8830" path="New Pages | IMCT Forcast Import" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="IMCTForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows imct forcast import management.</about>
+    </page>
+  </pages>
+  <userControls>
+    <userControl name="TableOfContents" prefix="uc" generate="Always">
+      <body>
+                
+&lt;div class="ParaInfo"&gt;
+        ^TocInstruction^Please select a page link in the table of contents below.^TocInstruction^&lt;/div&gt;
+&lt;div class="ParaHeader"&gt;
+    ^TocHeader^Site Map^TocHeader^
+&lt;/div&gt;
+&lt;asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" /&gt;
+&lt;asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" CssClass="TreeView"&gt;
+&lt;/asp:TreeView&gt;
+
+&lt;div id="app-sitemap" data-app-role="page" data-activator="Button|^TocHeader^Site Map^TocHeader^"&gt;
+    &lt;p&gt;
+      &lt;span&gt;^TocInstruction^Please select a page link in the table of contents below.^TocInstruction^&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;div data-app-role="sitemap"&gt;&lt;/div&gt;
+    &lt;p&gt;
+      &lt;br /&gt;
+    &lt;/p&gt;
+&lt;/div&gt;
+              </body>
+    </userControl>
+    <userControl name="RichEditor" prefix="uc" generate="FirstTimeOnly">
+      <body>
+              
+&lt;asp:TextBox ID="TextBox1" runat="server" Columns="50" Rows="10" Height="241px"
+    Width="450px"&gt;&lt;/asp:TextBox&gt;
+&lt;act:HtmlEditorExtender ID="Editor1" runat="server" TargetControlID="TextBox1" EnableSanitization="false"&gt;
+&lt;/act:HtmlEditorExtender&gt;
+            </body>
+    </userControl>
+    <userControl name="Welcome" prefix="uc" generate="Always">
+      <body>
+&lt;div style="padding-left:8px"&gt;&lt;div class="ParaInfo"&gt;
+        ^SignInInstruction^Sign in to access the protected site content.^SignInInstruction^&lt;/div&gt;
+&lt;div class="ParaHeader"&gt;
+    ^SignInHeader^Instructions^SignInHeader^
+&lt;/div&gt;
+&lt;div class="ParaText"&gt;
+    ^SignInPara1^Two standard user accounts are automatically created when application is initialized
+    if membership option has been selected for this application.^SignInPara1^
+&lt;/div&gt;
+                  
+&lt;div class="ParaText"&gt;
+    ^SignInPara2^The administrative account &lt;b&gt;admin&lt;/b&gt; is authorized to access all areas of the
+    web site and membership manager. The standard &lt;b&gt;user&lt;/b&gt; account is allowed to
+    access all areas of the web site with the exception of membership manager.^SignInPara2^&lt;/div&gt;
+                
+&lt;div class="ParaText"&gt;
+    &lt;div style="border: solid 1px black; background-color: InfoBackground; padding: 8px;
+        float: left;"&gt;
+        ^AdminDesc^Administrative account^AdminDesc^:&lt;br /&gt;
+        &lt;b title="User Name"&gt;admin&lt;/b&gt; / &lt;b title="Password"&gt;admin123%&lt;/b&gt;
+        &lt;br /&gt;
+        &lt;br /&gt;
+        ^UserDesc^Standard user account^UserDesc^:&lt;br /&gt;
+        &lt;b title="User Name"&gt;user&lt;/b&gt; / &lt;b title="Password"&gt;user123%&lt;/b&gt;
+    &lt;/div&gt;
+    &lt;div style="clear:both;margin-bottom:8px"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="app-welcome" data-app-role="page" data-activator="Button|^SignInHeader^Instructions^SignInHeader^" data-activator-description="^SignInInstruction^Sign in to access the protected site content.^SignInInstruction^"&gt;
+      &lt;p&gt;^SignInInstruction^Sign in to access the protected site content.^SignInInstruction^&lt;/p&gt;
+      &lt;p&gt;
+          ^SignInPara1^Two standard user accounts are automatically created when application is initialized
+  if membership option has been selected for this application.^SignInPara1^
+      &lt;/p&gt;
+
+      &lt;p&gt;
+          ^SignInPara2^The administrative account &lt;b&gt;admin&lt;/b&gt; is authorized to access all areas of the
+  web site and membership manager. The standard &lt;b&gt;user&lt;/b&gt; account is allowed to
+  access all areas of the web site with the exception of membership manager.^SignInPara2^
+      &lt;/p&gt;
+      &lt;p&gt;
+          ^AdminDesc^Administrative account^AdminDesc^:&lt;br /&gt;
+          &lt;b title="User Name"&gt;admin&lt;/b&gt; / &lt;b title="Password"&gt;admin123%&lt;/b&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
+          ^UserDesc^Standard user account^UserDesc^:&lt;br /&gt;
+          &lt;b title="User Name"&gt;user&lt;/b&gt; / &lt;b title="Password"&gt;user123%&lt;/b&gt;
+      &lt;/p&gt;
+      &lt;p&gt;&lt;a href="#" data-role="button" data-inline="true" data-theme="b" data-app-role="loginstatus" data-icon="lock"&gt;Login Status&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;</body>
+    </userControl>
+    <userControl name="MembershipManager" prefix="uc" generate="Always">
+      <body>
+                  
+&lt;aquarium:MembershipManager ID="mm" runat="server" /&gt;
+                </body>
+    </userControl>
+    <userControl name="Login" prefix="uc" generate="FirstTimeOnly">
+      <body>
+              
+&lt;div data-app-role="page" data-content-framework="bootstrap"&gt;
+        &lt;div class="navbar navbar-default navbar-static-top" role="navigation"&gt;
+            &lt;div class="container"&gt;
+                &lt;div class="navbar-header"&gt;
+                    &lt;span class="navbar-brand"&gt;Standalone Login Page&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class="navbar-collapse"&gt;
+                    &lt;div class="navbar-form navbar-right" role="form"&gt;
+                        &lt;div class="form-group"&gt;
+                            &lt;input id="login-user-name" type="text" placeholder="Username" class="form-control" autocapitalize="off"&gt;
+                        &lt;/div&gt;
+                        &lt;div class="form-group"&gt;
+                            &lt;input id="login-password" type="password" placeholder="Password" class="form-control"&gt;
+                        &lt;/div&gt;
+                        &lt;button id="login-button" class="btn btn-success"&gt;Sign in&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;!--/.navbar-collapse --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- Main jumbotron for a primary marketing message or call to action --&gt;
+        &lt;div class="jumbotron"&gt;
+            &lt;div class="container"&gt;
+                &lt;h1&gt;&lt;span class="glyphicon glyphicon-globe"&gt;&lt;/span&gt;&amp;nbsp;Hello, world!&lt;/h1&gt;
+                &lt;p&gt;
+                    This is a template for a custom login screen. It includes a large callout called a jumbotron and three supporting content blocks.
+                    Edit the "~/Login.html" page in Visual Studio to create something more unique.
+                &lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="#" class="btn btn-primary btn-lg" role="button"&gt;Learn more &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="container"&gt;
+
+            &lt;div class="row"&gt;
+                &lt;div class="col-sm-8"&gt;
+                    &lt;h2&gt;^SignInInstruction^Sign in to access the protected site content.^SignInInstruction^&lt;/h2&gt;
+                    &lt;p&gt;
+                        ^SignInPara1^Two standard user accounts are automatically created when application is initialized
+                        if membership option has been selected for this application.^SignInPara1^
+                    &lt;/p&gt;
+
+                    &lt;p&gt;
+                        ^SignInPara2^The administrative account &lt;b&gt;admin&lt;/b&gt; is authorized to access all areas of the
+                        web site and membership manager. The standard &lt;b&gt;user&lt;/b&gt; account is allowed to
+                        access all areas of the web site with the exception of membership manager.^SignInPara2^
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="col-sm-4"&gt;
+                    &lt;div class="panel panel-success"&gt;
+                        &lt;div class="panel-heading"&gt;
+                            &lt;span&gt;^AdminDesc^Administrative account^AdminDesc^&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="panel-body"&gt;
+                            User Name: &lt;b title="User Name"&gt;admin&lt;/b&gt;&lt;br /&gt;
+                            Password: &lt;b title="Password"&gt;admin123%&lt;/b&gt;&lt;br /&gt;
+                            &lt;a class="btn btn-link" href="#" id="admin-login"&gt;Login as Admin&lt;/a&gt;&lt;br /&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="panel panel-default"&gt;
+                        &lt;div class="panel-heading"&gt;
+                            &lt;span&gt;^UserDesc^Standard user account^UserDesc^&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="panel-body"&gt;
+                            User Name: &lt;b title="User Name"&gt;user&lt;/b&gt;&lt;br /&gt;
+                            Password: &lt;b title="Password"&gt;user123%&lt;/b&gt;&lt;br /&gt;
+                            &lt;a class="btn btn-link" href="#" id="user-login"&gt;Login as User&lt;/a&gt;&lt;br /&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;hr /&gt;
+            &lt;!-- Example row of columns --&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="col-sm-4"&gt;
+                    &lt;h2&gt;Heading&lt;/h2&gt;
+                    &lt;p&gt;Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. &lt;/p&gt;
+                    &lt;p&gt;&lt;a class="btn btn-default" href="#" role="button"&gt;View details &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="col-sm-4"&gt;
+                    &lt;h2&gt;Heading&lt;/h2&gt;
+                    &lt;p&gt;Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. &lt;/p&gt;
+                    &lt;p&gt;&lt;a class="btn btn-default" href="#" role="button"&gt;View details &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="col-sm-4"&gt;
+                    &lt;h2&gt;Heading&lt;/h2&gt;
+                    &lt;p&gt;Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="btn btn-default" href="#" role="button"&gt;View details &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;hr/&gt;
+        &lt;!-- /container --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+    &lt;script type="text/javascript"&gt;
+        (function () {
+            var resources = Web.MembershipResources.Messages;
+
+            function performLogin(username, password) {
+
+                var userNameElem = $('#login-user-name'),
+                    passwordElem = $('#login-password');
+
+                if (!username)
+                    username = userNameElem.val();
+                if (!password)
+                    password = passwordElem.val();
+
+                if (!username)
+                    $app.alert(resources.BlankUserName, function () {
+                        userNameElem.focus();
+                    });
+                else if (!password)
+                    $app.alert(resources.BlankPassword, function () {
+                        passwordElem.focus();
+                    });
+                else
+                    $app.login(username, password, true,
+                        function () {
+                            setTimeout(function() {
+                              $app._navigated = true;
+                              var returnUrl = window.location.href.match(/\?ReturnUrl=(.+)$/);
+                              window.location.replace(returnUrl &amp;&amp; decodeURIComponent(returnUrl[1]) || __baseUrl);
+                            });
+                        },
+                        function () {
+                            $app.alert(resources.InvalidUserNameAndPassword, function () {
+                                userNameElem.focus();
+                            });
+                        });
+                return false;
+            }
+
+            $(document)
+                .on('click', '#login-button', function () {
+                    performLogin();
+                })
+                .on('click', '#admin-login', function () {
+                    performLogin('admin', 'admin123%');
+                })
+                .on('click', '#user-login', function () {
+                    performLogin('user', 'user123%');
+                })
+                .on('keydown', 'input', function (event) {
+                    if (event.which == 13) {
+                        event.preventDefault();
+                        performLogin();
+                        return false;
+                    }
+                });
+        })();
+    &lt;/script&gt;
+
+            </body>
+    </userControl>
+  </userControls>
+</application>

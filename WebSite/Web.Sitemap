@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode title="^SiteHome^Home^SiteHome^" description="" url="~/Default.aspx">
+    <siteMapNode title="^HomePath^Home^HomePath^" description="^HomeDesc^Application home page^HomeDesc^" url="~/Pages/Home.aspx" cssClass="Wide" />
+    <siteMapNode title="SD (EDI)" description="" url="~/Pages/SalesDepartment.aspx" roles="Administrators,SD">
+      <siteMapNode title="Orders" description="" url="~/Pages/OrderImport.aspx" roles="*">
+        <siteMapNode title="Manual" description="View Order Manual" url="~/Pages/OrderManual.aspx" roles="Administrators,SD" />
+        <siteMapNode title="HATC" description="View HATC Order Import" url="~/Pages/HATCOrderImport.aspx" roles="Administrators,SD" />
+        <siteMapNode title="IMCT" description="View IMCT Order Import" url="~/Pages/IMCTOrderImport.aspx" roles="Administrators,SD" />
+        <siteMapNode title="MMTH" description="View MMTH Order Import" url="~/Pages/MMTHOrderImport.aspx" roles="Administrators,SD" />
+        <siteMapNode title="KMT" description="View KMT Order Import" url="~/Pages/KMTOrderImport.aspx" roles="Administrators" />
+        <siteMapNode title="KYB" description="View KYB Order Import" url="~/Pages/KYBOrderImport.aspx" roles="Administrators,SD" />
+        <siteMapNode title="THM" description="View THM Order Import" url="~/Pages/THMOrderImport.aspx" roles="Administrators,SD" />
+        <siteMapNode title="TSM" description="View TSM Order Import" url="~/Pages/TSMOrderImport.aspx" roles="Administrators,SD" />
+        <siteMapNode title="TYM" description="View TYM Order Import" url="~/Pages/TYMOrderImport.aspx" roles="Administrators,SD" />
+        <siteMapNode title="APC" description="View APC Order Import" url="~/Pages/APCOrderImport.aspx" roles="Administrators,SD" />
+        <siteMapNode title="NMT" description="View NMT Order Import" url="~/Pages/NMTOrderImport.aspx" />
+        <siteMapNode title="NPT" description="View NPT Order Import" url="~/Pages/NPTOrderImport.aspx" />
+        <siteMapNode title="AAT" description="View AAT Order Import" url="~/Pages/AATOrderImport.aspx" roles="Administrators,SD" />
+      </siteMapNode>
+      <siteMapNode title="Forcast" description="" url="~/Pages/ForcastImport.aspx" roles="*">
+        <siteMapNode title="Manual" description="View Forcast Manual" url="~/Pages/ForcastManual.aspx" roles="Administrators,SD" />
+        <siteMapNode title="HATC" description="View HATC Forcast Import" url="~/Pages/HATCForcastImport.aspx" roles="Administrators,SD" />
+        <siteMapNode title="AAT" description="View AAT Forcast Import" url="~/Pages/AATForcastImport.aspx" />
+        <siteMapNode title="MMTH" description="View MMTH Forcast Import" url="~/Pages/MMTHForcastImport.aspx" />
+        <siteMapNode title="IMCT" description="View IMCT Forcast Import" url="~/Pages/IMCTForcastImport.aspx" />
+        <siteMapNode title="TSM" description="" url="~/Pages/TSMForcastImport.aspx" roles="*" />
+        <siteMapNode title="KMT" description="View KMT Forcast Import" url="~/Pages/KMTForcastImport.aspx" roles="Administrators" />
+        <siteMapNode title="KYB" description="View KYB Forcast Import" url="~/Pages/KYBForcastImport.aspx" roles="Administrators,SD" />
+        <siteMapNode title="THM" description="View THM Forcast Import" url="~/Pages/THMForcastImport.aspx" roles="Administrators,SD" />
+        <siteMapNode title="TYM" description="View TYM Forcast Import" url="~/Pages/TYMForcastImport.aspx" roles="Administrators,SD" />
+        <siteMapNode title="NMT" description="View NMT Forcast Import" url="~/Pages/NMTForcastImport.aspx" roles="Administrators,SD" />
+        <siteMapNode title="NPT" description="View NPT Forcast Import" url="~/Pages/NPTForcastImport.aspx" />
+      </siteMapNode>
+      <siteMapNode title="Reports" description="" url="~/Pages/SDReports.aspx" roles="*">
+        <siteMapNode title="Orders" description="View Orders" url="~/Pages/Orders.aspx" roles="Administrators,SD" />
+        <siteMapNode title="Forcast" description="View Orders Forcast" url="~/Pages/OrdersForcast.aspx" roles="Administrators,SD" />
+      </siteMapNode>
+      <siteMapNode title="T05" description="" url="~/Pages/SDT05.aspx" />
+      <siteMapNode title="T08" description="" url="~/Pages/SDT08.aspx" />
+    </siteMapNode>
+    <siteMapNode title="SA (EDI)" description="" url="~/Pages/SAEdi.aspx" roles="Administrators,SA">
+      <siteMapNode title="Forcast" description="View Orders Forcast Month" url="~/Pages/OrdersForcastMonth.aspx" />
+      <siteMapNode title="Forcast Month Manual" description="View Forcast Month Manual" url="~/Pages/ForcastMonthManual.aspx" />
+      <siteMapNode title="HATC Forcast Month Import" description="View HATC Forcast Month Import" url="~/Pages/HATCForcastMonthImport.aspx" />
+      <siteMapNode title="APC Forcast Month Import" description="View APC Forcast Month Import" url="~/Pages/APCForcastMonthImport.aspx" />
+      <siteMapNode title="APC Forcast Month Text Import" description="View APC Forcast Month Text Import" url="~/Pages/APCForcastMonthTextImport.aspx" />
+      <siteMapNode title="THM Forcast Month Import" description="View THM Forcast Month Import" url="~/Pages/THMForcastMonthImport.aspx" />
+      <siteMapNode title="TSM Forcast Month Import" description="View TSM Forcast Month Import" url="~/Pages/TSMForcastMonthImport.aspx" />
+      <siteMapNode title="TYM Forcast Month Import" description="View TYM Forcast Month Import" url="~/Pages/TYMForcastMonthImport.aspx" />
+      <siteMapNode title="SA T05" description="View vw SA T05" url="~/Pages/vw_SA_T05.aspx" />
+    </siteMapNode>
+    <siteMapNode title="Master Data" description="" url="~/Pages/MasterData.aspx" roles="Administrators,SystemAdmin">
+      <siteMapNode title="M24" description="View Material Number" url="~/Pages/MaterialNumber.aspx">
+        <siteMapNode title="M24 Import" description="View Material Number Import" url="~/Pages/MaterialNumberImport.aspx" />
+      </siteMapNode>
+      <siteMapNode title="M12" description="View Customer" url="~/Pages/Customer.aspx">
+        <siteMapNode title="M12 Import" description="View Customer Import" url="~/Pages/CustomerImport.aspx" />
+      </siteMapNode>
+      <siteMapNode title="Working Date" description="View Working Date" url="~/Pages/WorkingDate.aspx">
+        <siteMapNode title="Working Type" description="View Working Type" url="~/Pages/WorkingType.aspx" />
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode title="System Log" description="" url="~/Pages/SystemLog.aspx" roles="Administrators">
+      <siteMapNode title="M12 Import Log" description="View Customer Import Log" url="~/Pages/CustomerImportLog.aspx" />
+      <siteMapNode title="M24 Import Log" description="View Material Number Import Log" url="~/Pages/MaterialNumberImportLog.aspx" />
+    </siteMapNode>
+    <siteMapNode title="^MembershipPath^Membership^MembershipPath^" description="^MembershipDesc^User and role manager^MembershipDesc^" url="~/Pages/Membership.aspx" roles="Administrators" />
+    <siteMapNode title="New Pages" description="" url="~/Pages/p181114030734.aspx">
+      <siteMapNode title="Cal Date" description="View Cal Date" url="~/Pages/CalDate.aspx" />
+      <siteMapNode title="Customer Log" description="View Customer Log" url="~/Pages/CustomerLog.aspx" />
+      <siteMapNode title="Forcast Import Log" description="View Forcast Import Log" url="~/Pages/ForcastImportLog.aspx" />
+      <siteMapNode title="Forcast Month Import Log" description="View Forcast Month Import Log" url="~/Pages/ForcastMonthImportLog.aspx" />
+      <siteMapNode title="Material Number Log" description="View Material Number Log" url="~/Pages/MaterialNumberLog.aspx" />
+      <siteMapNode title="Order Import Log" description="View Order Import Log" url="~/Pages/OrderImportLog.aspx" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

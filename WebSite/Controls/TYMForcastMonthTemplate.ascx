@@ -1,0 +1,1 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="TYMForcastMonthTemplate.ascx.cs" Inherits="Controls_TYMForcastMonthTemplate"  %><asp:UpdatePanel ID="UpdatePanel1" runat="server"><ContentTemplate><div style="margin:2px;border: solid 1px silver;padding:8px;">uc:TYMForcastMonthTemplate</div></ContentTemplate></asp:UpdatePanel>

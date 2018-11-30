@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="OrderImportLog" conflictDetection="overwriteChanges" label="Order Import Log" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"OrderImportLog"."AutoId" "AutoId"
+	,"OrderImportLog"."OrderBy" "OrderBy"
+	,"OrderImportLog"."DeliveryDestination" "DeliveryDestination"
+	,"OrderImportLog"."CustomerMatCode" "CustomerMatCode"
+	,"OrderImportLog"."PartsDevision" "PartsDevision"
+	,"OrderImportLog"."CustomerPO" "CustomerPO"
+	,"OrderImportLog"."Key1" "Key1"
+	,"OrderImportLog"."Key2" "Key2"
+	,"OrderImportLog"."Key3" "Key3"
+	,"OrderImportLog"."ReliabilityDevision" "ReliabilityDevision"
+	,"OrderImportLog"."DeliveryDate" "DeliveryDate"
+	,"OrderImportLog"."Quantity" "Quantity"
+	,"OrderImportLog"."Unit" "Unit"
+	,"OrderImportLog"."PlngPeriod" "PlngPeriod"
+	,"OrderImportLog"."SAPCode" "SAPCode"
+	,"OrderImportLog"."Filename" "Filename"
+	,"OrderImportLog"."StatusCode" "StatusCode"
+	,"OrderImportLog"."CustomerId" "CustomerId"
+	,"OrderImportLog"."ExecuteBy" "ExecuteBy"
+	,"OrderImportLog"."ExecuteDate" "ExecuteDate"
+	,"OrderImportLog"."CustomerName" "CustomerName"
+	,"OrderImportLog"."PlantCode" "PlantCode"
+	,"OrderImportLog"."AddCode" "AddCode"
+	,"OrderImportLog"."Arrivaltime" "Arrivaltime"
+	,"OrderImportLog"."FromTo" "FromTo"
+from "dbo"."OrderImportLog" "OrderImportLog"
+]]></text>
+    </command>
+    <command id="AutoIdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="AutoId" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="AutoId" type="Decimal" allowNulls="false" isPrimaryKey="true" label="Auto#" readOnly="true" />
+    <field name="OrderBy" type="String" label="Order By" length="50" showInSummary="true" />
+    <field name="DeliveryDestination" type="String" label="Delivery Destination" length="250" showInSummary="true" />
+    <field name="CustomerMatCode" type="String" label="Customer Mat Code" length="50" showInSummary="true" />
+    <field name="PartsDevision" type="String" label="Parts Devision" length="10" showInSummary="true" />
+    <field name="CustomerPO" type="String" label="Customer PO" length="50" showInSummary="true" />
+    <field name="Key1" type="String" label="Key1" length="50" />
+    <field name="Key2" type="String" label="Key2" length="50" />
+    <field name="Key3" type="String" label="Key3" length="50" />
+    <field name="ReliabilityDevision" type="String" label="Reliability Devision" length="50" />
+    <field name="DeliveryDate" type="DateTime" label="Delivery Date" />
+    <field name="Quantity" type="Int32" label="Quantity" />
+    <field name="Unit" type="String" label="Unit" length="50" />
+    <field name="PlngPeriod" type="String" label="Plng Period" length="50" />
+    <field name="SAPCode" type="String" label="SAP Code" length="50" />
+    <field name="Filename" type="String" label="Filename" length="200" />
+    <field name="StatusCode" type="String" label="Status Code" length="100" />
+    <field name="CustomerId" type="Int32" label="Customer#" />
+    <field name="ExecuteBy" type="String" label="Execute By" length="50" />
+    <field name="ExecuteDate" type="DateTime" default="(getdate())" label="Execute Date" />
+    <field name="CustomerName" type="String" label="Customer Name" length="50" />
+    <field name="PlantCode" type="String" label="Plant Code" length="50" />
+    <field name="AddCode" type="String" label="Add Code" length="50" />
+    <field name="Arrivaltime" type="String" label="Arrivaltime" length="50" />
+    <field name="FromTo" type="String" label="From To" length="50" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Order Import Log">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="OrderBy" columns="50" />
+        <dataField fieldName="DeliveryDestination" />
+        <dataField fieldName="CustomerMatCode" columns="50" />
+        <dataField fieldName="PartsDevision" columns="10" />
+        <dataField fieldName="CustomerPO" columns="50" />
+        <dataField fieldName="Key1" columns="50" />
+        <dataField fieldName="Key2" columns="50" />
+        <dataField fieldName="Key3" columns="50" />
+        <dataField fieldName="ReliabilityDevision" columns="50" />
+        <dataField fieldName="DeliveryDate" columns="10" />
+        <dataField fieldName="Quantity" columns="15" />
+        <dataField fieldName="Unit" columns="50" />
+        <dataField fieldName="PlngPeriod" columns="50" />
+        <dataField fieldName="SAPCode" columns="50" />
+        <dataField fieldName="Filename" />
+        <dataField fieldName="StatusCode" />
+        <dataField fieldName="CustomerId" columns="15" />
+        <dataField fieldName="ExecuteBy" columns="50" />
+        <dataField fieldName="ExecuteDate" columns="10" />
+        <dataField fieldName="CustomerName" columns="50" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Order Import Log">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Order Import Log" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="OrderBy" columns="50" />
+            <dataField fieldName="DeliveryDestination" />
+            <dataField fieldName="CustomerMatCode" columns="50" />
+            <dataField fieldName="PartsDevision" columns="10" />
+            <dataField fieldName="CustomerPO" columns="50" />
+            <dataField fieldName="Key1" columns="50" />
+            <dataField fieldName="Key2" columns="50" />
+            <dataField fieldName="Key3" columns="50" />
+            <dataField fieldName="ReliabilityDevision" columns="50" />
+            <dataField fieldName="DeliveryDate" columns="10" />
+            <dataField fieldName="Quantity" columns="15" />
+            <dataField fieldName="Unit" columns="50" />
+            <dataField fieldName="PlngPeriod" columns="50" />
+            <dataField fieldName="SAPCode" columns="50" />
+            <dataField fieldName="Filename" />
+            <dataField fieldName="StatusCode" />
+            <dataField fieldName="CustomerId" columns="15" />
+            <dataField fieldName="ExecuteBy" columns="50" />
+            <dataField fieldName="ExecuteDate" columns="10" />
+            <dataField fieldName="CustomerName" columns="50" />
+            <dataField fieldName="PlantCode" columns="50" />
+            <dataField fieldName="AddCode" columns="50" />
+            <dataField fieldName="Arrivaltime" columns="50" />
+            <dataField fieldName="FromTo" columns="50" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Order Import Log">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="New Order Import Log" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="OrderBy" columns="50" />
+            <dataField fieldName="DeliveryDestination" />
+            <dataField fieldName="CustomerMatCode" columns="50" />
+            <dataField fieldName="PartsDevision" columns="10" />
+            <dataField fieldName="CustomerPO" columns="50" />
+            <dataField fieldName="Key1" columns="50" />
+            <dataField fieldName="Key2" columns="50" />
+            <dataField fieldName="Key3" columns="50" />
+            <dataField fieldName="ReliabilityDevision" columns="50" />
+            <dataField fieldName="DeliveryDate" columns="10" />
+            <dataField fieldName="Quantity" columns="15" />
+            <dataField fieldName="Unit" columns="50" />
+            <dataField fieldName="PlngPeriod" columns="50" />
+            <dataField fieldName="SAPCode" columns="50" />
+            <dataField fieldName="Filename" />
+            <dataField fieldName="StatusCode" />
+            <dataField fieldName="CustomerId" columns="15" />
+            <dataField fieldName="ExecuteBy" columns="50" />
+            <dataField fieldName="ExecuteDate" columns="10" />
+            <dataField fieldName="CustomerName" columns="50" />
+            <dataField fieldName="PlantCode" columns="50" />
+            <dataField fieldName="AddCode" columns="50" />
+            <dataField fieldName="Arrivaltime" columns="50" />
+            <dataField fieldName="FromTo" columns="50" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Delete" />
+      <action id="a6" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenKeySelected="true" whenClientScript="this.hasDetails()" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a5" />
+      <action id="a6" commandName="Import" commandArgument="createForm1" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+  </actions>
+</dataController>

@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="MaterialNumberImport" conflictDetection="overwriteChanges" label="Material Number Import" handler="MyCompany.Rules.MaterialNumberImportBusinessRule" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"MaterialNumberImport"."AutoId" "AutoId"
+	,"MaterialNumberImport"."SoldtoParty" "SoldtoParty"
+	,"MaterialNumberImport"."ShiptoParty" "ShiptoParty"
+	,"MaterialNumberImport"."CustomerItemNumber" "CustomerItemNumber"
+	,"MaterialNumberImport"."MassPartsIDFlag" "MassPartsIDFlag"
+	,"MaterialNumberImport"."ExpansionKey1" "ExpansionKey1"
+	,"MaterialNumberImport"."ExpansionKey2" "ExpansionKey2"
+	,"MaterialNumberImport"."ExpansionKey3" "ExpansionKey3"
+	,"MaterialNumberImport"."VaridityDateTo" "VaridityDateTo"
+	,"MaterialNumberImport"."ValiditydateFrom" "ValiditydateFrom"
+	,"MaterialNumberImport"."PLANT" "PLANT"
+	,"MaterialNumberImport"."MaterialNumber" "MaterialNumber"
+	,"MaterialNumberImport"."UnitCode" "UnitCode"
+	,"MaterialNumberImport"."Status" "Status"
+from "dbo"."MaterialNumberImport" "MaterialNumberImport"
+]]></text>
+    </command>
+    <command id="AutoIdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="AutoId" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="AutoId" type="Int32" allowNulls="false" isPrimaryKey="true" label="Auto#" readOnly="true" />
+    <field name="SoldtoParty" type="String" label="Soldto Party" length="255" showInSummary="true" />
+    <field name="ShiptoParty" type="String" label="Shipto Party" length="255" showInSummary="true" />
+    <field name="CustomerItemNumber" type="String" label="Customer Item Number" length="255" showInSummary="true" />
+    <field name="MassPartsIDFlag" type="String" label="Mass Parts ID Flag" length="255" showInSummary="true" />
+    <field name="ExpansionKey1" type="String" label="Expansion Key1" length="255" showInSummary="true" />
+    <field name="ExpansionKey2" type="String" label="Expansion Key2" length="255" />
+    <field name="ExpansionKey3" type="String" label="Expansion Key3" length="255" />
+    <field name="VaridityDateTo" type="String" label="Varidity Date To" length="255" />
+    <field name="ValiditydateFrom" type="String" label="Validitydate From" length="255" />
+    <field name="PLANT" type="String" label="Plant" length="255" />
+    <field name="MaterialNumber" type="String" label="Material Number" length="255" />
+    <field name="UnitCode" type="String" label="Unit Code" length="50" />
+    <field name="Status" type="String" label="Status" length="50" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Material Number Import">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="SoldtoParty" />
+        <dataField fieldName="ShiptoParty" />
+        <dataField fieldName="CustomerItemNumber" />
+        <dataField fieldName="MassPartsIDFlag" />
+        <dataField fieldName="ExpansionKey1" />
+        <dataField fieldName="ExpansionKey2" />
+        <dataField fieldName="ExpansionKey3" />
+        <dataField fieldName="VaridityDateTo" />
+        <dataField fieldName="ValiditydateFrom" />
+        <dataField fieldName="PLANT" />
+        <dataField fieldName="MaterialNumber" />
+        <dataField fieldName="UnitCode" columns="50" />
+        <dataField fieldName="Status" columns="50" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Material Number Import">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Material Number Import" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="SoldtoParty" />
+            <dataField fieldName="ShiptoParty" />
+            <dataField fieldName="CustomerItemNumber" />
+            <dataField fieldName="MassPartsIDFlag" />
+            <dataField fieldName="ExpansionKey1" />
+            <dataField fieldName="ExpansionKey2" />
+            <dataField fieldName="ExpansionKey3" />
+            <dataField fieldName="VaridityDateTo" />
+            <dataField fieldName="ValiditydateFrom" />
+            <dataField fieldName="PLANT" />
+            <dataField fieldName="MaterialNumber" />
+            <dataField fieldName="UnitCode" columns="50" />
+            <dataField fieldName="Status" columns="50" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Material Number Import">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="New Material Number Import" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="SoldtoParty" />
+            <dataField fieldName="ShiptoParty" />
+            <dataField fieldName="CustomerItemNumber" />
+            <dataField fieldName="MassPartsIDFlag" />
+            <dataField fieldName="ExpansionKey1" />
+            <dataField fieldName="ExpansionKey2" />
+            <dataField fieldName="ExpansionKey3" />
+            <dataField fieldName="VaridityDateTo" />
+            <dataField fieldName="ValiditydateFrom" />
+            <dataField fieldName="PLANT" />
+            <dataField fieldName="MaterialNumber" />
+            <dataField fieldName="UnitCode" columns="50" />
+            <dataField fieldName="Status" columns="50" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action commandName="Import" headerText="From Excel" id="a101" />
+      <action commandName="Custom" commandArgument="Execute" headerText="Execute" confirmation="Confirm M24" id="a100">
+        <data />
+      </action>
+      <action commandName="SQL" commandArgument="ClearData" headerText="Clear Data" id="a102">
+        <data><![CDATA[delete from MaterialNumberImport]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Custom" commandArgument="Execute" type="Sql" phase="Execute"><![CDATA[exec sp_MaterialNumberImport @Session_UserName]]></rule>
+  </businessRules>
+</dataController>

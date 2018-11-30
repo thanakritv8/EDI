@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<map xmlns="urn:codeontime:data-map">
+  <node name="FilesImport" refs="1" depth="0" schema="dbo" label="Files Import" schemaLabel="Dbo">
+    <node name="HATCOrderImport" refs="0" depth="1" schema="dbo" label="HATC Order Import" schemaLabel="Dbo" />
+  </node>
+  <node name="AATForcastImport" refs="0" depth="0" schema="dbo" label="AAT Forcast Import" schemaLabel="Dbo" />
+  <node name="AATOrderImport" refs="0" depth="0" schema="dbo" label="AAT Order Import" schemaLabel="Dbo" />
+  <node name="APCForcastMonthImport" refs="0" depth="0" schema="dbo" label="APC Forcast Month Import" schemaLabel="Dbo" />
+  <node name="APCForcastMonthTextImport" refs="0" depth="0" schema="dbo" label="APC Forcast Month Text Import" schemaLabel="Dbo">
+    <node name="APCOrderImport" refs="0" depth="0" schema="dbo" label="APC Order Import" schemaLabel="Dbo" />
+    <node name="Customer" refs="0" depth="0" schema="dbo" label="Customer" schemaLabel="Dbo" />
+    <node name="CustomerImport" refs="0" depth="0" schema="dbo" label="Customer Import" schemaLabel="Dbo" />
+    <node name="CustomerImportLog" refs="0" depth="0" schema="dbo" label="Customer Import Log" schemaLabel="Dbo" />
+    <node name="ForcastManual" refs="0" depth="0" schema="dbo" label="Forcast Manual" schemaLabel="Dbo" />
+    <node name="ForcastMonthManual" refs="0" depth="0" schema="dbo" label="Forcast Month Manual" schemaLabel="Dbo" />
+    <node name="HATCForcastImport" refs="0" depth="0" schema="dbo" label="HATC Forcast Import" schemaLabel="Dbo" />
+    <node name="HATCForcastMonthExcelImport" refs="0" depth="0" schema="dbo" label="HATC Forcast Month Excel Import" schemaLabel="Dbo" />
+    <node name="HATCForcastMonthImport" refs="0" depth="0" schema="dbo" label="HATC Forcast Month Import" schemaLabel="Dbo" />
+    <node name="IMCTOrderImport" refs="0" depth="0" schema="dbo" label="IMCT Order Import" schemaLabel="Dbo" />
+    <node name="KMTForcastImport" refs="0" depth="0" schema="dbo" label="KMT Forcast Import" schemaLabel="Dbo" />
+    <node name="KMTOrderImport" refs="0" depth="0" schema="dbo" label="KMT Order Import" schemaLabel="Dbo" />
+    <node name="KYBForcastImport" refs="0" depth="0" schema="dbo" label="KYB Forcast Import" schemaLabel="Dbo" />
+    <node name="KYBOrderImport" refs="0" depth="0" schema="dbo" label="KYB Order Import" schemaLabel="Dbo" />
+    <node name="MaterialNumber" refs="0" depth="0" schema="dbo" label="Material Number" schemaLabel="Dbo" />
+    <node name="MaterialNumberImport" refs="0" depth="0" schema="dbo" label="Material Number Import" schemaLabel="Dbo" />
+    <node name="MaterialNumberImportLog" refs="0" depth="0" schema="dbo" label="Material Number Import Log" schemaLabel="Dbo" />
+    <node name="MMTHOrderImport" refs="0" depth="0" schema="dbo" label="MMTH Order Import" schemaLabel="Dbo" />
+    <node name="NMTForcastImport" refs="0" depth="0" schema="dbo" label="NMT Forcast Import" schemaLabel="Dbo" />
+    <node name="NMTOrderImport" refs="0" depth="0" schema="dbo" label="NMT Order Import" schemaLabel="Dbo" />
+    <node name="NPTForcastImport" refs="0" depth="0" schema="dbo" label="NPT Forcast Import" schemaLabel="Dbo" />
+    <node name="NPTOrderImport" refs="0" depth="0" schema="dbo" label="NPT Order Import" schemaLabel="Dbo" />
+    <node name="OrderManual" refs="0" depth="0" schema="dbo" label="Order Manual" schemaLabel="Dbo" />
+    <node name="Orders" refs="0" depth="0" schema="dbo" label="Orders" schemaLabel="Dbo" />
+    <node name="OrdersForcast" refs="0" depth="0" schema="dbo" label="Orders Forcast" schemaLabel="Dbo" />
+    <node name="OrdersForcastMonth" refs="0" depth="0" schema="dbo" label="Orders Forcast Month" schemaLabel="Dbo" />
+    <node name="THMForcastImport" refs="0" depth="0" schema="dbo" label="THM Forcast Import" schemaLabel="Dbo" />
+    <node name="THMForcastMonthImport" refs="0" depth="0" schema="dbo" label="THM Forcast Month Import" schemaLabel="Dbo" />
+    <node name="THMOrderImport" refs="0" depth="0" schema="dbo" label="THM Order Import" schemaLabel="Dbo" />
+    <node name="TSMForcastMonthImport" refs="0" depth="0" schema="dbo" label="TSM Forcast Month Import" schemaLabel="Dbo" />
+    <node name="TSMOrderImport" refs="0" depth="0" schema="dbo" label="TSM Order Import" schemaLabel="Dbo" />
+    <node name="TYMForcastImport" refs="0" depth="0" schema="dbo" label="TYM Forcast Import" schemaLabel="Dbo" />
+    <node name="TYMForcastMonthImport" refs="0" depth="0" schema="dbo" label="TYM Forcast Month Import" schemaLabel="Dbo" />
+    <node name="TYMOrderImport" refs="0" depth="0" schema="dbo" label="TYM Order Import" schemaLabel="Dbo" />
+    <node name="WorkingDate" refs="0" depth="0" schema="dbo" label="Working Date" schemaLabel="Dbo" />
+    <node name="WorkingType" refs="0" depth="0" schema="dbo" label="Working Type" schemaLabel="Dbo" />
+  </node>
+  <node name="AllReports" label="^ReportsPath^Reports^ReportsPath^">
+    <node name="vw_SA_T05" refs="0" depth="0" schema="dbo" label="vw SA T05" schemaLabel="Dbo" parent="Reports" />
+    <node name="vw_SD_T05" refs="0" depth="0" schema="dbo" label="vw SD T05" schemaLabel="Dbo" parent="Reports" />
+    <node name="vw_SD_T08" refs="0" depth="0" schema="dbo" label="vw SD T08" schemaLabel="Dbo" parent="Reports" />
+  </node>
+</map>

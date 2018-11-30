@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="vw_SA_T05" conflictDetection="overwriteChanges" label="vw SA T05" handler="MyCompany.Rules.vw_SA_T05BusinessRule" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"vw_SA_T05"."AutoId" "AutoId"
+	,"vw_SA_T05"."OrderBy" "OrderBy"
+	,"vw_SA_T05"."DeliveryDestination" "DeliveryDestination"
+	,"vw_SA_T05"."CustomerMatCode" "CustomerMatCode"
+	,"vw_SA_T05"."PartsDevision" "PartsDevision"
+	,"vw_SA_T05"."CustomerPO" "CustomerPO"
+	,"vw_SA_T05"."Key1" "Key1"
+	,"vw_SA_T05"."Key2" "Key2"
+	,"vw_SA_T05"."Key3" "Key3"
+	,"vw_SA_T05"."ReliabilityDevision" "ReliabilityDevision"
+	,"vw_SA_T05"."DeliveryDate" "DeliveryDate"
+	,"vw_SA_T05"."Quantity" "Quantity"
+	,"vw_SA_T05"."Unit" "Unit"
+	,"vw_SA_T05"."PlngPeriod" "PlngPeriod"
+	,"vw_SA_T05"."SAPCode" "SAPCode"
+	,"vw_SA_T05"."CustomerId" "CustomerId"
+	,"vw_SA_T05"."CreateBy" "CreateBy"
+	,"vw_SA_T05"."CreateDate" "CreateDate"
+	,"vw_SA_T05"."UpdateBy" "UpdateBy"
+	,"vw_SA_T05"."UpdateDate" "UpdateDate"
+from "dbo"."vw_SA_T05" "vw_SA_T05"
+]]></text>
+    </command>
+    <command id="AutoIdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="AutoId" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="AutoId" type="Decimal" allowNulls="false" label="Auto#" readOnly="true" showInSummary="true" />
+    <field name="OrderBy" type="String" label="Order By" length="50" showInSummary="true" />
+    <field name="DeliveryDestination" type="String" label="Delivery Destination" length="250" showInSummary="true" />
+    <field name="CustomerMatCode" type="String" label="Customer Mat Code" length="50" showInSummary="true" />
+    <field name="PartsDevision" type="String" label="Parts Devision" length="10" showInSummary="true" />
+    <field name="CustomerPO" type="String" label="Customer PO" length="50" />
+    <field name="Key1" type="String" label="Key1" length="50" />
+    <field name="Key2" type="String" label="Key2" length="50" />
+    <field name="Key3" type="String" label="Key3" length="50" />
+    <field name="ReliabilityDevision" type="String" label="Reliability Devision" length="50" />
+    <field name="DeliveryDate" type="Date" label="Delivery Date" />
+    <field name="Quantity" type="String" label="Quantity" length="50" />
+    <field name="Unit" type="String" label="Unit" length="50" />
+    <field name="PlngPeriod" type="String" label="Plng Period" length="50" />
+    <field name="SAPCode" type="String" label="SAP Code" length="50" />
+    <field name="CustomerId" type="Int32" label="Customer#" />
+    <field name="CreateBy" type="String" label="Create By" length="50" />
+    <field name="CreateDate" type="DateTime" label="Create Date" />
+    <field name="UpdateBy" type="String" label="Update By" length="50" />
+    <field name="UpdateDate" type="DateTime" label="Update Date" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="vw SA T05">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="AutoId" columns="15" />
+        <dataField fieldName="OrderBy" columns="50" />
+        <dataField fieldName="DeliveryDestination" />
+        <dataField fieldName="CustomerMatCode" columns="50" />
+        <dataField fieldName="PartsDevision" columns="10" />
+        <dataField fieldName="CustomerPO" columns="50" />
+        <dataField fieldName="Key1" columns="50" />
+        <dataField fieldName="Key2" columns="50" />
+        <dataField fieldName="Key3" columns="50" />
+        <dataField fieldName="ReliabilityDevision" columns="50" />
+        <dataField fieldName="DeliveryDate" columns="10" />
+        <dataField fieldName="Quantity" columns="50" />
+        <dataField fieldName="Unit" columns="50" />
+        <dataField fieldName="PlngPeriod" columns="50" />
+        <dataField fieldName="SAPCode" columns="50" />
+        <dataField fieldName="CustomerId" columns="15" />
+        <dataField fieldName="CreateBy" columns="50" hidden="true" />
+        <dataField fieldName="CreateDate" columns="10" hidden="true" />
+        <dataField fieldName="UpdateBy" columns="50" hidden="true" />
+        <dataField fieldName="UpdateDate" columns="10" hidden="true" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review vw SA T05">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="vw SA T05" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="AutoId" columns="15" />
+            <dataField fieldName="OrderBy" columns="50" />
+            <dataField fieldName="DeliveryDestination" />
+            <dataField fieldName="CustomerMatCode" columns="50" />
+            <dataField fieldName="PartsDevision" columns="10" />
+            <dataField fieldName="CustomerPO" columns="50" />
+            <dataField fieldName="Key1" columns="50" />
+            <dataField fieldName="Key2" columns="50" />
+            <dataField fieldName="Key3" columns="50" />
+            <dataField fieldName="ReliabilityDevision" columns="50" />
+            <dataField fieldName="DeliveryDate" columns="10" />
+            <dataField fieldName="Quantity" columns="50" />
+            <dataField fieldName="Unit" columns="50" />
+            <dataField fieldName="PlngPeriod" columns="50" />
+            <dataField fieldName="SAPCode" columns="50" />
+            <dataField fieldName="CustomerId" columns="15" />
+            <dataField fieldName="CreateBy" columns="50" />
+            <dataField fieldName="CreateDate" columns="10" />
+            <dataField fieldName="UpdateBy" columns="50" />
+            <dataField fieldName="UpdateDate" columns="10" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New vw SA T05">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="New vw SA T05" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="OrderBy" columns="50" />
+            <dataField fieldName="DeliveryDestination" />
+            <dataField fieldName="CustomerMatCode" columns="50" />
+            <dataField fieldName="PartsDevision" columns="10" />
+            <dataField fieldName="CustomerPO" columns="50" />
+            <dataField fieldName="Key1" columns="50" />
+            <dataField fieldName="Key2" columns="50" />
+            <dataField fieldName="Key3" columns="50" />
+            <dataField fieldName="ReliabilityDevision" columns="50" />
+            <dataField fieldName="DeliveryDate" columns="10" />
+            <dataField fieldName="Quantity" columns="50" />
+            <dataField fieldName="Unit" columns="50" />
+            <dataField fieldName="PlngPeriod" columns="50" />
+            <dataField fieldName="SAPCode" columns="50" />
+            <dataField fieldName="CustomerId" columns="15" />
+            <dataField fieldName="CreateBy" columns="50" />
+            <dataField fieldName="CreateDate" columns="10" />
+            <dataField fieldName="UpdateBy" columns="50" />
+            <dataField fieldName="UpdateDate" columns="10" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Delete" />
+      <action id="a6" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenKeySelected="true" whenClientScript="this.hasDetails()" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+  </actions>
+</dataController>

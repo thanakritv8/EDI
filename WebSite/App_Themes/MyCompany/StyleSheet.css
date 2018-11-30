@@ -1,0 +1,8 @@
+﻿tr.StatusExecuteSuccess td
+{ color: Black !important;
+    background-color: PaleGreen !important;
+}
+tr.StatusExecuteError td
+{ color: Black !important;
+    background-color: #ffb3b3 !important;
+}

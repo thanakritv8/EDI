@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="vw_T08" conflictDetection="overwriteChanges" label="vw T08" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"vw_T08"."SalesDocumentType" "SalesDocumentType"
+	,"vw_T08"."SalesOrganization" "SalesOrganization"
+	,"vw_T08"."DistributionChannel" "DistributionChannel"
+	,"vw_T08"."Division" "Division"
+	,"vw_T08"."SoldTo" "SoldTo"
+	,"vw_T08"."ShipTo" "ShipTo"
+	,"vw_T08"."PurchaseOrderNumber" "PurchaseOrderNumber"
+	,"vw_T08"."SalesDocument" "SalesDocument"
+	,"vw_T08"."InvoiceNumber" "InvoiceNumber"
+	,"vw_T08"."SalesDocumentItemCat " "SalesDocumentItemCat"
+	,"vw_T08"."MaterialCode" "MaterialCode"
+	,"vw_T08"."KeyField1" "KeyField1"
+	,"vw_T08"."KeyField2" "KeyField2"
+	,"vw_T08"."KeyField3" "KeyField3"
+	,"vw_T08"."RokiDeliveryPlant" "RokiDeliveryPlant"
+	,"vw_T08"."RokiDel StorageLoc " "RokiDelStorageLoc"
+	,"vw_T08"."GoodsMovementDate" "GoodsMovementDate"
+	,"vw_T08"."LastDeliveryPlant" "LastDeliveryPlant"
+	,"vw_T08"."LastDel StorageLoc " "LastDelStorageLoc"
+	,"vw_T08"."NetValueInDoc Currency" "NetValueInDocCurrency"
+	,"vw_T08"."SdDocumentCurrency" "SdDocumentCurrency"
+	,"vw_T08"."IncotermPart1" "IncotermPart1"
+	,"vw_T08"."IncotermPart2" "IncotermPart2"
+	,"vw_T08"."ScheduleLineCat " "ScheduleLineCat"
+	,"vw_T08"."ScheduleLineDate" "ScheduleLineDate"
+	,"vw_T08"."ArrivalTime" "ArrivalTime"
+	,"vw_T08"."Expr1" "Expr1"
+	,"vw_T08"."SalesUnit" "SalesUnit"
+	,"vw_T08"."FromTo" "FromTo"
+	,"vw_T08"."PlantCode" "PlantCode"
+	,"vw_T08"."AddCode" "AddCode"
+	,"vw_T08"."VatRate" "VatRate"
+from "dbo"."vw_T08" "vw_T08"
+]]></text>
+    </command>
+  </commands>
+  <fields>
+    <field name="SalesDocumentType" type="String" allowNulls="false" label="Sales Document Type" readOnly="true" length="1" showInSummary="true" />
+    <field name="SalesOrganization" type="String" allowNulls="false" label="Sales Organization" readOnly="true" length="1" showInSummary="true" />
+    <field name="DistributionChannel" type="String" allowNulls="false" label="Distribution Channel" readOnly="true" length="1" showInSummary="true" />
+    <field name="Division" type="String" allowNulls="false" label="Division" readOnly="true" length="1" showInSummary="true" />
+    <field name="SoldTo" type="String" allowNulls="false" label="Sold To" readOnly="true" length="1" showInSummary="true" />
+    <field name="ShipTo" type="String" allowNulls="false" label="Ship To" readOnly="true" length="1" />
+    <field name="PurchaseOrderNumber" type="String" allowNulls="false" label="Purchase Order Number" readOnly="true" length="1" />
+    <field name="SalesDocument" type="String" allowNulls="false" label="Sales Document" readOnly="true" length="1" />
+    <field name="InvoiceNumber" type="String" allowNulls="false" label="Invoice Number" readOnly="true" length="1" />
+    <field name="SalesDocumentItemCat" type="String" allowNulls="false" label="Sales Document Item Cat" readOnly="true" length="1" />
+    <field name="MaterialCode" type="String" allowNulls="false" label="Material Code" readOnly="true" length="1" />
+    <field name="KeyField1" type="String" allowNulls="false" label="Key Field1" readOnly="true" length="1" />
+    <field name="KeyField2" type="String" allowNulls="false" label="Key Field2" readOnly="true" length="1" />
+    <field name="KeyField3" type="String" allowNulls="false" label="Key Field3" readOnly="true" length="1" />
+    <field name="RokiDeliveryPlant" type="String" allowNulls="false" label="Roki Delivery Plant" readOnly="true" length="1" />
+    <field name="RokiDelStorageLoc" type="String" allowNulls="false" label="Roki Del Storage Loc" readOnly="true" length="1" />
+    <field name="GoodsMovementDate" type="String" allowNulls="false" label="Goods Movement Date" readOnly="true" length="1" />
+    <field name="LastDeliveryPlant" type="String" allowNulls="false" label="Last Delivery Plant" readOnly="true" length="1" />
+    <field name="LastDelStorageLoc" type="String" allowNulls="false" label="Last Del Storage Loc" readOnly="true" length="1" />
+    <field name="NetValueInDocCurrency" type="String" allowNulls="false" label="Net Value In Doc Currency" readOnly="true" length="1" />
+    <field name="SdDocumentCurrency" type="String" allowNulls="false" label="Sd Document Currency" readOnly="true" length="1" />
+    <field name="IncotermPart1" type="String" allowNulls="false" label="Incoterm Part1" readOnly="true" length="1" />
+    <field name="IncotermPart2" type="String" allowNulls="false" label="Incoterm Part2" readOnly="true" length="1" />
+    <field name="ScheduleLineCat" type="String" allowNulls="false" label="Schedule Line Cat" readOnly="true" length="1" />
+    <field name="ScheduleLineDate" type="String" allowNulls="false" label="Schedule Line Date" readOnly="true" length="1" />
+    <field name="ArrivalTime" type="String" allowNulls="false" label="Arrival Time" readOnly="true" length="1" />
+    <field name="Expr1" type="String" allowNulls="false" label="Expr1" readOnly="true" length="1" />
+    <field name="SalesUnit" type="String" allowNulls="false" label="Sales Unit" readOnly="true" length="1" />
+    <field name="FromTo" type="String" allowNulls="false" label="From To" readOnly="true" length="1" />
+    <field name="PlantCode" type="String" allowNulls="false" label="Plant Code" readOnly="true" length="1" />
+    <field name="AddCode" type="String" allowNulls="false" label="Add Code" readOnly="true" length="1" />
+    <field name="VatRate" type="String" allowNulls="false" label="Vat Rate" readOnly="true" length="1" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="vw T08">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="SalesDocumentType" columns="1" />
+        <dataField fieldName="SalesOrganization" columns="1" />
+        <dataField fieldName="DistributionChannel" columns="1" />
+        <dataField fieldName="Division" columns="1" />
+        <dataField fieldName="SoldTo" columns="1" />
+        <dataField fieldName="ShipTo" columns="1" />
+        <dataField fieldName="PurchaseOrderNumber" columns="1" />
+        <dataField fieldName="SalesDocument" columns="1" />
+        <dataField fieldName="InvoiceNumber" columns="1" />
+        <dataField fieldName="SalesDocumentItemCat" columns="1" />
+        <dataField fieldName="MaterialCode" columns="1" />
+        <dataField fieldName="KeyField1" columns="1" />
+        <dataField fieldName="KeyField2" columns="1" />
+        <dataField fieldName="KeyField3" columns="1" />
+        <dataField fieldName="RokiDeliveryPlant" columns="1" />
+        <dataField fieldName="RokiDelStorageLoc" columns="1" />
+        <dataField fieldName="GoodsMovementDate" columns="1" />
+        <dataField fieldName="LastDeliveryPlant" columns="1" />
+        <dataField fieldName="LastDelStorageLoc" columns="1" />
+        <dataField fieldName="NetValueInDocCurrency" columns="1" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review vw T08">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="vw T08" newColumn="true">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="SalesDocumentType" columns="1" />
+            <dataField fieldName="SalesOrganization" columns="1" />
+            <dataField fieldName="DistributionChannel" columns="1" />
+            <dataField fieldName="Division" columns="1" />
+            <dataField fieldName="SoldTo" columns="1" />
+            <dataField fieldName="ShipTo" columns="1" />
+            <dataField fieldName="PurchaseOrderNumber" columns="1" />
+            <dataField fieldName="SalesDocument" columns="1" />
+            <dataField fieldName="InvoiceNumber" columns="1" />
+            <dataField fieldName="SalesDocumentItemCat" columns="1" />
+            <dataField fieldName="MaterialCode" columns="1" />
+            <dataField fieldName="KeyField1" columns="1" />
+            <dataField fieldName="KeyField2" columns="1" />
+            <dataField fieldName="KeyField3" columns="1" />
+            <dataField fieldName="RokiDeliveryPlant" columns="1" />
+            <dataField fieldName="RokiDelStorageLoc" columns="1" />
+            <dataField fieldName="GoodsMovementDate" columns="1" />
+            <dataField fieldName="LastDeliveryPlant" columns="1" />
+            <dataField fieldName="LastDelStorageLoc" columns="1" />
+            <dataField fieldName="NetValueInDocCurrency" columns="1" />
+            <dataField fieldName="SdDocumentCurrency" columns="1" />
+            <dataField fieldName="IncotermPart1" columns="1" />
+            <dataField fieldName="IncotermPart2" columns="1" />
+            <dataField fieldName="ScheduleLineCat" columns="1" />
+            <dataField fieldName="ScheduleLineDate" columns="1" />
+            <dataField fieldName="ArrivalTime" columns="1" />
+            <dataField fieldName="Expr1" columns="1" />
+            <dataField fieldName="SalesUnit" columns="1" />
+            <dataField fieldName="FromTo" columns="1" />
+            <dataField fieldName="PlantCode" columns="1" />
+            <dataField fieldName="AddCode" columns="1" />
+            <dataField fieldName="VatRate" columns="1" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New vw T08">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="New vw T08" newColumn="true">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields />
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="Duplicate" commandArgument="createForm1" />
+      <action id="a8" commandName="New" commandArgument="grid1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Delete" />
+      <action id="a6" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenKeySelected="true" whenClientScript="this.get_hasDetails()" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
+      <action id="a1" commandName="ExportCsv" />
+      <action id="a2" />
+      <action id="a3" commandName="ExportRowset" />
+      <action id="a4" commandName="ExportRss" />
+      <action id="a7" commandName="DataSheet" />
+      <action id="a8" commandName="Grid" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
+      <action id="a1" commandName="ReportAsPdf" />
+      <action id="a2" commandName="ReportAsImage" />
+      <action id="a3" commandName="ReportAsExcel" />
+      <action id="a4" commandName="ReportAsWord" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+  </actions>
+</dataController>

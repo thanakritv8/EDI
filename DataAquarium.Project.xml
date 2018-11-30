@@ -1,0 +1,41 @@
+<!-- 
+  This file is provided to store the settings for your Data Aquarium project. 
+  You can safely delete this file if no further code generation is planned.
+-->
+<project compatibility="20111118" subscriptionLevel="Unlimited" codeDomProvider="CSharp" targetFramework="4.0" name="ROKI_EDI" prettyName="ROKI EDI" type="Web Site Factory" userInterface="Desktop" pageImplementation="aspx" sourceControl="" xmlns="urn:schemas-codeontime-com:data-aquarium-project">
+  <connectionString hostDatabaseSharing="false" sessionStateMode="None">Data Source=192.168.100.206;Initial Catalog=ROKI_EDI;Persist Security Info=True;User ID=dev01;Password=1q2w3e4r5T;</connectionString>
+  <providerName>System.Data.SqlClient</providerName>
+  <namespace>MyCompany</namespace>
+  <webServer run="true" port="26841">
+    <webConfig></webConfig>
+  </webServer>
+  <features pageHeader=" " copyright="Copy right &lt;a href=&quot;http://www.barcodeautoid.com&quot; target=&quot;_blank&quot;&gt;@Bar Code Auto ID (Thailand) Co.,Ltd.&lt;/a&gt;" annotations="false" annotationsPath="" newColumn="true" floating="false" maxGridFields="20" multiSelect="false" batchEdit="false" advancedSearch="false" advancedLookup="false" relationshipExplorer="false" enablePermalinks="false" enableHistory="false" enableTransactions="false" showModalForms="true" tabViewSelection="5" useSaveAndNew="false">
+    <navigation detectUnderscoreSeparatedSchema="" />
+    <grid actionColumn="false" />
+    <ease urlHashing="false">
+      <auditing></auditing>
+    </ease>
+    <packageProperties></packageProperties>
+    <touch desktopDisplayDensity="Condensed" mobileDisplayDensity="Auto" transitions="" sidebar="Landscape" labelsInList="DisplayedBelow" initialListMode="SeeAll" menu="toolbar" promoteActions="true" smartDates="true" mapApiIdentifier="" />
+    <cms searchEngine="" analysisEngine="" analysisOnDataPages="false" />
+    <smtp deliveryMethod="Network" deliveryFormat="" from="" clientDomain="" targetName="" host="" port="" defaultCredentials="true" enableSsl="false" username="" password="" />
+  </features>
+  <host path="" url="" />
+  <databaseObjectFilter generate="ControllersAndPages"></databaseObjectFilter>
+  <bll discoveryDepth="3" labelFormatExpression="" generate="true" selectMethod="Select" selectSingleMethod="SelectSingle" insertMethod="Insert" updateMethod="Update" deleteMethod="Delete" generateSharedBusinessRules="true" includeViews="true" tabViewSelection="0" normalizeModelNames="true">
+    <fieldMap></fieldMap>
+    <keys></keys>
+    <fieldsToIgnore></fieldsToIgnore>
+    <fieldsToHide></fieldsToHide>
+    <customLabels></customLabels>
+  </bll>
+  <reports enabled="true" />
+  <membership enabled="true" providerName="System.Data.SqlClient" connectionString="" windowsAuthentication="false" customSecurity="false" dedicatedLogin="true" displayRememberMe="true" rememberMeSet="false" displaySignUp="false" displayPasswordRecovery="false" displayMyAccount="true" displayHelp="false" idleUserDetectionTimeout="15" tabViewSelection="0" activeDirectory="false" validationKey="4C0C6C4795DDA1F769A900691D03FB3312BEDEE2058EF40B466F018F8C9BFF3BD02855371E3117DFC30474E06AAF8466D3C2A9EC51A78BB4431C4D97B580DEE3">
+    <adConfig></adConfig>
+    <config></config>
+  </membership>
+  <globalization uiCulture="en-US" culture="en-US" enableClientBasedCulture="false" supportedCultures="en-US,en-US; " googleTranslateApiKey="" />
+  <layout name="Classic" menuStyle="MultiLevel" />
+  <theme name="Verdant" />
+  <native windows="false" android="false" ios="false" osx="false" />
+</project>

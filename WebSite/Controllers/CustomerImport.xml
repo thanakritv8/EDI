@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="CustomerImport" conflictDetection="overwriteChanges" label="Customer Import" handler="MyCompany.Rules.CustomerImportBusinessRule" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"CustomerImport"."AutoId" "AutoId"
+	,"CustomerImport"."Code" "Code"
+	,"CustomerImport"."Name" "Name"
+	,"CustomerImport"."Code2" "Code2"
+	,"CustomerImport"."Code3" "Code3"
+	,"CustomerImport"."Address" "Address"
+	,"CustomerImport"."City" "City"
+	,"CustomerImport"."State" "State"
+	,"CustomerImport"."Country" "Country"
+	,"CustomerImport"."ZIPCode" "ZIPCode"
+	,"CustomerImport"."Phone" "Phone"
+	,"CustomerImport"."Fax" "Fax"
+	,"CustomerImport"."LocationCode" "LocationCode"
+	,"CustomerImport"."PlantCode" "PlantCode"
+	,"CustomerImport"."CreateBy" "CreateBy"
+	,"CustomerImport"."CreateDate" "CreateDate"
+	,"CustomerImport"."Status" "Status"
+from "dbo"."CustomerImport" "CustomerImport"
+]]></text>
+    </command>
+    <command id="AutoIdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="AutoId" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="AutoId" type="Int32" allowNulls="false" isPrimaryKey="true" label="Auto#" readOnly="true" />
+    <field name="Code" type="String" label="Code" length="50" showInSummary="true" />
+    <field name="Name" type="String" label="Name" length="250" showInSummary="true" />
+    <field name="Code2" type="String" label="Code2" length="50" showInSummary="true" />
+    <field name="Code3" type="String" label="Code3" length="50" showInSummary="true" />
+    <field name="Address" type="String" label="Address" length="500" showInSummary="true" />
+    <field name="City" type="String" label="City" length="50" />
+    <field name="State" type="String" label="State" length="50" />
+    <field name="Country" type="String" label="Country" length="50" />
+    <field name="ZIPCode" type="String" label="ZIP Code" length="50" />
+    <field name="Phone" type="String" label="Phone" length="50" />
+    <field name="Fax" type="String" label="Fax" length="50" />
+    <field name="LocationCode" type="String" label="Location Code" length="50" />
+    <field name="PlantCode" type="String" label="Plant Code" length="50" />
+    <field name="CreateBy" type="String" label="Create By" length="50" />
+    <field name="CreateDate" type="DateTime" label="Create Date" />
+    <field name="Status" type="String" label="Status" length="50" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="Customer Import">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="Code" columns="50" />
+        <dataField fieldName="Name" />
+        <dataField fieldName="Code2" columns="50" />
+        <dataField fieldName="Code3" columns="50" />
+        <dataField fieldName="Address" />
+        <dataField fieldName="City" columns="50" />
+        <dataField fieldName="State" columns="50" />
+        <dataField fieldName="Country" columns="50" />
+        <dataField fieldName="ZIPCode" columns="50" />
+        <dataField fieldName="Phone" columns="50" />
+        <dataField fieldName="Fax" columns="50" />
+        <dataField fieldName="LocationCode" columns="50" />
+        <dataField fieldName="PlantCode" columns="50" />
+        <dataField fieldName="CreateBy" columns="50" />
+        <dataField fieldName="CreateDate" columns="10" />
+        <dataField fieldName="Status" columns="50" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review Customer Import">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="Customer Import" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Code" columns="50" />
+            <dataField fieldName="Name" />
+            <dataField fieldName="Code2" columns="50" />
+            <dataField fieldName="Code3" columns="50" />
+            <dataField fieldName="Address" />
+            <dataField fieldName="City" columns="50" />
+            <dataField fieldName="State" columns="50" />
+            <dataField fieldName="Country" columns="50" />
+            <dataField fieldName="ZIPCode" columns="50" />
+            <dataField fieldName="Phone" columns="50" />
+            <dataField fieldName="Fax" columns="50" />
+            <dataField fieldName="LocationCode" columns="50" />
+            <dataField fieldName="PlantCode" columns="50" />
+            <dataField fieldName="CreateBy" columns="50" />
+            <dataField fieldName="CreateDate" columns="10" />
+            <dataField fieldName="Status" columns="50" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New Customer Import">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="New Customer Import" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="Code" columns="50" />
+            <dataField fieldName="Name" />
+            <dataField fieldName="Code2" columns="50" />
+            <dataField fieldName="Code3" columns="50" />
+            <dataField fieldName="Address" />
+            <dataField fieldName="City" columns="50" />
+            <dataField fieldName="State" columns="50" />
+            <dataField fieldName="Country" columns="50" />
+            <dataField fieldName="ZIPCode" columns="50" />
+            <dataField fieldName="Phone" columns="50" />
+            <dataField fieldName="Fax" columns="50" />
+            <dataField fieldName="LocationCode" columns="50" />
+            <dataField fieldName="PlantCode" columns="50" />
+            <dataField fieldName="CreateBy" columns="50" />
+            <dataField fieldName="CreateDate" columns="10" />
+            <dataField fieldName="Status" columns="50" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action commandName="Import" headerText="From Excel" id="a100" />
+      <action id="a1" commandName="SQL" headerText="Execute" confirmation="Confirm ?" commandArgument="Execute">
+        <data><![CDATA[exec sp_CustomerImport @Session_UserName]]></data>
+      </action>
+      <action commandName="SQL" commandArgument="ClearData" headerText="Clear Data" id="a101">
+        <data><![CDATA[delete from CustomerImport]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules />
+</dataController>

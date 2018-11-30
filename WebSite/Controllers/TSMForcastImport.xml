@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="TSMForcastImport" conflictDetection="overwriteChanges" label="TSM Forcast Import" handler="MyCompany.Rules.TSMForcastImportBusinessRule" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"TSMForcastImport"."AutoId" "AutoId"
+	,"TSMForcastImport"."OrderBy" "OrderBy"
+	,"TSMForcastImport"."DeliveryDestination" "DeliveryDestination"
+	,"TSMForcastImport"."CustomerMatCode" "CustomerMatCode"
+	,"TSMForcastImport"."PartsDevision" "PartsDevision"
+	,"TSMForcastImport"."CustomerPO" "CustomerPO"
+	,"TSMForcastImport"."Key1" "Key1"
+	,"TSMForcastImport"."Key2" "Key2"
+	,"TSMForcastImport"."Key3" "Key3"
+	,"TSMForcastImport"."ReliabilityDevision" "ReliabilityDevision"
+	,"TSMForcastImport"."DeliveryDate" "DeliveryDate"
+	,"TSMForcastImport"."Quantity" "Quantity"
+	,"TSMForcastImport"."Unit" "Unit"
+	,"TSMForcastImport"."PlngPeriod" "PlngPeriod"
+	,"TSMForcastImport"."SAPCode" "SAPCode"
+	,"TSMForcastImport"."StatusCode" "StatusCode"
+	,"TSMForcastImport"."DeliveryDestinationCode" "DeliveryDestinationCode"
+	,"TSMForcastImport"."FileName" "FileName"
+from "dbo"."TSMForcastImport" "TSMForcastImport"
+]]></text>
+    </command>
+    <command id="AutoIdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="AutoId" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="AutoId" type="Decimal" allowNulls="false" isPrimaryKey="true" label="Auto#" readOnly="true" />
+    <field name="OrderBy" type="String" label="Order By" length="50" showInSummary="true" />
+    <field name="DeliveryDestination" type="String" label="Delivery Destination" length="250" showInSummary="true" />
+    <field name="CustomerMatCode" type="String" label="Customer Mat Code" length="50" showInSummary="true" />
+    <field name="PartsDevision" type="String" label="Parts Devision" length="10" showInSummary="true" />
+    <field name="CustomerPO" type="String" label="Customer PO" length="50" showInSummary="true" />
+    <field name="Key1" type="String" label="Key1" length="50" />
+    <field name="Key2" type="String" label="Key2" length="50" />
+    <field name="Key3" type="String" label="Key3" length="50" />
+    <field name="ReliabilityDevision" type="String" label="Reliability Devision" length="50" />
+    <field name="DeliveryDate" type="DateTime" label="Delivery Date" />
+    <field name="Quantity" type="Int32" label="Quantity" />
+    <field name="Unit" type="String" label="Unit" length="50" />
+    <field name="PlngPeriod" type="String" label="Plng Period" length="50" />
+    <field name="SAPCode" type="String" label="SAP Code" length="50" />
+    <field name="StatusCode" type="String" label="Status Code" length="100" />
+    <field name="DeliveryDestinationCode" type="String" label="Delivery Destination Code" length="50" />
+    <field name="FileName" type="String" label="File Name" length="200" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="TSM Forcast Import">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="OrderBy" columns="50" />
+        <dataField fieldName="DeliveryDestination" />
+        <dataField fieldName="CustomerMatCode" columns="50" />
+        <dataField fieldName="PartsDevision" columns="10" />
+        <dataField fieldName="CustomerPO" columns="50" />
+        <dataField fieldName="Key1" columns="50" />
+        <dataField fieldName="Key2" columns="50" />
+        <dataField fieldName="Key3" columns="50" />
+        <dataField fieldName="ReliabilityDevision" columns="50" />
+        <dataField fieldName="DeliveryDate" columns="10" />
+        <dataField fieldName="Quantity" columns="15" />
+        <dataField fieldName="Unit" columns="50" />
+        <dataField fieldName="PlngPeriod" columns="50" />
+        <dataField fieldName="SAPCode" columns="50" />
+        <dataField fieldName="StatusCode" />
+        <dataField fieldName="DeliveryDestinationCode" columns="50" />
+        <dataField fieldName="FileName" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review TSM Forcast Import">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="TSM Forcast Import" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="OrderBy" columns="50" />
+            <dataField fieldName="DeliveryDestination" />
+            <dataField fieldName="CustomerMatCode" columns="50" />
+            <dataField fieldName="PartsDevision" columns="10" />
+            <dataField fieldName="CustomerPO" columns="50" />
+            <dataField fieldName="Key1" columns="50" />
+            <dataField fieldName="Key2" columns="50" />
+            <dataField fieldName="Key3" columns="50" />
+            <dataField fieldName="ReliabilityDevision" columns="50" />
+            <dataField fieldName="DeliveryDate" columns="10" />
+            <dataField fieldName="Quantity" columns="15" />
+            <dataField fieldName="Unit" columns="50" />
+            <dataField fieldName="PlngPeriod" columns="50" />
+            <dataField fieldName="SAPCode" columns="50" />
+            <dataField fieldName="StatusCode" />
+            <dataField fieldName="DeliveryDestinationCode" columns="50" />
+            <dataField fieldName="FileName" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New TSM Forcast Import">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="New TSM Forcast Import" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="OrderBy" columns="50" />
+            <dataField fieldName="DeliveryDestination" />
+            <dataField fieldName="CustomerMatCode" columns="50" />
+            <dataField fieldName="PartsDevision" columns="10" />
+            <dataField fieldName="CustomerPO" columns="50" />
+            <dataField fieldName="Key1" columns="50" />
+            <dataField fieldName="Key2" columns="50" />
+            <dataField fieldName="Key3" columns="50" />
+            <dataField fieldName="ReliabilityDevision" columns="50" />
+            <dataField fieldName="DeliveryDate" columns="10" />
+            <dataField fieldName="Quantity" columns="15" />
+            <dataField fieldName="Unit" columns="50" />
+            <dataField fieldName="PlngPeriod" columns="50" />
+            <dataField fieldName="SAPCode" columns="50" />
+            <dataField fieldName="StatusCode" />
+            <dataField fieldName="DeliveryDestinationCode" columns="50" />
+            <dataField fieldName="FileName" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag1" scope="Grid">
+      <action id="a1" commandName="Select" commandArgument="editForm1" />
+      <action id="a2" commandName="Edit" />
+      <action id="a3" commandName="Delete" />
+      <action id="a6" />
+      <action id="a7" commandName="New" commandArgument="grid1" />
+      <action id="a8" commandName="Duplicate" commandArgument="createForm1" />
+    </actionGroup>
+    <actionGroup id="ag2" scope="Form">
+      <action id="a1" commandName="Edit" />
+      <action id="a2" commandName="Delete" />
+      <action id="a3" commandName="Cancel" />
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Delete" />
+      <action id="a6" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a7" whenLastCommandName="New" commandName="Insert" />
+      <action id="a8" whenLastCommandName="New" commandName="Cancel" />
+      <action id="a9" whenLastCommandName="Duplicate" commandName="Insert" />
+      <action id="a10" whenLastCommandName="Duplicate" commandName="Cancel" />
+      <action id="a13" whenLastCommandName="Insert" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenKeySelected="true" whenClientScript="this.hasDetails()" />
+    </actionGroup>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action commandName="Custom" commandArgument="Execute" headerText="Execute" id="a101" />
+      <action commandName="Custom" commandArgument="ClearData" headerText="Clear Data" id="a100" />
+    </actionGroup>
+    <actionGroup id="ag4" scope="ActionBar" headerText="Edit/Delete" flat="true">
+      <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
+      <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
+    </actionGroup>
+    <actionGroup id="ag6" scope="ActionBar" headerText="Record">
+      <action id="a1" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a3" whenLastCommandName="New" commandName="Insert" />
+      <action id="a4" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+    <actionGroup id="ag8" scope="Row">
+      <action id="a4" whenLastCommandName="Edit" commandName="Update" />
+      <action id="a5" whenLastCommandName="Edit" commandName="Cancel" />
+      <action id="a6" whenLastCommandName="New" commandName="Insert" />
+      <action id="a7" whenLastCommandName="New" commandName="Cancel" />
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Custom" commandArgument="ClearData" type="Sql" phase="Execute"><![CDATA[EXEC sp_TSM_Forcast_ClearData]]></rule>
+    <rule id="r101" commandName="Custom" commandArgument="Execute" type="Sql" phase="Execute"><![CDATA[EXEC sp_TSM_Forcast_Execute @Session_UserName]]></rule>
+  </businessRules>
+</dataController>

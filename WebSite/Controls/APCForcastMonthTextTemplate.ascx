@@ -1,0 +1,1 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="APCForcastMonthTextTemplate.ascx.cs" Inherits="Controls_APCForcastMonthTextTemplate"  %><asp:UpdatePanel ID="UpdatePanel1" runat="server"><ContentTemplate><div style="margin:2px;border: solid 1px silver;padding:8px;">uc:APCForcastMonthTextTemplate</div></ContentTemplate></asp:UpdatePanel>

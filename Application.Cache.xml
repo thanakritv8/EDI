@@ -1,0 +1,947 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<application snapshot="true" xmlns="urn:schemas-codeontime-com:data-aquarium-application" xmlns:m="urn:codeontime:data-map" xmlns:dm="urn:schemas-codeontime-com:data-model" integrity="checked">
+  <pages xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+    <page name="Home" title="^HomeTitle^Start^HomeTitle^" description="^HomeDesc^Application home page^HomeDesc^" path="^HomePath^Home^HomePath^" style="HomePage" customStyle="Wide" index="1000">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <controls>
+        <control id="control1" name="TableOfContents" container="container1" />
+      </controls>
+    </page>
+    <page name="SalesDepartment" index="1010" title="SD (EDI)" path="SD (EDI)" roles="Administrators,SD">
+      <containers />
+      <controls />
+    </page>
+    <page name="OrderImport" path="SD (EDI) | Orders" index="1020" title="Orders" roles="*" />
+    <page name="OrderManual" title="Key Manual Order" description="View Order Manual" index="1030" path="SD (EDI) | Orders | Manual" roles="Administrators,SD">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="OrderManual" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="OrderManualTemplate" />
+      </controls>
+      <about>This page allows order manual management.</about>
+    </page>
+    <page name="HATCOrderImport" title="HATC Order" description="View HATC Order Import" index="1040" path="SD (EDI) | Orders | HATC" roles="Administrators,SD">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HATCOrderImport" view="grid1" showInSummary="true" container="container1" text="" showModalForms="true" showRowNumber="true" showViewSelector="false" multiSelect="true" showDetailsInListMode="false" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="HATCOrderTemplate" />
+      </controls>
+      <about>This page allows hatc order import management.</about>
+    </page>
+    <page name="IMCTOrderImport" title="IMCT Order" description="View IMCT Order Import" index="1060" path="SD (EDI) | Orders | IMCT" roles="Administrators,SD">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="IMCTOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" showViewSelector="false" multiSelect="true" startCommandArgument="Administrators,SD" showRowNumber="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="IMCTOrderTemplate" />
+      </controls>
+      <about>This page allows imct order import management.</about>
+    </page>
+    <page name="MMTHOrderImport" title="MMTH Order Import" description="View MMTH Order Import" index="1070" path="SD (EDI) | Orders | MMTH" roles="Administrators,SD">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="MMTHOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" showViewSelector="false" multiSelect="true" showRowNumber="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="MMTHOrderTemplate" />
+      </controls>
+      <about>This page allows mmth order import management.</about>
+    </page>
+    <page name="KMTOrderImport" title="KMT Order Import" description="View KMT Order Import" index="1080" path="SD (EDI) | Orders | KMT" roles="Administrators" useExtenders="false">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="KMTOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" showViewSelector="false" multiSelect="true" showRowNumber="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="KMTOrderTemplate" />
+      </controls>
+      <about>This page allows kmt order import management.</about>
+    </page>
+    <page name="KYBOrderImport" title="KYB Order" description="View KYB Order Import" index="1090" path="SD (EDI) | Orders | KYB" roles="Administrators,SD">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="KYBOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" showViewSelector="false" multiSelect="true" showRowNumber="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="KYBOrderTemplate" />
+      </controls>
+      <about>This page allows kyb order import management.</about>
+    </page>
+    <page name="THMOrderImport" title="THM Order Import" description="View THM Order Import" index="1100" path="SD (EDI) | Orders | THM" roles="Administrators,SD">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="THMOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" showViewSelector="false" multiSelect="true" showRowNumber="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="THMOrderTemplate" />
+      </controls>
+      <about>This page allows thm order import management.</about>
+    </page>
+    <page name="TSMOrderImport" title="TSM Order" description="View TSM Order Import" index="1110" path="SD (EDI) | Orders | TSM" roles="Administrators,SD">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="TSMOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" showViewSelector="false" multiSelect="true" showRowNumber="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="TSMOrderTemplate" />
+      </controls>
+      <about>This page allows tsm order import management.</about>
+    </page>
+    <page name="TYMOrderImport" title="TYM Order" description="View TYM Order Import" index="1120" path="SD (EDI) | Orders | TYM" roles="Administrators,SD">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="TYMOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" showViewSelector="false" multiSelect="true" showRowNumber="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="TYMOrderTemplate" />
+      </controls>
+      <about>This page allows tym order import management.</about>
+    </page>
+    <page name="APCOrderImport" title="APC Order Import" description="View APC Order Import" index="1130" path="SD (EDI) | Orders | APC" roles="Administrators,SD">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="APCOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" showViewSelector="false" multiSelect="true" showRowNumber="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="APCOrderTemplate" />
+      </controls>
+      <about>This page allows apc order import management.</about>
+    </page>
+    <page name="NMTOrderImport" title="NMT Order" description="View NMT Order Import" index="1140" path="SD (EDI) | Orders | NMT">
+      <containers>
+        <container id="c101" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="NMTOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls>
+        <control id="control1" container="c101" name="NMTOrderTemplate" />
+      </controls>
+      <about>This page allows nmt order import management.</about>
+    </page>
+    <page name="NPTOrderImport" title="NPT Order" description="View NPT Order Import" index="1150" path="SD (EDI) | Orders | NPT">
+      <containers>
+        <container id="c101" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="NPTOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls>
+        <control id="control1" container="c101" name="NPTOrderTemplate" />
+      </controls>
+      <about>This page allows npt order import management.</about>
+    </page>
+    <page name="AATOrderImport" title="AAT Order" description="View AAT Order Import" index="1160" path="SD (EDI) | Orders | AAT" roles="Administrators,SD">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="AATOrderImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" showViewSelector="false" multiSelect="true" showRowNumber="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="AATOrderTemplate" />
+      </controls>
+      <about>This page allows aat order import management.</about>
+    </page>
+    <page name="ForcastImport" path="SD (EDI) | Forcast" index="1170" title="Forcast Import" roles="*" />
+    <page name="ForcastManual" title="Forcast Manual" description="View Forcast Manual" index="1180" path="SD (EDI) | Forcast | Manual" roles="Administrators,SD">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="ForcastManual" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="ForcastManualTemplate" />
+      </controls>
+      <about>This page allows forcast manual management.</about>
+    </page>
+    <page name="HATCForcastImport" title="HATC Forecast" description="View HATC Forcast Import" index="1190" path="SD (EDI) | Forcast | HATC" roles="Administrators,SD" useExtenders="false">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HATCForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" showViewSelector="false" multiSelect="true" showRowNumber="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="HATCForcastTemplate" />
+      </controls>
+      <about>This page allows hatc forcast import management.</about>
+    </page>
+    <page name="AATForcastImport" title="AAT Forecast" description="View AAT Forcast Import" index="1200" path="SD (EDI) | Forcast | AAT" useExtenders="false">
+      <containers>
+        <container id="c101" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="AATForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls>
+        <control id="control1" container="c101" name="AATForcastTemplate" />
+      </controls>
+      <about>This page allows aat forcast import management.</about>
+    </page>
+    <page name="MMTHForcastImport" title="MMTH Forcast Import" description="View MMTH Forcast Import" index="1210" path="SD (EDI) | Forcast | MMTH">
+      <containers>
+        <container id="c101" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="MMTHForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls>
+        <control id="control1" container="c101" name="MMTHForcastTemplate" />
+      </controls>
+      <about>This page allows mmth forcast import management.</about>
+    </page>
+    <page name="IMCTForcastImport" title="IMCT Forcast Import" description="View IMCT Forcast Import" index="1220" path="SD (EDI) | Forcast | IMCT" useExtenders="false">
+      <containers>
+        <container id="c101" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="IMCTForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls>
+        <control id="control1" container="c101" name="IMCTForcastTemplate" />
+      </controls>
+      <about>This page allows imct forcast import management.</about>
+    </page>
+    <page name="TSMForcastImport" path="SD (EDI) | Forcast | TSM" index="1230" title="TSMForcast Import" roles="*" useExtenders="false" generate="Always">
+      <containers>
+        <container id="c101" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <controls>
+        <control id="control1" container="c101" name="TSMForcastTemplate" />
+      </controls>
+      <dataViews>
+        <dataView id="view1" container="container1" controller="TSMForcastImport" multiSelect="false" autoHide="Nothing" />
+      </dataViews>
+    </page>
+    <page name="KMTForcastImport" title="KMT Forecast Import" description="View KMT Forcast Import" index="1240" path="SD (EDI) | Forcast | KMT" roles="Administrators" useExtenders="false">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="KMTForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" showViewSelector="false" multiSelect="true" startCommandArgument="Administrators,SD" showRowNumber="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="KMTForcastTemplate" />
+      </controls>
+      <about>This page allows kmt forcast import management.</about>
+    </page>
+    <page name="KYBForcastImport" title="KYB Forecast" description="View KYB Forcast Import" index="1250" path="SD (EDI) | Forcast | KYB" roles="Administrators,SD" useExtenders="false">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="KYBForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" showViewSelector="false" multiSelect="true" showRowNumber="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="KYBForcastTemplate" />
+      </controls>
+      <about>This page allows kyb forcast import management.</about>
+    </page>
+    <page name="THMForcastImport" title="THM Forecast" description="View THM Forcast Import" index="1260" path="SD (EDI) | Forcast | THM" roles="Administrators,SD" useExtenders="false">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="THMForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" showViewSelector="false" multiSelect="true" showRowNumber="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="THMForcastTemplate" />
+      </controls>
+      <about>This page allows thm forcast import management.</about>
+    </page>
+    <page name="TYMForcastImport" title="TYM Forecast" description="View TYM Forcast Import" index="1270" path="SD (EDI) | Forcast | TYM" roles="Administrators,SD" useExtenders="false">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="TYMForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" showViewSelector="false" multiSelect="true" showRowNumber="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="TYMForcastTemplate" />
+      </controls>
+      <about>This page allows tym forcast import management.</about>
+    </page>
+    <page name="NMTForcastImport" title="NMT Forecast" description="View NMT Forcast Import" index="1280" path="SD (EDI) | Forcast | NMT" roles="Administrators,SD" useExtenders="false">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="NMTForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" showViewSelector="false" multiSelect="true" showRowNumber="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="NMTForcastTemplate" />
+      </controls>
+      <about>This page allows nmt forcast import management.</about>
+    </page>
+    <page name="NPTForcastImport" title="NPT Forecast" description="View NPT Forcast Import" index="1290" path="SD (EDI) | Forcast | NPT" useExtenders="false">
+      <containers>
+        <container id="c101" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="NPTForcastImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls>
+        <control id="control1" container="c101" name="NPTForcastTemplate" />
+      </controls>
+      <about>This page allows npt forcast import management.</about>
+    </page>
+    <page name="SDReports" path="SD (EDI) | Reports" index="1300" title="Reports" roles="*" />
+    <page name="Orders" title="Orders" description="View Orders" index="1310" path="SD (EDI) | Reports | Orders" roles="Administrators,SD">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="Orders" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows orders management.</about>
+    </page>
+    <page name="OrdersForcast" title="Orders Forcast" description="View Orders Forcast" index="1320" path="SD (EDI) | Reports | Forcast" roles="Administrators,SD">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="OrdersForcast" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows orders forcast management.</about>
+    </page>
+    <page name="SDT05" path="SD (EDI) | T05" index="1330" title="T05">
+      <containers>
+        <container id="c101" flow="NewRow" />
+      </containers>
+      <controls>
+        <control id="control1" container="c101" name="SDT05Template" />
+      </controls>
+    </page>
+    <page name="SDT08" path="SD (EDI) | T08" index="1340" title="T08">
+      <containers>
+        <container id="c101" flow="NewRow" />
+      </containers>
+      <controls>
+        <control id="control1" container="c101" name="SDT08Template" />
+      </controls>
+    </page>
+    <page name="SAEdi" index="1350" title="SA (EDI)" path="SA (EDI)" roles="Administrators,SA">
+      <containers />
+      <controls />
+    </page>
+    <page name="OrdersForcastMonth" title="Forecast" description="View Orders Forcast Month" index="1360" path="SA (EDI) | Forcast" useExtenders="false">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="OrdersForcastMonth" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows orders forcast month management.</about>
+    </page>
+    <page name="ForcastMonthManual" title="Forecast Month Manual" description="View Forcast Month Manual" index="1370" path="SA (EDI) | Forcast Month Manual" useExtenders="false">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="ForcastMonthManual" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="ForcastMonthManulaTemplate" />
+      </controls>
+      <about>This page allows forcast month manual management.</about>
+    </page>
+    <page name="MasterData" index="1380" title="Master Data" path="Master Data" roles="Administrators,SystemAdmin">
+      <containers />
+      <controls />
+    </page>
+    <page name="HATCForcastMonthImport" title="HATC Forecast Month Import" description="View HATC Forcast Month Import" index="1390" path="SA (EDI) | HATC Forcast Month Import" useExtenders="false">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="HATCForcastMonthImport" view="grid1" showInSummary="true" container="container1" text="" showModalForms="true" showViewSelector="false" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="HATCForcastMonthTemplate" />
+      </controls>
+      <about>This page allows hatc forcast month import management.</about>
+    </page>
+    <page name="MaterialNumber" title="M24" description="View Material Number" index="1400" path="Master Data | M24">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="MaterialNumber" view="grid1" showInSummary="true" container="container1" text="" showModalForms="true" showViewSelector="false" />
+      </dataViews>
+      <controls />
+      <about>This page allows material number management.</about>
+    </page>
+    <page name="MaterialNumberImport" title="Material Number Import" description="View Material Number Import" index="1410" path="Master Data | M24 | M24 Import">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="MaterialNumberImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows material number import management.</about>
+    </page>
+    <page name="APCForcastMonthImport" title="APC Forecast Month Import" description="View APC Forcast Month Import" index="1420" path="SA (EDI) | APC Forcast Month Import" useExtenders="false">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="APCForcastMonthImport" view="grid1" showInSummary="true" container="container1" text="" showModalForms="true" showViewSelector="false" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="SA_APCForcastTemplate" />
+      </controls>
+      <about>This page allows apc forcast month import management.</about>
+    </page>
+    <page name="APCForcastMonthTextImport" title="APC Forecast Month Text Import" description="View APC Forcast Month Text Import" index="1430" path="SA (EDI) | APC Forcast Month Text Import" useExtenders="false">
+      <containers>
+        <container id="container1" flow="NewRow" />
+        <container id="c100" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="APCForcastMonthTextImport" view="grid1" showInSummary="true" container="c100" text="" showModalForms="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="container1" name="APCForcastMonthTextTemplate" />
+      </controls>
+      <about>This page allows apc forcast month text import management.</about>
+    </page>
+    <page name="THMForcastMonthImport" title="THM Forecast Month Import" description="View THM Forcast Month Import" index="1440" path="SA (EDI) | THM Forcast Month Import" useExtenders="false">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="THMForcastMonthImport" view="grid1" showInSummary="true" container="container1" text="" showModalForms="true" showViewSelector="false" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="SA_THMForcastTemplate" />
+      </controls>
+      <about>This page allows thm forcast month import management.</about>
+    </page>
+    <page name="TSMForcastMonthImport" title="TSM Forecast Month Import" description="View TSM Forcast Month Import" index="1450" path="SA (EDI) | TSM Forcast Month Import" useExtenders="false">
+      <containers>
+        <container id="c100" flow="NewRow" />
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="TSMForcastMonthImport" view="grid1" showInSummary="true" container="container1" text="" showModalForms="true" showViewSelector="false" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="c100" name="SA_TSMForcastTemplate" />
+      </controls>
+      <about>This page allows tsm forcast month import management.</about>
+    </page>
+    <page name="TYMForcastMonthImport" title="TYM Forecast Month Import" description="View TYM Forcast Month Import" index="1460" path="SA (EDI) | TYM Forcast Month Import" useExtenders="false">
+      <containers>
+        <container id="container1" flow="NewRow" />
+        <container id="c100" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="TYMForcastMonthImport" view="grid1" showInSummary="true" container="c100" text="" showModalForms="true" />
+      </dataViews>
+      <controls>
+        <control id="c100" container="container1" name="TYMForcastMonthTemplate" />
+      </controls>
+      <about>This page allows tym forcast month import management.</about>
+    </page>
+    <page name="Customer" title="Customer" description="View Customer" index="1470" path="Master Data | M12">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="Customer" view="grid1" showInSummary="true" container="container1" text="" showModalForms="true" showViewSelector="false" />
+      </dataViews>
+      <controls />
+      <about>This page allows customer management.</about>
+    </page>
+    <page name="CustomerImport" title="Customer Import" description="View Customer Import" index="1480" path="Master Data | M12 | M12 Import">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="CustomerImport" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows customer import management.</about>
+    </page>
+    <page name="vw_SA_T05" title="SA T05" description="View vw SA T05" index="1490" path="SA (EDI) | SA T05">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="vw_SA_T05" view="grid1" showInSummary="true" container="container1" text="" showModalForms="true" pageSize="25" />
+      </dataViews>
+      <controls />
+      <about>This page allows vw sa t05 management.</about>
+    </page>
+    <page name="SystemLog" title="System Log" externalUrl="about:blank" index="1500" path="System Log" roles="Administrators" />
+    <page name="CustomerImportLog" title="M12 Import Log" description="View Customer Import Log" index="1510" path="System Log | M12 Import Log">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="CustomerImportLog" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows customer import log management.</about>
+    </page>
+    <page name="MaterialNumberImportLog" title="M24 Import Log" description="View Material Number Import Log" index="1520" path="System Log | M24 Import Log">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="MaterialNumberImportLog" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows material number import log management.</about>
+    </page>
+    <page name="Membership" title="^MembershipTitle^Membership Manager^MembershipTitle^" description="^MembershipDesc^User and role manager^MembershipDesc^" roles="Administrators" path="^MembershipPath^Membership^MembershipPath^" style="UsersPage" index="1530">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <about>^MembershipAbout^This page allows to manage roles and users.^MembershipAbout^</about>
+      <controls>
+        <control id="control1" name="MembershipManager" container="container1" />
+      </controls>
+    </page>
+    <page name="WorkingDate" title="Working Date" description="View Working Date" index="1540" path="Master Data | Working Date">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="WorkingDate" view="grid1" showInSummary="true" container="container1" text="" showModalForms="true" showViewSelector="false" multiSelect="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows working date management.</about>
+    </page>
+    <page name="WorkingType" title="Working Type" description="View Working Type" index="1550" path="Master Data | Working Date | Working Type">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="WorkingType" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows working type management.</about>
+    </page>
+    <page name="p181114030734" title="New Pages" externalUrl="about:blank" index="1560" path="New Pages" />
+    <page name="CalDate" title="Cal Date" description="View Cal Date" index="1570" path="New Pages | Cal Date">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="CalDate" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows cal date management.</about>
+    </page>
+    <page name="CustomerLog" title="Customer Log" description="View Customer Log" index="1580" path="New Pages | Customer Log">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="CustomerLog" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows customer log management.</about>
+    </page>
+    <page name="ForcastImportLog" title="Forcast Import Log" description="View Forcast Import Log" index="1590" path="New Pages | Forcast Import Log">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="ForcastImportLog" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows forcast import log management.</about>
+    </page>
+    <page name="ForcastMonthImportLog" title="Forcast Month Import Log" description="View Forcast Month Import Log" index="1600" path="New Pages | Forcast Month Import Log">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="ForcastMonthImportLog" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows forcast month import log management.</about>
+    </page>
+    <page name="MaterialNumberLog" title="Material Number Log" description="View Material Number Log" index="1610" path="New Pages | Material Number Log">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="MaterialNumberLog" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows material number log management.</about>
+    </page>
+    <page name="OrderImportLog" title="Order Import Log" description="View Order Import Log" index="1620" path="New Pages | Order Import Log">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="OrderImportLog" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows order import log management.</about>
+    </page>
+  </pages>
+  <userControls>
+    <userControl name="TableOfContents" prefix="uc" generate="Always">
+      <body>
+                
+&lt;div class="ParaInfo"&gt;
+        ^TocInstruction^Please select a page link in the table of contents below.^TocInstruction^&lt;/div&gt;
+&lt;div class="ParaHeader"&gt;
+    ^TocHeader^Site Map^TocHeader^
+&lt;/div&gt;
+&lt;asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" /&gt;
+&lt;asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" CssClass="TreeView"&gt;
+&lt;/asp:TreeView&gt;
+
+&lt;div id="app-sitemap" data-app-role="page" data-activator="Button|^TocHeader^Site Map^TocHeader^"&gt;
+    &lt;p&gt;
+      &lt;span&gt;^TocInstruction^Please select a page link in the table of contents below.^TocInstruction^&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;div data-app-role="sitemap"&gt;&lt;/div&gt;
+    &lt;p&gt;
+      &lt;br /&gt;
+    &lt;/p&gt;
+&lt;/div&gt;
+              </body>
+    </userControl>
+    <userControl name="RichEditor" prefix="uc" generate="FirstTimeOnly">
+      <body>
+              
+&lt;asp:TextBox ID="TextBox1" runat="server" Columns="50" Rows="10" Height="241px"
+    Width="450px"&gt;&lt;/asp:TextBox&gt;
+&lt;act:HtmlEditorExtender ID="Editor1" runat="server" TargetControlID="TextBox1" EnableSanitization="false"&gt;
+&lt;/act:HtmlEditorExtender&gt;
+            </body>
+    </userControl>
+    <userControl name="Welcome" prefix="uc" generate="Always">
+      <body>
+&lt;div style="padding-left:8px"&gt;&lt;div class="ParaInfo"&gt;
+        ^SignInInstruction^Sign in to access the protected site content.^SignInInstruction^&lt;/div&gt;
+&lt;div class="ParaHeader"&gt;
+    ^SignInHeader^Instructions^SignInHeader^
+&lt;/div&gt;
+&lt;div class="ParaText"&gt;
+    ^SignInPara1^Two standard user accounts are automatically created when application is initialized
+    if membership option has been selected for this application.^SignInPara1^
+&lt;/div&gt;
+                  
+&lt;div class="ParaText"&gt;
+    ^SignInPara2^The administrative account &lt;b&gt;admin&lt;/b&gt; is authorized to access all areas of the
+    web site and membership manager. The standard &lt;b&gt;user&lt;/b&gt; account is allowed to
+    access all areas of the web site with the exception of membership manager.^SignInPara2^&lt;/div&gt;
+                
+&lt;div class="ParaText"&gt;
+    &lt;div style="border: solid 1px black; background-color: InfoBackground; padding: 8px;
+        float: left;"&gt;
+        ^AdminDesc^Administrative account^AdminDesc^:&lt;br /&gt;
+        &lt;b title="User Name"&gt;admin&lt;/b&gt; / &lt;b title="Password"&gt;admin123%&lt;/b&gt;
+        &lt;br /&gt;
+        &lt;br /&gt;
+        ^UserDesc^Standard user account^UserDesc^:&lt;br /&gt;
+        &lt;b title="User Name"&gt;user&lt;/b&gt; / &lt;b title="Password"&gt;user123%&lt;/b&gt;
+    &lt;/div&gt;
+    &lt;div style="clear:both;margin-bottom:8px"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="app-welcome" data-app-role="page" data-activator="Button|^SignInHeader^Instructions^SignInHeader^" data-activator-description="^SignInInstruction^Sign in to access the protected site content.^SignInInstruction^"&gt;
+      &lt;p&gt;^SignInInstruction^Sign in to access the protected site content.^SignInInstruction^&lt;/p&gt;
+      &lt;p&gt;
+          ^SignInPara1^Two standard user accounts are automatically created when application is initialized
+  if membership option has been selected for this application.^SignInPara1^
+      &lt;/p&gt;
+
+      &lt;p&gt;
+          ^SignInPara2^The administrative account &lt;b&gt;admin&lt;/b&gt; is authorized to access all areas of the
+  web site and membership manager. The standard &lt;b&gt;user&lt;/b&gt; account is allowed to
+  access all areas of the web site with the exception of membership manager.^SignInPara2^
+      &lt;/p&gt;
+      &lt;p&gt;
+          ^AdminDesc^Administrative account^AdminDesc^:&lt;br /&gt;
+          &lt;b title="User Name"&gt;admin&lt;/b&gt; / &lt;b title="Password"&gt;admin123%&lt;/b&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
+          ^UserDesc^Standard user account^UserDesc^:&lt;br /&gt;
+          &lt;b title="User Name"&gt;user&lt;/b&gt; / &lt;b title="Password"&gt;user123%&lt;/b&gt;
+      &lt;/p&gt;
+      &lt;p&gt;&lt;a href="#" data-role="button" data-inline="true" data-theme="b" data-app-role="loginstatus" data-icon="lock"&gt;Login Status&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;</body>
+    </userControl>
+    <userControl name="MembershipManager" prefix="uc" generate="Always">
+      <body>
+                  
+&lt;aquarium:MembershipManager ID="mm" runat="server" /&gt;
+                </body>
+    </userControl>
+    <userControl name="Login" prefix="uc" generate="FirstTimeOnly">
+      <body>
+              
+&lt;div data-app-role="page" data-content-framework="bootstrap"&gt;
+        &lt;div class="navbar navbar-default navbar-static-top" role="navigation"&gt;
+            &lt;div class="container"&gt;
+                &lt;div class="navbar-header"&gt;
+                    &lt;span class="navbar-brand"&gt;Standalone Login Page&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class="navbar-collapse"&gt;
+                    &lt;div class="navbar-form navbar-right" role="form"&gt;
+                        &lt;div class="form-group"&gt;
+                            &lt;input id="login-user-name" type="text" placeholder="Username" class="form-control" autocapitalize="off"&gt;
+                        &lt;/div&gt;
+                        &lt;div class="form-group"&gt;
+                            &lt;input id="login-password" type="password" placeholder="Password" class="form-control"&gt;
+                        &lt;/div&gt;
+                        &lt;button id="login-button" class="btn btn-success"&gt;Sign in&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;!--/.navbar-collapse --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- Main jumbotron for a primary marketing message or call to action --&gt;
+        &lt;div class="jumbotron"&gt;
+            &lt;div class="container"&gt;
+                &lt;h1&gt;&lt;span class="glyphicon glyphicon-globe"&gt;&lt;/span&gt;&amp;nbsp;Hello, world!&lt;/h1&gt;
+                &lt;p&gt;
+                    This is a template for a custom login screen. It includes a large callout called a jumbotron and three supporting content blocks.
+                    Edit the "~/Login.html" page in Visual Studio to create something more unique.
+                &lt;/p&gt;
+
+                &lt;p&gt;&lt;a href="#" class="btn btn-primary btn-lg" role="button"&gt;Learn more &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="container"&gt;
+
+            &lt;div class="row"&gt;
+                &lt;div class="col-sm-8"&gt;
+                    &lt;h2&gt;^SignInInstruction^Sign in to access the protected site content.^SignInInstruction^&lt;/h2&gt;
+                    &lt;p&gt;
+                        ^SignInPara1^Two standard user accounts are automatically created when application is initialized
+                        if membership option has been selected for this application.^SignInPara1^
+                    &lt;/p&gt;
+
+                    &lt;p&gt;
+                        ^SignInPara2^The administrative account &lt;b&gt;admin&lt;/b&gt; is authorized to access all areas of the
+                        web site and membership manager. The standard &lt;b&gt;user&lt;/b&gt; account is allowed to
+                        access all areas of the web site with the exception of membership manager.^SignInPara2^
+                    &lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="col-sm-4"&gt;
+                    &lt;div class="panel panel-success"&gt;
+                        &lt;div class="panel-heading"&gt;
+                            &lt;span&gt;^AdminDesc^Administrative account^AdminDesc^&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="panel-body"&gt;
+                            User Name: &lt;b title="User Name"&gt;admin&lt;/b&gt;&lt;br /&gt;
+                            Password: &lt;b title="Password"&gt;admin123%&lt;/b&gt;&lt;br /&gt;
+                            &lt;a class="btn btn-link" href="#" id="admin-login"&gt;Login as Admin&lt;/a&gt;&lt;br /&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="panel panel-default"&gt;
+                        &lt;div class="panel-heading"&gt;
+                            &lt;span&gt;^UserDesc^Standard user account^UserDesc^&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="panel-body"&gt;
+                            User Name: &lt;b title="User Name"&gt;user&lt;/b&gt;&lt;br /&gt;
+                            Password: &lt;b title="Password"&gt;user123%&lt;/b&gt;&lt;br /&gt;
+                            &lt;a class="btn btn-link" href="#" id="user-login"&gt;Login as User&lt;/a&gt;&lt;br /&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;hr /&gt;
+            &lt;!-- Example row of columns --&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="col-sm-4"&gt;
+                    &lt;h2&gt;Heading&lt;/h2&gt;
+                    &lt;p&gt;Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. &lt;/p&gt;
+                    &lt;p&gt;&lt;a class="btn btn-default" href="#" role="button"&gt;View details &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="col-sm-4"&gt;
+                    &lt;h2&gt;Heading&lt;/h2&gt;
+                    &lt;p&gt;Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. &lt;/p&gt;
+                    &lt;p&gt;&lt;a class="btn btn-default" href="#" role="button"&gt;View details &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="col-sm-4"&gt;
+                    &lt;h2&gt;Heading&lt;/h2&gt;
+                    &lt;p&gt;Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="btn btn-default" href="#" role="button"&gt;View details &amp;raquo;&lt;/a&gt;&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;hr/&gt;
+        &lt;!-- /container --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+    &lt;script type="text/javascript"&gt;
+        (function () {
+            var resources = Web.MembershipResources.Messages;
+
+            function performLogin(username, password) {
+
+                var userNameElem = $('#login-user-name'),
+                    passwordElem = $('#login-password');
+
+                if (!username)
+                    username = userNameElem.val();
+                if (!password)
+                    password = passwordElem.val();
+
+                if (!username)
+                    $app.alert(resources.BlankUserName, function () {
+                        userNameElem.focus();
+                    });
+                else if (!password)
+                    $app.alert(resources.BlankPassword, function () {
+                        passwordElem.focus();
+                    });
+                else
+                    $app.login(username, password, true,
+                        function () {
+                            setTimeout(function() {
+                              $app._navigated = true;
+                              var returnUrl = window.location.href.match(/\?ReturnUrl=(.+)$/);
+                              window.location.replace(returnUrl &amp;&amp; decodeURIComponent(returnUrl[1]) || __baseUrl);
+                            });
+                        },
+                        function () {
+                            $app.alert(resources.InvalidUserNameAndPassword, function () {
+                                userNameElem.focus();
+                            });
+                        });
+                return false;
+            }
+
+            $(document)
+                .on('click', '#login-button', function () {
+                    performLogin();
+                })
+                .on('click', '#admin-login', function () {
+                    performLogin('admin', 'admin123%');
+                })
+                .on('click', '#user-login', function () {
+                    performLogin('user', 'user123%');
+                })
+                .on('keydown', 'input', function (event) {
+                    if (event.which == 13) {
+                        event.preventDefault();
+                        performLogin();
+                        return false;
+                    }
+                });
+        })();
+    &lt;/script&gt;
+
+            </body>
+    </userControl>
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="FileImportTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="HATCOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="HATCForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="AATOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="APCOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="IMCTOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="KMTForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="KMTOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="KYBOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="KYBForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="MMTHOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="TYMOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="TYMForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="TSMOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="THMOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="THMForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="SA_HATCForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="SA_APCForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="SA_THMForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="SA_TSMForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="OrderManualTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="ForcastManualTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="ForcastMonthManulaTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="NMTForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="TYMForcastMonthTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="APCForcastMonthTextTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="HATCForcastMonthExcelTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl name="HATCForcastMonthTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl name="NMTOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl name="NPTOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl name="AATForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl name="TSMForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl name="NPTForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl name="SDT05Template" prefix="uc" generate="FirstTimeOnly" />
+    <userControl name="SDT08Template" prefix="uc" generate="FirstTimeOnly" />
+    <userControl name="MMTHForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl name="IMCTOrderImportBusinessRule" prefix="uc" generate="FirstTimeOnly" />
+    <userControl name="IMCTForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+  </userControls>
+</application>
