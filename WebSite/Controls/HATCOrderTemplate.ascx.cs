@@ -63,12 +63,15 @@ public partial class Controls_HATCOrderTemplate : System.Web.UI.UserControl
                             Order.OrderBy = Order.DeliveryDestination.EndsWith("03") ? "40138011" : "40108011";
                             Order.CustomerMatCode = line.Substring(28, 18).Trim().Replace(" ", "");
                             string[] materialTemp = SharedBusinessRules.getMaterial(line.Substring(28, 18).Trim().Replace(" ", ""), Order.DeliveryDestination.EndsWith("03") ? "40138011" : "40108011", line.Substring(22, 6), line.Substring(145, 5)).Split(':');
-                            Order.SAPCode = materialTemp[0];
-                            Order.PartsDevision = materialTemp[1];
-                            Order.DeliveryDestinationCode = materialTemp[2];
-                            Order.Key1 = materialTemp[3];
-                            Order.Key2 = materialTemp[4];
-                            Order.Key3 = materialTemp[5];
+                            if (materialTemp.Length > 1)
+                            {
+                                Order.SAPCode = materialTemp[0];
+                                Order.PartsDevision = materialTemp[1];
+                                Order.DeliveryDestinationCode = materialTemp[2];
+                                Order.Key1 = materialTemp[3];
+                                Order.Key2 = materialTemp[4];
+                                Order.Key3 = materialTemp[5];
+                            }
                             Order.CustomerPO = line.Substring(10, 12).Trim();
                             Order.ReliabilityDevision = "P"; //Realiability = [Forcast=F,Order=P]
                             Order.DeliveryDate = Convert.ToDateTime(line.Substring(118, 4).Trim() + "-" + line.Substring(122, 2).Trim() + "-" + line.Substring(124, 2).Trim());

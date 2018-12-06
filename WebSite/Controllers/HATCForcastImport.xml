@@ -22,7 +22,7 @@ select
 	,"HATCForcastImport"."FileId" "FileId"
 	,"HATCForcastImport"."StatusCode" "StatusCode"
 	,"HATCForcastImport"."FileName" "FileName"
-	,"HATCForcastImport"."DeliveryDestnationCode" "DeliveryDestnationCode"
+	,"HATCForcastImport"."DeliveryDestinationCode" "DeliveryDestinationCode"
 from "dbo"."HATCForcastImport" "HATCForcastImport"
 ]]></text>
     </command>
@@ -52,7 +52,7 @@ from "dbo"."HATCForcastImport" "HATCForcastImport"
     <field name="FileId" type="Decimal" label="File#" />
     <field name="StatusCode" type="String" label="Status Code" length="100" />
     <field name="FileName" type="String" allowQBE="false" allowSorting="false" label="File Name" />
-    <field name="DeliveryDestnationCode" type="String" label="Delivery Destnation Code" length="50" />
+    <field name="DeliveryDestinationCode" type="String" label="Delivery Destination Code" length="50" />
   </fields>
   <views>
     <view id="grid1" type="Grid" commandId="command1" label="HATC Forcast Import">
@@ -74,7 +74,7 @@ from "dbo"."HATCForcastImport" "HATCForcastImport"
         <dataField fieldName="SAPCode" columns="50" />
         <dataField fieldName="StatusCode" />
         <dataField fieldName="FileName" rows="5" />
-        <dataField fieldName="DeliveryDestnationCode" columns="50" />
+        <dataField fieldName="DeliveryDestinationCode" columns="50" />
       </dataFields>
     </view>
     <view id="editForm1" type="Form" commandId="command1" label="Review HATC Forcast Import">
@@ -100,7 +100,7 @@ from "dbo"."HATCForcastImport" "HATCForcastImport"
             <dataField fieldName="FileId" columns="15" />
             <dataField fieldName="StatusCode" />
             <dataField fieldName="FileName" rows="5" />
-            <dataField fieldName="DeliveryDestnationCode" columns="50" />
+            <dataField fieldName="DeliveryDestinationCode" columns="50" />
           </dataFields>
         </category>
       </categories>
@@ -128,7 +128,7 @@ from "dbo"."HATCForcastImport" "HATCForcastImport"
             <dataField fieldName="FileId" columns="15" />
             <dataField fieldName="StatusCode" />
             <dataField fieldName="FileName" rows="5" />
-            <dataField fieldName="DeliveryDestnationCode" columns="50" />
+            <dataField fieldName="DeliveryDestinationCode" columns="50" />
           </dataFields>
         </category>
       </categories>

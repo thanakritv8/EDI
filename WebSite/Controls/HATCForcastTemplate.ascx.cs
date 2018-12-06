@@ -53,6 +53,7 @@ public partial class Controls_HATCForcastTemplate : System.Web.UI.UserControl
 
         // Save file
         string filename = System.IO.Path.GetFileName(AsyncFileUpload1.FileName);
+        string fn = filename;
         filename = String.Format("HATC_{0}_FORCAST_{1}", DateTime.Now.ToString("yyyyMMddHHmmss"), filename);
         AsyncFileUpload1.SaveAs(Server.MapPath("~/Files/") + filename);
         string LocationCode = string.Empty;
@@ -146,15 +147,19 @@ public partial class Controls_HATCForcastTemplate : System.Web.UI.UserControl
                                 forcast.DeliveryDestination = PlantCode + "-" + LocationCode;
                                 forcast.CustomerMatCode = CustMatNo;
                                 string[] materialTemp = SharedBusinessRules.getMaterial(forcast.CustomerMatCode, PlantCode.EndsWith("03") ? "40138011" : "40108011", PlantCode, LocationCode).Split(':');
-                                forcast.PartsDevision = materialTemp[1];
+                                if (materialTemp.Length > 1)
+                                {
+                                    forcast.SAPCode = materialTemp[0];
+                                    forcast.PartsDevision = materialTemp[1];
+                                    forcast.DeliveryDestinationCode = materialTemp[2];
+                                }
                                 forcast.CustomerPO = "";
                                 forcast.ReliabilityDevision = ReliabilityDevision;
                                 forcast.Unit = "ST";
                                 forcast.PlngPeriod = "D";
-                                forcast.DeliveryDestnationCode = materialTemp[2];
-                                forcast.SAPCode = materialTemp[0];
                                 forcast.DeliveryDate = Convert.ToDateTime(dueDate[i]);
                                 forcast.Quantity = Convert.ToInt32(orderQty[i].ToString());
+                                forcast.FileName = fn;
                                 forcast.Insert();
                             }
                             break;

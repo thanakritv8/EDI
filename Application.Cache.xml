@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<application snapshot="true" xmlns="urn:schemas-codeontime-com:data-aquarium-application" xmlns:m="urn:codeontime:data-map" xmlns:dm="urn:schemas-codeontime-com:data-model" integrity="checked">
+<application snapshot="true" integrity="checked" xmlns="urn:schemas-codeontime-com:data-aquarium-application" xmlns:m="urn:codeontime:data-map" xmlns:dm="urn:schemas-codeontime-com:data-model">
   <pages xmlns="urn:schemas-codeontime-com:data-aquarium-application">
     <page name="Home" title="^HomeTitle^Start^HomeTitle^" description="^HomeDesc^Application home page^HomeDesc^" path="^HomePath^Home^HomePath^" style="HomePage" customStyle="Wide" index="1000">
       <containers>
@@ -905,33 +904,33 @@
 
             </body>
     </userControl>
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="FileImportTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="HATCOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="HATCForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="AATOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="APCOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="IMCTOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="KMTForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="KMTOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="KYBOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="KYBForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="MMTHOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="TYMOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="TYMForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="TSMOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="THMOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="THMForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="SA_HATCForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="SA_APCForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="SA_THMForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="SA_TSMForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="OrderManualTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="ForcastManualTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="ForcastMonthManulaTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="NMTForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="TYMForcastMonthTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="APCForcastMonthTextTemplate" prefix="uc" generate="FirstTimeOnly" />
-    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="HATCForcastMonthExcelTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl name="FileImportTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="HATCOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="HATCForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="AATOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="APCOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="IMCTOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="KMTForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="KMTOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="KYBOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="KYBForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="MMTHOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="TYMOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="TYMForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="TSMOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="THMOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="THMForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="SA_HATCForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="SA_APCForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="SA_THMForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="SA_TSMForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="OrderManualTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="ForcastManualTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="ForcastMonthManulaTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="NMTForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="TYMForcastMonthTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="APCForcastMonthTextTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl name="HATCForcastMonthExcelTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
     <userControl name="HATCForcastMonthTemplate" prefix="uc" generate="FirstTimeOnly" />
     <userControl name="NMTOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
     <userControl name="NPTOrderTemplate" prefix="uc" generate="FirstTimeOnly" />

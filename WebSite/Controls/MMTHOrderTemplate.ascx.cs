@@ -57,12 +57,15 @@ public partial class Controls_MMTHOrderTemplate : System.Web.UI.UserControl
                             Order.DeliveryDestination = item[2]; 
                             Order.CustomerMatCode = item[7].Trim();
                             string[] materialTemp = SharedBusinessRules.getMaterial(item[7].Trim(), CustCode, item[2], "MMTh").Split(':');
-                            Order.SAPCode = materialTemp[0];
-                            Order.PartsDevision = materialTemp[1];
-                            Order.DeliveryDestinationCode = materialTemp[2];
-                            Order.Key1 = materialTemp[3];
-                            Order.Key2 = materialTemp[4];
-                            Order.Key3 = materialTemp[5];
+                            if (materialTemp.Length > 1)
+                            {
+                                Order.SAPCode = materialTemp[0];
+                                Order.PartsDevision = materialTemp[1];
+                                Order.DeliveryDestinationCode = materialTemp[2];
+                                Order.Key1 = materialTemp[3];
+                                Order.Key2 = materialTemp[4];
+                                Order.Key3 = materialTemp[5];
+                            }                            
                             Order.CustomerPO = item[4].Trim();
                             Order.ReliabilityDevision = "P";
                             Order.DeliveryDate =Convert.ToDateTime( item[5].Substring(0, 4).Trim() + "-" + item[5].Substring(5, 2).Trim() + "-" + item[5].Substring(8, 2).Trim());

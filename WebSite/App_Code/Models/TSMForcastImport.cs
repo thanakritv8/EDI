@@ -63,6 +63,12 @@ namespace MyCompany.Models
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private string _fileName;
         
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        private DateTime? _deliveryDateOld;
+        
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        private string _condition;
+        
         public TSMForcastImportModel()
         {
         }
@@ -323,6 +329,34 @@ namespace MyCompany.Models
                 UpdateFieldValue("FileName", value);
             }
         }
+        
+        [System.ComponentModel.DataObjectField(false, false, true)]
+        public DateTime? DeliveryDateOld
+        {
+            get
+            {
+                return _deliveryDateOld;
+            }
+            set
+            {
+                _deliveryDateOld = value;
+                UpdateFieldValue("DeliveryDateOld", value);
+            }
+        }
+        
+        [System.ComponentModel.DataObjectField(false, false, true)]
+        public string Condition
+        {
+            get
+            {
+                return _condition;
+            }
+            set
+            {
+                _condition = value;
+                UpdateFieldValue("Condition", value);
+            }
+        }
     }
     
     [System.ComponentModel.DataObject(false)]
@@ -347,9 +381,11 @@ namespace MyCompany.Models
                     string sAPCode, 
                     string statusCode, 
                     string deliveryDestinationCode, 
-                    string fileName)
+                    string fileName, 
+                    DateTime? deliveryDateOld, 
+                    string condition)
         {
-            return new TSMForcastImportFactory().Select(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, statusCode, deliveryDestinationCode, fileName);
+            return new TSMForcastImportFactory().Select(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, statusCode, deliveryDestinationCode, fileName, deliveryDateOld, condition);
         }
         
         public static List<MyCompany.Models.TSMForcastImport> Select(string filter, string sort, string dataView, params System.Object[] parameters)
@@ -462,6 +498,8 @@ namespace MyCompany.Models
                     string statusCode, 
                     string deliveryDestinationCode, 
                     string fileName, 
+                    DateTime? deliveryDateOld, 
+                    string condition, 
                     string sort, 
                     int maximumRows, 
                     int startRowIndex)
@@ -503,6 +541,10 @@ namespace MyCompany.Models
             	filter.Add(("DeliveryDestinationCode:*" + deliveryDestinationCode));
             if (!(String.IsNullOrEmpty(fileName)))
             	filter.Add(("FileName:*" + fileName));
+            if (deliveryDateOld.HasValue)
+            	filter.Add(("DeliveryDateOld:=" + deliveryDateOld.Value.ToString()));
+            if (!(String.IsNullOrEmpty(condition)))
+            	filter.Add(("Condition:*" + condition));
             PageRequest request = new PageRequest((startRowIndex / maximumRows), maximumRows, sort, filter.ToArray());
             request.MetadataFilter = new string[] {
                     "fields"};
@@ -529,12 +571,14 @@ namespace MyCompany.Models
                     string statusCode, 
                     string deliveryDestinationCode, 
                     string fileName, 
+                    DateTime? deliveryDateOld, 
+                    string condition, 
                     string sort, 
                     int maximumRows, 
                     int startRowIndex, 
                     string dataView)
         {
-            PageRequest request = CreateRequest(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, statusCode, deliveryDestinationCode, fileName, sort, maximumRows, startRowIndex);
+            PageRequest request = CreateRequest(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, statusCode, deliveryDestinationCode, fileName, deliveryDateOld, condition, sort, maximumRows, startRowIndex);
             request.RequiresMetaData = true;
             request.MetadataFilter = new string[] {
                     "fields"};
@@ -561,12 +605,14 @@ namespace MyCompany.Models
                     string statusCode, 
                     string deliveryDestinationCode, 
                     string fileName, 
+                    DateTime? deliveryDateOld, 
+                    string condition, 
                     string sort, 
                     int maximumRows, 
                     int startRowIndex, 
                     string dataView)
         {
-            PageRequest request = CreateRequest(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, statusCode, deliveryDestinationCode, fileName, sort, -1, startRowIndex);
+            PageRequest request = CreateRequest(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, statusCode, deliveryDestinationCode, fileName, deliveryDateOld, condition, sort, -1, startRowIndex);
             request.RequiresMetaData = false;
             request.MetadataFilter = new string[] {
                     "fields"};
@@ -594,14 +640,16 @@ namespace MyCompany.Models
                     string sAPCode, 
                     string statusCode, 
                     string deliveryDestinationCode, 
-                    string fileName)
+                    string fileName, 
+                    DateTime? deliveryDateOld, 
+                    string condition)
         {
-            return Select(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, statusCode, deliveryDestinationCode, fileName, null, Int32.MaxValue, 0, SelectView);
+            return Select(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, statusCode, deliveryDestinationCode, fileName, deliveryDateOld, condition, null, Int32.MaxValue, 0, SelectView);
         }
         
         public List<MyCompany.Models.TSMForcastImport> Select(MyCompany.Models.TSMForcastImport qbe)
         {
-            return Select(qbe.AutoId, qbe.OrderBy, qbe.DeliveryDestination, qbe.CustomerMatCode, qbe.PartsDevision, qbe.CustomerPO, qbe.Key1, qbe.Key2, qbe.Key3, qbe.ReliabilityDevision, qbe.DeliveryDate, qbe.Quantity, qbe.Unit, qbe.PlngPeriod, qbe.SAPCode, qbe.StatusCode, qbe.DeliveryDestinationCode, qbe.FileName);
+            return Select(qbe.AutoId, qbe.OrderBy, qbe.DeliveryDestination, qbe.CustomerMatCode, qbe.PartsDevision, qbe.CustomerPO, qbe.Key1, qbe.Key2, qbe.Key3, qbe.ReliabilityDevision, qbe.DeliveryDate, qbe.Quantity, qbe.Unit, qbe.PlngPeriod, qbe.SAPCode, qbe.StatusCode, qbe.DeliveryDestinationCode, qbe.FileName, qbe.DeliveryDateOld, qbe.Condition);
         }
         
         public List<MyCompany.Models.TSMForcastImport> Select(string filter, BusinessObjectParameters parameters)
@@ -629,7 +677,7 @@ namespace MyCompany.Models
         
         public MyCompany.Models.TSMForcastImport SelectSingle(decimal? autoId)
         {
-            List<MyCompany.Models.TSMForcastImport> list = Select(autoId, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+            List<MyCompany.Models.TSMForcastImport> list = Select(autoId, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
             if (list.Count == 0)
             	return null;
             return list[0];
@@ -664,6 +712,8 @@ namespace MyCompany.Models
             values.Add(new FieldValue("StatusCode", original_TSMForcastImport.StatusCode, theTSMForcastImport.StatusCode));
             values.Add(new FieldValue("DeliveryDestinationCode", original_TSMForcastImport.DeliveryDestinationCode, theTSMForcastImport.DeliveryDestinationCode));
             values.Add(new FieldValue("FileName", original_TSMForcastImport.FileName, theTSMForcastImport.FileName));
+            values.Add(new FieldValue("DeliveryDateOld", original_TSMForcastImport.DeliveryDateOld, theTSMForcastImport.DeliveryDateOld));
+            values.Add(new FieldValue("Condition", original_TSMForcastImport.Condition, theTSMForcastImport.Condition));
             return values.ToArray();
         }
         

@@ -57,12 +57,15 @@ public partial class Controls_IMCTOrderTemplate : System.Web.UI.UserControl
                             Order.Unit = "ST";
                             Order.PlngPeriod = "D";
                             string[] materialTemp = SharedBusinessRules.getMaterial(line.Substring(35, 10).Trim().Replace(" ", ""), CustCode, line.Substring(120, 5).Trim(), "IMCT").Split(':');
-                            Order.SAPCode = materialTemp[0];
-                            Order.PartsDevision = materialTemp[1];
-                            Order.DeliveryDestinationCode = materialTemp[2];
-                            Order.Key1 = materialTemp[3];
-                            Order.Key2 = materialTemp[4];
-                            Order.Key3 = materialTemp[5];
+                            if (materialTemp.Length > 1)
+                            {
+                                Order.SAPCode = materialTemp[0];
+                                Order.PartsDevision = materialTemp[1];
+                                Order.DeliveryDestinationCode = materialTemp[2];
+                                Order.Key1 = materialTemp[3];
+                                Order.Key2 = materialTemp[4];
+                                Order.Key3 = materialTemp[5];
+                            }
                             Order.AddCode = i.ToString();
                             Order.PlantCode = "";
                             Order.Arrivaltime = line.Substring(159, 2).Trim() + ":" + line.Substring(161, 2).Trim();

@@ -12,6 +12,9 @@ public partial class Controls_SDT08Template : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        TextBox1.Text = DateTime.Now.ToString("yyyy-MM-dd");
+        int lastMonth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+        TextBox2.Text = DateTime.Now.AddDays(lastMonth).ToString("yyyy-MM-dd");
         if (!Page.IsPostBack)
         {
             ShowT08();

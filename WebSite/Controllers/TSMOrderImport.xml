@@ -84,7 +84,12 @@ from "dbo"."TSMOrderImport" "TSMOrderImport"
         <dataField fieldName="AddCode" columns="50" />
         <dataField fieldName="Arrivaltime" columns="50" />
         <dataField fieldName="FromTo" columns="50" />
+        <dataField fieldName="DeliveryDestinationCode" columns="50" />
       </dataFields>
+      <styles>
+        <expression type="ClientScript" result="StatusExecuteError" test="[StatusCode]==&quot;Error&quot;" />
+        <expression type="ClientScript" result="StatusExecuteSuccess" test="[StatusCode]==&quot;Success&quot;" />
+      </styles>
     </view>
     <view id="editForm1" type="Form" commandId="command1" label="Review TSM Order Import">
       <headerText>$DefaultEditViewDescription</headerText>

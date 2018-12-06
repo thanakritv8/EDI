@@ -24,7 +24,7 @@ select
 	,"OrdersForcast"."CreateDate" "CreateDate"
 	,"OrdersForcast"."UpdateBy" "UpdateBy"
 	,"OrdersForcast"."UpdateDate" "UpdateDate"
-	,"OrdersForcast"."DeliveryDestnationCode" "DeliveryDestnationCode"
+	,"OrdersForcast"."DeliveryDestinationCode" "DeliveryDestinationCode"
 from "dbo"."OrdersForcast" "OrdersForcast"
 ]]></text>
     </command>
@@ -56,7 +56,7 @@ from "dbo"."OrdersForcast" "OrdersForcast"
     <field name="CreateDate" type="DateTime" label="Create Date" />
     <field name="UpdateBy" type="String" label="Update By" length="50" />
     <field name="UpdateDate" type="DateTime" label="Update Date" />
-    <field name="DeliveryDestnationCode" type="String" label="Delivery Destnation Code" length="50" />
+    <field name="DeliveryDestinationCode" type="String" label="Delivery Destination Code" length="50" />
   </fields>
   <views>
     <view id="grid1" type="Grid" commandId="command1" label="Orders Forcast">
@@ -81,7 +81,7 @@ from "dbo"."OrdersForcast" "OrdersForcast"
         <dataField fieldName="CreateDate" columns="10" />
         <dataField fieldName="UpdateBy" columns="50" />
         <dataField fieldName="UpdateDate" columns="10" />
-        <dataField fieldName="DeliveryDestnationCode" columns="50" />
+        <dataField fieldName="DeliveryDestinationCode" columns="50" />
       </dataFields>
     </view>
     <view id="editForm1" type="Form" commandId="command1" label="Review Orders Forcast">
@@ -109,7 +109,7 @@ from "dbo"."OrdersForcast" "OrdersForcast"
             <dataField fieldName="CreateDate" columns="10" />
             <dataField fieldName="UpdateBy" columns="50" />
             <dataField fieldName="UpdateDate" columns="10" />
-            <dataField fieldName="DeliveryDestnationCode" columns="50" />
+            <dataField fieldName="DeliveryDestinationCode" columns="50" />
           </dataFields>
         </category>
       </categories>
@@ -139,7 +139,7 @@ from "dbo"."OrdersForcast" "OrdersForcast"
             <dataField fieldName="CreateDate" columns="10" />
             <dataField fieldName="UpdateBy" columns="50" />
             <dataField fieldName="UpdateDate" columns="10" />
-            <dataField fieldName="DeliveryDestnationCode" columns="50" />
+            <dataField fieldName="DeliveryDestinationCode" columns="50" />
           </dataFields>
         </category>
       </categories>

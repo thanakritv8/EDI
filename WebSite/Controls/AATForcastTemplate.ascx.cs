@@ -24,6 +24,7 @@ public partial class Controls_AATForcastTemplate : System.Web.UI.UserControl
 
         // Save file
         string filename = System.IO.Path.GetFileName(AsyncFileUpload1.FileName);
+        string fn = filename;
         filename = String.Format("AAT_{0}_Forcast_{1}", DateTime.Now.ToString("yyyyMMddHHmmss"), filename);
         AsyncFileUpload1.SaveAs(Server.MapPath("~/Files/") + filename);
 
@@ -64,15 +65,19 @@ public partial class Controls_AATForcastTemplate : System.Web.UI.UserControl
                                         forcast.DeliveryDestination = _item[8].ToString();
                                         forcast.CustomerMatCode = _item[11].ToString();
                                         string[] materialTemp = SharedBusinessRules.getMaterial(_item[11].ToString(), CustCode, _item[8].ToString(), "AAT").Split(':');
-                                        forcast.PartsDevision = materialTemp[1];
+                                        if (materialTemp.Length > 1)
+                                        {
+                                            forcast.SAPCode = materialTemp[0];
+                                            forcast.PartsDevision = materialTemp[1];
+                                            forcast.DeliveryDestinationCode = materialTemp[2];
+                                        }                                        
                                         forcast.CustomerPO = _item[12].ToString();
                                         forcast.ReliabilityDevision = "F";
                                         forcast.DeliveryDate = Convert.ToDateTime(_item[35].ToString().Substring(0, 4).Trim() + "-" + _item[35].ToString().Substring(4, 2).Trim() + "-" + _item[35].ToString().Substring(6, 2).Trim());
                                         forcast.Quantity = Convert.ToInt32(_item[32].ToString());
                                         forcast.Unit = "ST";
-                                        forcast.DeliveryDestnationCode = materialTemp[2];
                                         forcast.PlngPeriod = "D";
-                                        forcast.SAPCode = materialTemp[0];
+                                        forcast.Filename = fn;
                                         forcast.Insert();
                                     }
                                 }
@@ -94,15 +99,18 @@ public partial class Controls_AATForcastTemplate : System.Web.UI.UserControl
                                     forcast.DeliveryDestination = _item[8].ToString();
                                     forcast.CustomerMatCode = _item[11].ToString();
                                     string[] materialTemp = SharedBusinessRules.getMaterial(_item[11].ToString(), CustCode, _item[8].ToString(), "AAT").Split(':');
-                                    forcast.PartsDevision = materialTemp[1];
+                                    if (materialTemp.Length > 1)
+                                    {
+                                        forcast.SAPCode = materialTemp[0];
+                                        forcast.PartsDevision = materialTemp[1];
+                                        forcast.DeliveryDestinationCode = materialTemp[2];
+                                    }                                    
                                     forcast.CustomerPO = _item[12].ToString();
                                     forcast.ReliabilityDevision = "F";
                                     forcast.DeliveryDate = Convert.ToDateTime(_item[28].ToString().Substring(0, 4).Trim() + "-" + _item[28].ToString().Substring(4, 2).Trim() + "-" + _item[28].ToString().Substring(6, 2).Trim());
                                     forcast.Quantity = Convert.ToInt32(_item[25].ToString());
-                                    forcast.Unit = "ST";
-                                    forcast.DeliveryDestnationCode = materialTemp[2];
-                                    forcast.PlngPeriod = "D";
-                                    forcast.SAPCode = materialTemp[0];
+                                    forcast.Unit = "ST";                                    
+                                    forcast.PlngPeriod = "D";                                    
                                     forcast.Insert();
                                 }
                                 else

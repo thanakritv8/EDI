@@ -9,6 +9,7 @@ using System.Data;
 using System.IO;
 using MyCompany.Rules;
 using System.Text;
+using MyCompany.Data;
 
 
 
@@ -78,11 +79,11 @@ public partial class Controls_TSMForcastTemplate : System.Web.UI.UserControl
             string line = string.Empty;
             using (StreamReader sr = new StreamReader(filename))
             {
-                //using (SqlProcedure sp = new SqlProcedure("sp_TSM_Order_ClearData"))
-                //{
-                //    sp.ExecuteNonQuery();
-                //}
-                string[] strCol = { "DeliveryDestination", "CustomerMatCode", "CustomerPO", "Quantity", "DeliveryDate", "FromTo" };
+                using (SqlProcedure sp = new SqlProcedure("sp_TSM_Forcast_ClearData"))
+                {
+                    sp.ExecuteNonQuery();
+                }
+                string[] strCol = { "DeliveryDestination", "CustomerMatCode", "CustomerPO", "Quantity", "DeliveryDate", "FromTo", "StatusCode", "DeliveryDateOld" };
                 DataTable dt = new DataTable();
                 foreach (string strItem in strCol)
                 {
@@ -101,11 +102,11 @@ public partial class Controls_TSMForcastTemplate : System.Web.UI.UserControl
                     string[] item = ParseCsvRow(line);
                     if (item.Length > 1 && (item[1].Trim() == "NEW" || item[1].Trim() == "RES"))
                     {
-                        dt.Rows.Add(item[2].Trim(), item[3].Trim(), item[7].Trim(), Convert.ToInt32(item[9].Trim()), item[10].Trim(), "RTP:" + item[2].Trim());
+                        dt.Rows.Add(item[2].Trim(), item[3].Trim(), item[7].Trim(), Convert.ToInt32(item[9].Trim()), item[10].Trim(), "RTP:" + item[2].Trim(), item[1].Trim(), item[11].Trim());
                     }
                 }
                 DataTable dtTemp = dt.AsEnumerable()
-                    .GroupBy(r => new { Col1 = r["DeliveryDestination"], Col2 = r["CustomerMatCode"], Col3 = r["CustomerPO"], Col4 = r["DeliveryDate"], Col5 = r["FromTo"] })
+                    .GroupBy(r => new { Col1 = r["DeliveryDestination"], Col2 = r["CustomerMatCode"], Col3 = r["CustomerPO"], Col4 = r["DeliveryDate"], Col5 = r["FromTo"], Col6 = r["StatusCode"], Col7 = r["DeliveryDateOld"] })
                     .Select(g =>
                     {
                         var row = dt.NewRow();
@@ -115,10 +116,12 @@ public partial class Controls_TSMForcastTemplate : System.Web.UI.UserControl
                         row["Quantity"] = g.Sum(r => r.Field<int>("Quantity"));
                         row["DeliveryDate"] = g.Key.Col4;
                         row["FromTo"] = g.Key.Col5;
+                        row["StatusCode"] = g.Key.Col6;
+                        row["DeliveryDateOld"] = g.Key.Col7;
                         return row;
                     }).CopyToDataTable();
                 string CustCode = "40102011";
-                int i = 1;
+
                 foreach (DataRow item in dtTemp.Rows)
                 {
                     string[] dmy = Convert.ToString(item[4]).Split('/');
@@ -143,8 +146,13 @@ public partial class Controls_TSMForcastTemplate : System.Web.UI.UserControl
                         Forcast.Key3 = materialTemp[5];
                     }
                     Forcast.FileName = fn;
+                    if (Convert.ToString(item[6]) == "RES")
+                    {
+                        string[] dmyOld = Convert.ToString(item[7]).Split('/');
+                        Forcast.DeliveryDateOld = Convert.ToDateTime(dmyOld[0] + "-" + dmyOld[1] + "-20" + dmyOld[2]);
+                    }
+                    Forcast.Condition = Convert.ToString(item[6]);
                     Forcast.Insert();
-                    i++;
                 }
             }
         }

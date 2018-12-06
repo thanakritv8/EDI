@@ -61,13 +61,16 @@ public partial class Controls_MMTHForcastTemplate : System.Web.UI.UserControl
                             forcast.DeliveryDestination = plantCode;
                             forcast.CustomerMatCode = partNo.Trim();
                             string[] materialTemp = SharedBusinessRules.getMaterial(forcast.CustomerMatCode, "40113011", plantCode, "MMTh").Split(':');
-                            forcast.PartsDevision = materialTemp[1];
+                            if (materialTemp.Length > 1)
+                            {
+                                forcast.SAPCode = materialTemp[0];
+                                forcast.PartsDevision = materialTemp[1];
+                                forcast.DeliveryDestinationCode = materialTemp[2];
+                            }                            
                             forcast.CustomerPO = "";
                             forcast.ReliabilityDevision = "F";
                             forcast.Unit = "ST";
                             forcast.PlngPeriod = "D";
-                            forcast.DeliveryDestnationCode = materialTemp[2];
-                            forcast.SAPCode = materialTemp[0];
                             forcast.DeliveryDate = Convert.ToDateTime(yyyy + "-" + MM + "-" + arr[d-1]);
                             forcast.Quantity = Convert.ToInt32(arr[d]);
                             forcast.Insert();

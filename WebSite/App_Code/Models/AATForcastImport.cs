@@ -61,7 +61,10 @@ namespace MyCompany.Models
         private string _statusCode;
         
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
-        private string _deliveryDestnationCode;
+        private string _deliveryDestinationCode;
+        
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        private string _filename;
         
         public AATForcastImportModel()
         {
@@ -311,16 +314,30 @@ namespace MyCompany.Models
         }
         
         [System.ComponentModel.DataObjectField(false, false, true)]
-        public string DeliveryDestnationCode
+        public string DeliveryDestinationCode
         {
             get
             {
-                return _deliveryDestnationCode;
+                return _deliveryDestinationCode;
             }
             set
             {
-                _deliveryDestnationCode = value;
-                UpdateFieldValue("DeliveryDestnationCode", value);
+                _deliveryDestinationCode = value;
+                UpdateFieldValue("DeliveryDestinationCode", value);
+            }
+        }
+        
+        [System.ComponentModel.DataObjectField(false, false, true)]
+        public string Filename
+        {
+            get
+            {
+                return _filename;
+            }
+            set
+            {
+                _filename = value;
+                UpdateFieldValue("Filename", value);
             }
         }
     }
@@ -347,9 +364,9 @@ namespace MyCompany.Models
                     string sAPCode, 
                     decimal? fileId, 
                     string statusCode, 
-                    string deliveryDestnationCode)
+                    string deliveryDestinationCode)
         {
-            return new AATForcastImportFactory().Select(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, fileId, statusCode, deliveryDestnationCode);
+            return new AATForcastImportFactory().Select(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, fileId, statusCode, deliveryDestinationCode);
         }
         
         public static List<MyCompany.Models.AATForcastImport> Select(string filter, string sort, string dataView, params System.Object[] parameters)
@@ -461,7 +478,7 @@ namespace MyCompany.Models
                     string sAPCode, 
                     decimal? fileId, 
                     string statusCode, 
-                    string deliveryDestnationCode, 
+                    string deliveryDestinationCode, 
                     string sort, 
                     int maximumRows, 
                     int startRowIndex)
@@ -501,8 +518,8 @@ namespace MyCompany.Models
             	filter.Add(("FileId:=" + fileId.Value.ToString()));
             if (!(String.IsNullOrEmpty(statusCode)))
             	filter.Add(("StatusCode:*" + statusCode));
-            if (!(String.IsNullOrEmpty(deliveryDestnationCode)))
-            	filter.Add(("DeliveryDestnationCode:*" + deliveryDestnationCode));
+            if (!(String.IsNullOrEmpty(deliveryDestinationCode)))
+            	filter.Add(("DeliveryDestinationCode:*" + deliveryDestinationCode));
             PageRequest request = new PageRequest((startRowIndex / maximumRows), maximumRows, sort, filter.ToArray());
             request.MetadataFilter = new string[] {
                     "fields"};
@@ -528,13 +545,13 @@ namespace MyCompany.Models
                     string sAPCode, 
                     decimal? fileId, 
                     string statusCode, 
-                    string deliveryDestnationCode, 
+                    string deliveryDestinationCode, 
                     string sort, 
                     int maximumRows, 
                     int startRowIndex, 
                     string dataView)
         {
-            PageRequest request = CreateRequest(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, fileId, statusCode, deliveryDestnationCode, sort, maximumRows, startRowIndex);
+            PageRequest request = CreateRequest(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, fileId, statusCode, deliveryDestinationCode, sort, maximumRows, startRowIndex);
             request.RequiresMetaData = true;
             request.MetadataFilter = new string[] {
                     "fields"};
@@ -560,13 +577,13 @@ namespace MyCompany.Models
                     string sAPCode, 
                     decimal? fileId, 
                     string statusCode, 
-                    string deliveryDestnationCode, 
+                    string deliveryDestinationCode, 
                     string sort, 
                     int maximumRows, 
                     int startRowIndex, 
                     string dataView)
         {
-            PageRequest request = CreateRequest(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, fileId, statusCode, deliveryDestnationCode, sort, -1, startRowIndex);
+            PageRequest request = CreateRequest(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, fileId, statusCode, deliveryDestinationCode, sort, -1, startRowIndex);
             request.RequiresMetaData = false;
             request.MetadataFilter = new string[] {
                     "fields"};
@@ -594,14 +611,14 @@ namespace MyCompany.Models
                     string sAPCode, 
                     decimal? fileId, 
                     string statusCode, 
-                    string deliveryDestnationCode)
+                    string deliveryDestinationCode)
         {
-            return Select(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, fileId, statusCode, deliveryDestnationCode, null, Int32.MaxValue, 0, SelectView);
+            return Select(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, fileId, statusCode, deliveryDestinationCode, null, Int32.MaxValue, 0, SelectView);
         }
         
         public List<MyCompany.Models.AATForcastImport> Select(MyCompany.Models.AATForcastImport qbe)
         {
-            return Select(qbe.AutoId, qbe.OrderBy, qbe.DeliveryDestination, qbe.CustomerMatCode, qbe.PartsDevision, qbe.CustomerPO, qbe.Key1, qbe.Key2, qbe.Key3, qbe.ReliabilityDevision, qbe.DeliveryDate, qbe.Quantity, qbe.Unit, qbe.PlngPeriod, qbe.SAPCode, qbe.FileId, qbe.StatusCode, qbe.DeliveryDestnationCode);
+            return Select(qbe.AutoId, qbe.OrderBy, qbe.DeliveryDestination, qbe.CustomerMatCode, qbe.PartsDevision, qbe.CustomerPO, qbe.Key1, qbe.Key2, qbe.Key3, qbe.ReliabilityDevision, qbe.DeliveryDate, qbe.Quantity, qbe.Unit, qbe.PlngPeriod, qbe.SAPCode, qbe.FileId, qbe.StatusCode, qbe.DeliveryDestinationCode);
         }
         
         public List<MyCompany.Models.AATForcastImport> Select(string filter, BusinessObjectParameters parameters)
@@ -663,7 +680,8 @@ namespace MyCompany.Models
             values.Add(new FieldValue("SAPCode", original_AATForcastImport.SAPCode, theAATForcastImport.SAPCode));
             values.Add(new FieldValue("FileId", original_AATForcastImport.FileId, theAATForcastImport.FileId));
             values.Add(new FieldValue("StatusCode", original_AATForcastImport.StatusCode, theAATForcastImport.StatusCode));
-            values.Add(new FieldValue("DeliveryDestnationCode", original_AATForcastImport.DeliveryDestnationCode, theAATForcastImport.DeliveryDestnationCode));
+            values.Add(new FieldValue("DeliveryDestinationCode", original_AATForcastImport.DeliveryDestinationCode, theAATForcastImport.DeliveryDestinationCode));
+            values.Add(new FieldValue("Filename", original_AATForcastImport.Filename, theAATForcastImport.Filename));
             return values.ToArray();
         }
         

@@ -2646,7 +2646,7 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>AATForcastImport</TABLE_NAME>
-        <COLUMN_NAME>DeliveryDestnationCode</COLUMN_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
         <ORDINAL_POSITION>18</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>nvarchar</DATA_TYPE>
@@ -2668,6 +2668,21 @@
         <NUMERIC_PRECISION>18</NUMERIC_PRECISION>
         <NUMERIC_PRECISION_RADIX>10</NUMERIC_PRECISION_RADIX>
         <NUMERIC_SCALE>0</NUMERIC_SCALE>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>AATForcastImport</TABLE_NAME>
+        <COLUMN_NAME>Filename</COLUMN_NAME>
+        <ORDINAL_POSITION>19</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>-1</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>-1</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
         <IS_SPARSE>false</IS_SPARSE>
         <IS_COLUMN_SET>false</IS_COLUMN_SET>
         <IS_FILESTREAM>false</IS_FILESTREAM>
@@ -6214,7 +6229,7 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>HATCForcastImport</TABLE_NAME>
-        <COLUMN_NAME>DeliveryDestnationCode</COLUMN_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
         <ORDINAL_POSITION>19</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>nvarchar</DATA_TYPE>
@@ -7331,7 +7346,7 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>IMCTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>DeliveryDestnationCode</COLUMN_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
         <ORDINAL_POSITION>19</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>nvarchar</DATA_TYPE>
@@ -9655,7 +9670,7 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>MMTHForcastImport</TABLE_NAME>
-        <COLUMN_NAME>DeliveryDestnationCode</COLUMN_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
         <ORDINAL_POSITION>18</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>nvarchar</DATA_TYPE>
@@ -11633,7 +11648,7 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>OrdersForcast</TABLE_NAME>
-        <COLUMN_NAME>DeliveryDestnationCode</COLUMN_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
         <ORDINAL_POSITION>21</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>nvarchar</DATA_TYPE>
@@ -12193,6 +12208,21 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>THMForcastImport</TABLE_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
+        <ORDINAL_POSITION>19</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>THMForcastImport</TABLE_NAME>
         <COLUMN_NAME>FileId</COLUMN_NAME>
         <ORDINAL_POSITION>16</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
@@ -12200,6 +12230,21 @@
         <NUMERIC_PRECISION>18</NUMERIC_PRECISION>
         <NUMERIC_PRECISION_RADIX>10</NUMERIC_PRECISION_RADIX>
         <NUMERIC_SCALE>0</NUMERIC_SCALE>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>THMForcastImport</TABLE_NAME>
+        <COLUMN_NAME>FileName</COLUMN_NAME>
+        <ORDINAL_POSITION>18</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>-1</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>-1</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
         <IS_SPARSE>false</IS_SPARSE>
         <IS_COLUMN_SET>false</IS_COLUMN_SET>
         <IS_FILESTREAM>false</IS_FILESTREAM>
@@ -12969,6 +13014,21 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>TSMForcastImport</TABLE_NAME>
+        <COLUMN_NAME>Condition</COLUMN_NAME>
+        <ORDINAL_POSITION>20</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>TSMForcastImport</TABLE_NAME>
         <COLUMN_NAME>CustomerMatCode</COLUMN_NAME>
         <ORDINAL_POSITION>4</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
@@ -13001,6 +13061,19 @@
         <TABLE_NAME>TSMForcastImport</TABLE_NAME>
         <COLUMN_NAME>DeliveryDate</COLUMN_NAME>
         <ORDINAL_POSITION>11</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>datetime</DATA_TYPE>
+        <DATETIME_PRECISION>3</DATETIME_PRECISION>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>TSMForcastImport</TABLE_NAME>
+        <COLUMN_NAME>DeliveryDateOld</COLUMN_NAME>
+        <ORDINAL_POSITION>19</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>datetime</DATA_TYPE>
         <DATETIME_PRECISION>3</DATETIME_PRECISION>
@@ -13876,6 +13949,21 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>TYMForcastImport</TABLE_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
+        <ORDINAL_POSITION>19</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>TYMForcastImport</TABLE_NAME>
         <COLUMN_NAME>FileId</COLUMN_NAME>
         <ORDINAL_POSITION>16</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
@@ -13883,6 +13971,21 @@
         <NUMERIC_PRECISION>18</NUMERIC_PRECISION>
         <NUMERIC_PRECISION_RADIX>10</NUMERIC_PRECISION_RADIX>
         <NUMERIC_SCALE>0</NUMERIC_SCALE>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>TYMForcastImport</TABLE_NAME>
+        <COLUMN_NAME>FileName</COLUMN_NAME>
+        <ORDINAL_POSITION>18</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>-1</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>-1</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
         <IS_SPARSE>false</IS_SPARSE>
         <IS_COLUMN_SET>false</IS_COLUMN_SET>
         <IS_FILESTREAM>false</IS_FILESTREAM>
@@ -15784,7 +15887,7 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>AATForcastImport</TABLE_NAME>
-        <COLUMN_NAME>DeliveryDestnationCode</COLUMN_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
         <ORDINAL_POSITION>18</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>nvarchar</DATA_TYPE>
@@ -15806,6 +15909,21 @@
         <NUMERIC_PRECISION>18</NUMERIC_PRECISION>
         <NUMERIC_PRECISION_RADIX>10</NUMERIC_PRECISION_RADIX>
         <NUMERIC_SCALE>0</NUMERIC_SCALE>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </AllColumns>
+      <AllColumns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>AATForcastImport</TABLE_NAME>
+        <COLUMN_NAME>Filename</COLUMN_NAME>
+        <ORDINAL_POSITION>19</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>-1</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>-1</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
         <IS_SPARSE>false</IS_SPARSE>
         <IS_COLUMN_SET>false</IS_COLUMN_SET>
         <IS_FILESTREAM>false</IS_FILESTREAM>
@@ -19352,7 +19470,7 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>HATCForcastImport</TABLE_NAME>
-        <COLUMN_NAME>DeliveryDestnationCode</COLUMN_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
         <ORDINAL_POSITION>19</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>nvarchar</DATA_TYPE>
@@ -20469,7 +20587,7 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>IMCTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>DeliveryDestnationCode</COLUMN_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
         <ORDINAL_POSITION>19</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>nvarchar</DATA_TYPE>
@@ -22793,7 +22911,7 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>MMTHForcastImport</TABLE_NAME>
-        <COLUMN_NAME>DeliveryDestnationCode</COLUMN_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
         <ORDINAL_POSITION>18</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>nvarchar</DATA_TYPE>
@@ -24771,7 +24889,7 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>OrdersForcast</TABLE_NAME>
-        <COLUMN_NAME>DeliveryDestnationCode</COLUMN_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
         <ORDINAL_POSITION>21</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>nvarchar</DATA_TYPE>
@@ -25331,6 +25449,21 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>THMForcastImport</TABLE_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
+        <ORDINAL_POSITION>19</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </AllColumns>
+      <AllColumns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>THMForcastImport</TABLE_NAME>
         <COLUMN_NAME>FileId</COLUMN_NAME>
         <ORDINAL_POSITION>16</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
@@ -25338,6 +25471,21 @@
         <NUMERIC_PRECISION>18</NUMERIC_PRECISION>
         <NUMERIC_PRECISION_RADIX>10</NUMERIC_PRECISION_RADIX>
         <NUMERIC_SCALE>0</NUMERIC_SCALE>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </AllColumns>
+      <AllColumns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>THMForcastImport</TABLE_NAME>
+        <COLUMN_NAME>FileName</COLUMN_NAME>
+        <ORDINAL_POSITION>18</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>-1</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>-1</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
         <IS_SPARSE>false</IS_SPARSE>
         <IS_COLUMN_SET>false</IS_COLUMN_SET>
         <IS_FILESTREAM>false</IS_FILESTREAM>
@@ -26107,6 +26255,21 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>TSMForcastImport</TABLE_NAME>
+        <COLUMN_NAME>Condition</COLUMN_NAME>
+        <ORDINAL_POSITION>20</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </AllColumns>
+      <AllColumns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>TSMForcastImport</TABLE_NAME>
         <COLUMN_NAME>CustomerMatCode</COLUMN_NAME>
         <ORDINAL_POSITION>4</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
@@ -26139,6 +26302,19 @@
         <TABLE_NAME>TSMForcastImport</TABLE_NAME>
         <COLUMN_NAME>DeliveryDate</COLUMN_NAME>
         <ORDINAL_POSITION>11</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>datetime</DATA_TYPE>
+        <DATETIME_PRECISION>3</DATETIME_PRECISION>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </AllColumns>
+      <AllColumns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>TSMForcastImport</TABLE_NAME>
+        <COLUMN_NAME>DeliveryDateOld</COLUMN_NAME>
+        <ORDINAL_POSITION>19</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>datetime</DATA_TYPE>
         <DATETIME_PRECISION>3</DATETIME_PRECISION>
@@ -27014,6 +27190,21 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>TYMForcastImport</TABLE_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
+        <ORDINAL_POSITION>19</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </AllColumns>
+      <AllColumns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>TYMForcastImport</TABLE_NAME>
         <COLUMN_NAME>FileId</COLUMN_NAME>
         <ORDINAL_POSITION>16</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
@@ -27021,6 +27212,21 @@
         <NUMERIC_PRECISION>18</NUMERIC_PRECISION>
         <NUMERIC_PRECISION_RADIX>10</NUMERIC_PRECISION_RADIX>
         <NUMERIC_SCALE>0</NUMERIC_SCALE>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </AllColumns>
+      <AllColumns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>TYMForcastImport</TABLE_NAME>
+        <COLUMN_NAME>FileName</COLUMN_NAME>
+        <ORDINAL_POSITION>18</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>-1</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>-1</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
         <IS_SPARSE>false</IS_SPARSE>
         <IS_COLUMN_SET>false</IS_COLUMN_SET>
         <IS_FILESTREAM>false</IS_FILESTREAM>
@@ -29258,6 +29464,54 @@
       <IndexColumns>
         <constraint_catalog>ROKI_EDI</constraint_catalog>
         <constraint_schema>dbo</constraint_schema>
+        <constraint_name>NonClusteredIndex-20181203-163734</constraint_name>
+        <table_catalog>ROKI_EDI</table_catalog>
+        <table_schema>dbo</table_schema>
+        <table_name>HATCForcastImport</table_name>
+        <column_name>CustomerMatCode</column_name>
+        <ordinal_position>3</ordinal_position>
+        <KeyType>231</KeyType>
+        <index_name>NonClusteredIndex-20181203-163734</index_name>
+      </IndexColumns>
+      <IndexColumns>
+        <constraint_catalog>ROKI_EDI</constraint_catalog>
+        <constraint_schema>dbo</constraint_schema>
+        <constraint_name>NonClusteredIndex-20181203-163734</constraint_name>
+        <table_catalog>ROKI_EDI</table_catalog>
+        <table_schema>dbo</table_schema>
+        <table_name>HATCForcastImport</table_name>
+        <column_name>DeliveryDate</column_name>
+        <ordinal_position>4</ordinal_position>
+        <KeyType>61</KeyType>
+        <index_name>NonClusteredIndex-20181203-163734</index_name>
+      </IndexColumns>
+      <IndexColumns>
+        <constraint_catalog>ROKI_EDI</constraint_catalog>
+        <constraint_schema>dbo</constraint_schema>
+        <constraint_name>NonClusteredIndex-20181203-163734</constraint_name>
+        <table_catalog>ROKI_EDI</table_catalog>
+        <table_schema>dbo</table_schema>
+        <table_name>HATCForcastImport</table_name>
+        <column_name>DeliveryDestination</column_name>
+        <ordinal_position>2</ordinal_position>
+        <KeyType>231</KeyType>
+        <index_name>NonClusteredIndex-20181203-163734</index_name>
+      </IndexColumns>
+      <IndexColumns>
+        <constraint_catalog>ROKI_EDI</constraint_catalog>
+        <constraint_schema>dbo</constraint_schema>
+        <constraint_name>NonClusteredIndex-20181203-163734</constraint_name>
+        <table_catalog>ROKI_EDI</table_catalog>
+        <table_schema>dbo</table_schema>
+        <table_name>HATCForcastImport</table_name>
+        <column_name>OrderBy</column_name>
+        <ordinal_position>1</ordinal_position>
+        <KeyType>231</KeyType>
+        <index_name>NonClusteredIndex-20181203-163734</index_name>
+      </IndexColumns>
+      <IndexColumns>
+        <constraint_catalog>ROKI_EDI</constraint_catalog>
+        <constraint_schema>dbo</constraint_schema>
         <constraint_name>PK_HATCForcastImport</constraint_name>
         <table_catalog>ROKI_EDI</table_catalog>
         <table_schema>dbo</table_schema>
@@ -29530,6 +29784,78 @@
         <ordinal_position>1</ordinal_position>
         <KeyType>106</KeyType>
         <index_name>PK_T05Order</index_name>
+      </IndexColumns>
+      <IndexColumns>
+        <constraint_catalog>ROKI_EDI</constraint_catalog>
+        <constraint_schema>dbo</constraint_schema>
+        <constraint_name>NonClusteredIndex-20181203-135123</constraint_name>
+        <table_catalog>ROKI_EDI</table_catalog>
+        <table_schema>dbo</table_schema>
+        <table_name>OrdersForcast</table_name>
+        <column_name>CustomerMatCode</column_name>
+        <ordinal_position>3</ordinal_position>
+        <KeyType>231</KeyType>
+        <index_name>NonClusteredIndex-20181203-135123</index_name>
+      </IndexColumns>
+      <IndexColumns>
+        <constraint_catalog>ROKI_EDI</constraint_catalog>
+        <constraint_schema>dbo</constraint_schema>
+        <constraint_name>NonClusteredIndex-20181203-135123</constraint_name>
+        <table_catalog>ROKI_EDI</table_catalog>
+        <table_schema>dbo</table_schema>
+        <table_name>OrdersForcast</table_name>
+        <column_name>CustomerPO</column_name>
+        <ordinal_position>4</ordinal_position>
+        <KeyType>231</KeyType>
+        <index_name>NonClusteredIndex-20181203-135123</index_name>
+      </IndexColumns>
+      <IndexColumns>
+        <constraint_catalog>ROKI_EDI</constraint_catalog>
+        <constraint_schema>dbo</constraint_schema>
+        <constraint_name>NonClusteredIndex-20181203-135123</constraint_name>
+        <table_catalog>ROKI_EDI</table_catalog>
+        <table_schema>dbo</table_schema>
+        <table_name>OrdersForcast</table_name>
+        <column_name>DeliveryDate</column_name>
+        <ordinal_position>5</ordinal_position>
+        <KeyType>61</KeyType>
+        <index_name>NonClusteredIndex-20181203-135123</index_name>
+      </IndexColumns>
+      <IndexColumns>
+        <constraint_catalog>ROKI_EDI</constraint_catalog>
+        <constraint_schema>dbo</constraint_schema>
+        <constraint_name>NonClusteredIndex-20181203-135123</constraint_name>
+        <table_catalog>ROKI_EDI</table_catalog>
+        <table_schema>dbo</table_schema>
+        <table_name>OrdersForcast</table_name>
+        <column_name>DeliveryDestination</column_name>
+        <ordinal_position>2</ordinal_position>
+        <KeyType>231</KeyType>
+        <index_name>NonClusteredIndex-20181203-135123</index_name>
+      </IndexColumns>
+      <IndexColumns>
+        <constraint_catalog>ROKI_EDI</constraint_catalog>
+        <constraint_schema>dbo</constraint_schema>
+        <constraint_name>NonClusteredIndex-20181203-135123</constraint_name>
+        <table_catalog>ROKI_EDI</table_catalog>
+        <table_schema>dbo</table_schema>
+        <table_name>OrdersForcast</table_name>
+        <column_name>DeliveryDestinationCode</column_name>
+        <ordinal_position>6</ordinal_position>
+        <KeyType>231</KeyType>
+        <index_name>NonClusteredIndex-20181203-135123</index_name>
+      </IndexColumns>
+      <IndexColumns>
+        <constraint_catalog>ROKI_EDI</constraint_catalog>
+        <constraint_schema>dbo</constraint_schema>
+        <constraint_name>NonClusteredIndex-20181203-135123</constraint_name>
+        <table_catalog>ROKI_EDI</table_catalog>
+        <table_schema>dbo</table_schema>
+        <table_name>OrdersForcast</table_name>
+        <column_name>OrderBy</column_name>
+        <ordinal_position>1</ordinal_position>
+        <KeyType>231</KeyType>
+        <index_name>NonClusteredIndex-20181203-135123</index_name>
       </IndexColumns>
       <IndexColumns>
         <constraint_catalog>ROKI_EDI</constraint_catalog>
@@ -29820,6 +30146,16 @@
       <Indexes>
         <constraint_catalog>ROKI_EDI</constraint_catalog>
         <constraint_schema>dbo</constraint_schema>
+        <constraint_name>NonClusteredIndex-20181203-163734</constraint_name>
+        <table_catalog>ROKI_EDI</table_catalog>
+        <table_schema>dbo</table_schema>
+        <table_name>HATCForcastImport</table_name>
+        <index_name>NonClusteredIndex-20181203-163734</index_name>
+        <type_desc>NONCLUSTERED</type_desc>
+      </Indexes>
+      <Indexes>
+        <constraint_catalog>ROKI_EDI</constraint_catalog>
+        <constraint_schema>dbo</constraint_schema>
         <constraint_name>PK_HATCForcastImport</constraint_name>
         <table_catalog>ROKI_EDI</table_catalog>
         <table_schema>dbo</table_schema>
@@ -30016,6 +30352,16 @@
         <table_name>Orders</table_name>
         <index_name>PK_T05Order</index_name>
         <type_desc>CLUSTERED</type_desc>
+      </Indexes>
+      <Indexes>
+        <constraint_catalog>ROKI_EDI</constraint_catalog>
+        <constraint_schema>dbo</constraint_schema>
+        <constraint_name>NonClusteredIndex-20181203-135123</constraint_name>
+        <table_catalog>ROKI_EDI</table_catalog>
+        <table_schema>dbo</table_schema>
+        <table_name>OrdersForcast</table_name>
+        <index_name>NonClusteredIndex-20181203-135123</index_name>
+        <type_desc>NONCLUSTERED</type_desc>
       </Indexes>
       <Indexes>
         <constraint_catalog>ROKI_EDI</constraint_catalog>
@@ -31823,6 +32169,60 @@
           <IsUnique>false</IsUnique>
           <IsKey>false</IsKey>
           <BaseColumnName>StatusCode</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>THMForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>FileName</ColumnName>
+          <ColumnOrdinal>17</ColumnOrdinal>
+          <ColumnSize>2147483647</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>FileName</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>THMForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>true</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>DeliveryDestinationCode</ColumnName>
+          <ColumnOrdinal>18</ColumnOrdinal>
+          <ColumnSize>50</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>DeliveryDestinationCode</BaseColumnName>
           <BaseSchemaName>dbo</BaseSchemaName>
           <BaseTableName>THMForcastImport</BaseTableName>
           <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
@@ -34260,6 +34660,60 @@
           <IsUnique>false</IsUnique>
           <IsKey>false</IsKey>
           <BaseColumnName>StatusCode</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>TYMForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>FileName</ColumnName>
+          <ColumnOrdinal>17</ColumnOrdinal>
+          <ColumnSize>2147483647</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>FileName</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>TYMForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>true</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>DeliveryDestinationCode</ColumnName>
+          <ColumnOrdinal>18</ColumnOrdinal>
+          <ColumnSize>50</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>DeliveryDestinationCode</BaseColumnName>
           <BaseSchemaName>dbo</BaseSchemaName>
           <BaseTableName>TYMForcastImport</BaseTableName>
           <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
@@ -38797,14 +39251,14 @@
           <IsColumnSet>false</IsColumnSet>
         </Column>
         <Column>
-          <ColumnName>DeliveryDestnationCode</ColumnName>
+          <ColumnName>DeliveryDestinationCode</ColumnName>
           <ColumnOrdinal>18</ColumnOrdinal>
           <ColumnSize>50</ColumnSize>
           <NumericPrecision>255</NumericPrecision>
           <NumericScale>255</NumericScale>
           <IsUnique>false</IsUnique>
           <IsKey>false</IsKey>
-          <BaseColumnName>DeliveryDestnationCode</BaseColumnName>
+          <BaseColumnName>DeliveryDestinationCode</BaseColumnName>
           <BaseSchemaName>dbo</BaseSchemaName>
           <BaseTableName>IMCTForcastImport</BaseTableName>
           <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
@@ -43587,6 +44041,60 @@
           <IsUnique>false</IsUnique>
           <IsKey>false</IsKey>
           <BaseColumnName>FileName</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>TSMForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>DeliveryDateOld</ColumnName>
+          <ColumnOrdinal>18</ColumnOrdinal>
+          <ColumnSize>8</ColumnSize>
+          <NumericPrecision>23</NumericPrecision>
+          <NumericScale>3</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>DeliveryDateOld</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>TSMForcastImport</BaseTableName>
+          <DataType>System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>4</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlDateTime, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>datetime</DataTypeName>
+          <NonVersionedProviderType>4</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>Condition</ColumnName>
+          <ColumnOrdinal>19</ColumnOrdinal>
+          <ColumnSize>50</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>Condition</BaseColumnName>
           <BaseSchemaName>dbo</BaseSchemaName>
           <BaseTableName>TSMForcastImport</BaseTableName>
           <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
@@ -48695,14 +49203,14 @@
           <IsColumnSet>false</IsColumnSet>
         </Column>
         <Column>
-          <ColumnName>DeliveryDestnationCode</ColumnName>
+          <ColumnName>DeliveryDestinationCode</ColumnName>
           <ColumnOrdinal>20</ColumnOrdinal>
           <ColumnSize>50</ColumnSize>
           <NumericPrecision>255</NumericPrecision>
           <NumericScale>255</NumericScale>
           <IsUnique>false</IsUnique>
           <IsKey>false</IsKey>
-          <BaseColumnName>DeliveryDestnationCode</BaseColumnName>
+          <BaseColumnName>DeliveryDestinationCode</BaseColumnName>
           <BaseSchemaName>dbo</BaseSchemaName>
           <BaseTableName>OrdersForcast</BaseTableName>
           <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
@@ -49675,14 +50183,14 @@
           <IsColumnSet>false</IsColumnSet>
         </Column>
         <Column>
-          <ColumnName>DeliveryDestnationCode</ColumnName>
+          <ColumnName>DeliveryDestinationCode</ColumnName>
           <ColumnOrdinal>18</ColumnOrdinal>
           <ColumnSize>50</ColumnSize>
           <NumericPrecision>255</NumericPrecision>
           <NumericScale>255</NumericScale>
           <IsUnique>false</IsUnique>
           <IsKey>false</IsKey>
-          <BaseColumnName>DeliveryDestnationCode</BaseColumnName>
+          <BaseColumnName>DeliveryDestinationCode</BaseColumnName>
           <BaseSchemaName>dbo</BaseSchemaName>
           <BaseTableName>HATCForcastImport</BaseTableName>
           <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
@@ -52179,14 +52687,14 @@
           <IsColumnSet>false</IsColumnSet>
         </Column>
         <Column>
-          <ColumnName>DeliveryDestnationCode</ColumnName>
+          <ColumnName>DeliveryDestinationCode</ColumnName>
           <ColumnOrdinal>17</ColumnOrdinal>
           <ColumnSize>50</ColumnSize>
           <NumericPrecision>255</NumericPrecision>
           <NumericScale>255</NumericScale>
           <IsUnique>false</IsUnique>
           <IsKey>false</IsKey>
-          <BaseColumnName>DeliveryDestnationCode</BaseColumnName>
+          <BaseColumnName>DeliveryDestinationCode</BaseColumnName>
           <BaseSchemaName>dbo</BaseSchemaName>
           <BaseTableName>AATForcastImport</BaseTableName>
           <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
@@ -52199,6 +52707,33 @@
           <IsRowVersion>false</IsRowVersion>
           <IsHidden>false</IsHidden>
           <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>Filename</ColumnName>
+          <ColumnOrdinal>18</ColumnOrdinal>
+          <ColumnSize>2147483647</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>Filename</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>AATForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>true</IsLong>
           <IsReadOnly>false</IsReadOnly>
           <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
           <DataTypeName>nvarchar</DataTypeName>
@@ -53595,14 +54130,14 @@
           <IsColumnSet>false</IsColumnSet>
         </Column>
         <Column>
-          <ColumnName>DeliveryDestnationCode</ColumnName>
+          <ColumnName>DeliveryDestinationCode</ColumnName>
           <ColumnOrdinal>17</ColumnOrdinal>
           <ColumnSize>50</ColumnSize>
           <NumericPrecision>255</NumericPrecision>
           <NumericScale>255</NumericScale>
           <IsUnique>false</IsUnique>
           <IsKey>false</IsKey>
-          <BaseColumnName>DeliveryDestnationCode</BaseColumnName>
+          <BaseColumnName>DeliveryDestinationCode</BaseColumnName>
           <BaseSchemaName>dbo</BaseSchemaName>
           <BaseTableName>MMTHForcastImport</BaseTableName>
           <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
@@ -55175,6 +55710,32 @@
       <Columns>
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>THMForcastImport</TABLE_NAME>
+        <COLUMN_NAME>FileName</COLUMN_NAME>
+        <ORDINAL_POSITION>18</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>-1</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>-1</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>THMForcastImport</TABLE_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
+        <ORDINAL_POSITION>19</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>THMForcastMonthImport</TABLE_NAME>
         <COLUMN_NAME>AutoId</COLUMN_NAME>
         <ORDINAL_POSITION>1</ORDINAL_POSITION>
@@ -56319,6 +56880,32 @@
         <DATA_TYPE>nvarchar</DATA_TYPE>
         <CHARACTER_MAXIMUM_LENGTH>100</CHARACTER_MAXIMUM_LENGTH>
         <CHARACTER_OCTET_LENGTH>200</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>TYMForcastImport</TABLE_NAME>
+        <COLUMN_NAME>FileName</COLUMN_NAME>
+        <ORDINAL_POSITION>18</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>-1</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>-1</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>TYMForcastImport</TABLE_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
+        <ORDINAL_POSITION>19</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
         <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
         <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
       </Columns>
@@ -58439,7 +59026,7 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>IMCTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>DeliveryDestnationCode</COLUMN_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
         <ORDINAL_POSITION>19</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>nvarchar</DATA_TYPE>
@@ -60710,6 +61297,29 @@
         <DATA_TYPE>nvarchar</DATA_TYPE>
         <CHARACTER_MAXIMUM_LENGTH>200</CHARACTER_MAXIMUM_LENGTH>
         <CHARACTER_OCTET_LENGTH>400</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>TSMForcastImport</TABLE_NAME>
+        <COLUMN_NAME>DeliveryDateOld</COLUMN_NAME>
+        <ORDINAL_POSITION>19</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>datetime</DATA_TYPE>
+        <DATETIME_PRECISION>3</DATETIME_PRECISION>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>TSMForcastImport</TABLE_NAME>
+        <COLUMN_NAME>Condition</COLUMN_NAME>
+        <ORDINAL_POSITION>20</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
         <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
         <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
       </Columns>
@@ -63087,7 +63697,7 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>OrdersForcast</TABLE_NAME>
-        <COLUMN_NAME>DeliveryDestnationCode</COLUMN_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
         <ORDINAL_POSITION>21</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>nvarchar</DATA_TYPE>
@@ -63544,7 +64154,7 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>HATCForcastImport</TABLE_NAME>
-        <COLUMN_NAME>DeliveryDestnationCode</COLUMN_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
         <ORDINAL_POSITION>19</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>nvarchar</DATA_TYPE>
@@ -64709,12 +65319,25 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>AATForcastImport</TABLE_NAME>
-        <COLUMN_NAME>DeliveryDestnationCode</COLUMN_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
         <ORDINAL_POSITION>18</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>nvarchar</DATA_TYPE>
         <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
         <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>AATForcastImport</TABLE_NAME>
+        <COLUMN_NAME>Filename</COLUMN_NAME>
+        <ORDINAL_POSITION>19</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>-1</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>-1</CHARACTER_OCTET_LENGTH>
         <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
         <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
       </Columns>
@@ -65369,7 +65992,7 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>MMTHForcastImport</TABLE_NAME>
-        <COLUMN_NAME>DeliveryDestnationCode</COLUMN_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
         <ORDINAL_POSITION>18</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
         <DATA_TYPE>nvarchar</DATA_TYPE>

@@ -68,12 +68,15 @@ public partial class Controls_IMCTForcastTemplate : System.Web.UI.UserControl
                             forcast.OrderBy = OrderBy;
                             forcast.DeliveryDestination = DeliveryDestination + "-" + locCode;
                             forcast.CustomerMatCode = CusMatCode;
-                            forcast.SAPCode = materialTemp[0];
-                            forcast.PartsDevision = materialTemp[1];
-                            forcast.DeliveryDestnationCode = materialTemp[2];
-                            forcast.Key1 = materialTemp[3];
-                            forcast.Key2 = materialTemp[4];
-                            forcast.Key3 = materialTemp[5];
+                            if (materialTemp.Length > 1)
+                            {
+                                forcast.SAPCode = materialTemp[0];
+                                forcast.PartsDevision = materialTemp[1];
+                                forcast.DeliveryDestinationCode = materialTemp[2];
+                                forcast.Key1 = materialTemp[3];
+                                forcast.Key2 = materialTemp[4];
+                                forcast.Key3 = materialTemp[5];
+                            }                            
                             forcast.CustomerPO = "";
                             forcast.ReliabilityDevision = "F";
                             forcast.Unit = "ST";
@@ -84,11 +87,9 @@ public partial class Controls_IMCTForcastTemplate : System.Web.UI.UserControl
                             forcast.Insert();
                             subPointDate += 8;
                             subPointQty += 6;
-
                         }
                         startPointDate += 100;
                         startPointQty += 100;
-
                     }
 
                 }

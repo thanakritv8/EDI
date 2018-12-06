@@ -61,7 +61,7 @@ namespace MyCompany.Models
         private string _statusCode;
         
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
-        private string _deliveryDestnationCode;
+        private string _deliveryDestinationCode;
         
         public MMTHForcastImportModel()
         {
@@ -311,16 +311,16 @@ namespace MyCompany.Models
         }
         
         [System.ComponentModel.DataObjectField(false, false, true)]
-        public string DeliveryDestnationCode
+        public string DeliveryDestinationCode
         {
             get
             {
-                return _deliveryDestnationCode;
+                return _deliveryDestinationCode;
             }
             set
             {
-                _deliveryDestnationCode = value;
-                UpdateFieldValue("DeliveryDestnationCode", value);
+                _deliveryDestinationCode = value;
+                UpdateFieldValue("DeliveryDestinationCode", value);
             }
         }
     }
@@ -347,9 +347,9 @@ namespace MyCompany.Models
                     string sAPCode, 
                     decimal? fileId, 
                     string statusCode, 
-                    string deliveryDestnationCode)
+                    string deliveryDestinationCode)
         {
-            return new MMTHForcastImportFactory().Select(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, fileId, statusCode, deliveryDestnationCode);
+            return new MMTHForcastImportFactory().Select(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, fileId, statusCode, deliveryDestinationCode);
         }
         
         public static List<MyCompany.Models.MMTHForcastImport> Select(string filter, string sort, string dataView, params System.Object[] parameters)
@@ -461,7 +461,7 @@ namespace MyCompany.Models
                     string sAPCode, 
                     decimal? fileId, 
                     string statusCode, 
-                    string deliveryDestnationCode, 
+                    string deliveryDestinationCode, 
                     string sort, 
                     int maximumRows, 
                     int startRowIndex)
@@ -501,8 +501,8 @@ namespace MyCompany.Models
             	filter.Add(("FileId:=" + fileId.Value.ToString()));
             if (!(String.IsNullOrEmpty(statusCode)))
             	filter.Add(("StatusCode:*" + statusCode));
-            if (!(String.IsNullOrEmpty(deliveryDestnationCode)))
-            	filter.Add(("DeliveryDestnationCode:*" + deliveryDestnationCode));
+            if (!(String.IsNullOrEmpty(deliveryDestinationCode)))
+            	filter.Add(("DeliveryDestinationCode:*" + deliveryDestinationCode));
             PageRequest request = new PageRequest((startRowIndex / maximumRows), maximumRows, sort, filter.ToArray());
             request.MetadataFilter = new string[] {
                     "fields"};
@@ -528,13 +528,13 @@ namespace MyCompany.Models
                     string sAPCode, 
                     decimal? fileId, 
                     string statusCode, 
-                    string deliveryDestnationCode, 
+                    string deliveryDestinationCode, 
                     string sort, 
                     int maximumRows, 
                     int startRowIndex, 
                     string dataView)
         {
-            PageRequest request = CreateRequest(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, fileId, statusCode, deliveryDestnationCode, sort, maximumRows, startRowIndex);
+            PageRequest request = CreateRequest(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, fileId, statusCode, deliveryDestinationCode, sort, maximumRows, startRowIndex);
             request.RequiresMetaData = true;
             request.MetadataFilter = new string[] {
                     "fields"};
@@ -560,13 +560,13 @@ namespace MyCompany.Models
                     string sAPCode, 
                     decimal? fileId, 
                     string statusCode, 
-                    string deliveryDestnationCode, 
+                    string deliveryDestinationCode, 
                     string sort, 
                     int maximumRows, 
                     int startRowIndex, 
                     string dataView)
         {
-            PageRequest request = CreateRequest(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, fileId, statusCode, deliveryDestnationCode, sort, -1, startRowIndex);
+            PageRequest request = CreateRequest(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, fileId, statusCode, deliveryDestinationCode, sort, -1, startRowIndex);
             request.RequiresMetaData = false;
             request.MetadataFilter = new string[] {
                     "fields"};
@@ -594,14 +594,14 @@ namespace MyCompany.Models
                     string sAPCode, 
                     decimal? fileId, 
                     string statusCode, 
-                    string deliveryDestnationCode)
+                    string deliveryDestinationCode)
         {
-            return Select(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, fileId, statusCode, deliveryDestnationCode, null, Int32.MaxValue, 0, SelectView);
+            return Select(autoId, orderBy, deliveryDestination, customerMatCode, partsDevision, customerPO, key1, key2, key3, reliabilityDevision, deliveryDate, quantity, unit, plngPeriod, sAPCode, fileId, statusCode, deliveryDestinationCode, null, Int32.MaxValue, 0, SelectView);
         }
         
         public List<MyCompany.Models.MMTHForcastImport> Select(MyCompany.Models.MMTHForcastImport qbe)
         {
-            return Select(qbe.AutoId, qbe.OrderBy, qbe.DeliveryDestination, qbe.CustomerMatCode, qbe.PartsDevision, qbe.CustomerPO, qbe.Key1, qbe.Key2, qbe.Key3, qbe.ReliabilityDevision, qbe.DeliveryDate, qbe.Quantity, qbe.Unit, qbe.PlngPeriod, qbe.SAPCode, qbe.FileId, qbe.StatusCode, qbe.DeliveryDestnationCode);
+            return Select(qbe.AutoId, qbe.OrderBy, qbe.DeliveryDestination, qbe.CustomerMatCode, qbe.PartsDevision, qbe.CustomerPO, qbe.Key1, qbe.Key2, qbe.Key3, qbe.ReliabilityDevision, qbe.DeliveryDate, qbe.Quantity, qbe.Unit, qbe.PlngPeriod, qbe.SAPCode, qbe.FileId, qbe.StatusCode, qbe.DeliveryDestinationCode);
         }
         
         public List<MyCompany.Models.MMTHForcastImport> Select(string filter, BusinessObjectParameters parameters)
@@ -663,7 +663,7 @@ namespace MyCompany.Models
             values.Add(new FieldValue("SAPCode", original_MMTHForcastImport.SAPCode, theMMTHForcastImport.SAPCode));
             values.Add(new FieldValue("FileId", original_MMTHForcastImport.FileId, theMMTHForcastImport.FileId));
             values.Add(new FieldValue("StatusCode", original_MMTHForcastImport.StatusCode, theMMTHForcastImport.StatusCode));
-            values.Add(new FieldValue("DeliveryDestnationCode", original_MMTHForcastImport.DeliveryDestnationCode, theMMTHForcastImport.DeliveryDestnationCode));
+            values.Add(new FieldValue("DeliveryDestinationCode", original_MMTHForcastImport.DeliveryDestinationCode, theMMTHForcastImport.DeliveryDestinationCode));
             return values.ToArray();
         }
         

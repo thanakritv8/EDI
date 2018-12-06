@@ -21,6 +21,8 @@ select
 	,"THMForcastImport"."SAPCode" "SAPCode"
 	,"THMForcastImport"."FileId" "FileId"
 	,"THMForcastImport"."StatusCode" "StatusCode"
+	,"THMForcastImport"."FileName" "FileName"
+	,"THMForcastImport"."DeliveryDestinationCode" "DeliveryDestinationCode"
 from "dbo"."THMForcastImport" "THMForcastImport"
 ]]></text>
     </command>
@@ -49,6 +51,8 @@ from "dbo"."THMForcastImport" "THMForcastImport"
     <field name="SAPCode" type="String" label="SAP Code" length="50" />
     <field name="FileId" type="Decimal" label="File#" />
     <field name="StatusCode" type="String" label="Status Code" length="100" />
+    <field name="FileName" type="String" allowQBE="false" allowSorting="false" label="File Name" />
+    <field name="DeliveryDestinationCode" type="String" label="Delivery Destination Code" length="50" />
   </fields>
   <views>
     <view id="grid1" type="Grid" commandId="command1" label="THM Forcast Import">
@@ -70,6 +74,8 @@ from "dbo"."THMForcastImport" "THMForcastImport"
         <dataField fieldName="SAPCode" columns="50" />
         <dataField fieldName="FileId" columns="15" />
         <dataField fieldName="StatusCode" />
+        <dataField fieldName="FileName" rows="5" />
+        <dataField fieldName="DeliveryDestinationCode" columns="50" />
       </dataFields>
     </view>
     <view id="editForm1" type="Form" commandId="command1" label="Review THM Forcast Import">
@@ -94,6 +100,8 @@ from "dbo"."THMForcastImport" "THMForcastImport"
             <dataField fieldName="SAPCode" columns="50" />
             <dataField fieldName="FileId" columns="15" />
             <dataField fieldName="StatusCode" />
+            <dataField fieldName="FileName" rows="5" />
+            <dataField fieldName="DeliveryDestinationCode" columns="50" />
           </dataFields>
         </category>
       </categories>
@@ -120,6 +128,8 @@ from "dbo"."THMForcastImport" "THMForcastImport"
             <dataField fieldName="SAPCode" columns="50" />
             <dataField fieldName="FileId" columns="15" />
             <dataField fieldName="StatusCode" />
+            <dataField fieldName="FileName" rows="5" />
+            <dataField fieldName="DeliveryDestinationCode" columns="50" />
           </dataFields>
         </category>
       </categories>
@@ -155,27 +165,11 @@ from "dbo"."THMForcastImport" "THMForcastImport"
       <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
       <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
     </actionGroup>
-    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
-      <action id="a1" commandName="ExportCsv" />
-      <action id="a2" />
-      <action id="a3" commandName="ExportRowset" />
-      <action id="a4" commandName="ExportRss" />
-      <action id="a5" />
-      <action id="a6" commandName="Import" commandArgument="createForm1" />
-      <action id="a7" commandName="DataSheet" />
-      <action id="a8" commandName="Grid" />
-    </actionGroup>
     <actionGroup id="ag6" scope="ActionBar" headerText="Record">
       <action id="a1" whenLastCommandName="Edit" commandName="Update" />
       <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
       <action id="a3" whenLastCommandName="New" commandName="Insert" />
       <action id="a4" whenLastCommandName="New" commandName="Cancel" />
-    </actionGroup>
-    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
-      <action id="a1" commandName="ReportAsPdf" />
-      <action id="a2" commandName="ReportAsImage" />
-      <action id="a3" commandName="ReportAsExcel" />
-      <action id="a4" commandName="ReportAsWord" />
     </actionGroup>
     <actionGroup id="ag8" scope="Row">
       <action id="a4" whenLastCommandName="Edit" commandName="Update" />
@@ -184,4 +178,8 @@ from "dbo"."THMForcastImport" "THMForcastImport"
       <action id="a7" whenLastCommandName="New" commandName="Cancel" />
     </actionGroup>
   </actions>
+  <businessRules>
+    <rule id="r100" commandName="Custom" commandArgument="Execute" type="Sql" phase="Execute"><![CDATA[EXEC sp_THM_Forcast_Execute @Session_UserName]]></rule>
+    <rule id="r101" commandName="Custom" commandArgument="ClearData" type="Sql" phase="Execute"><![CDATA[EXEC sp_THM_Forcast_ClearData]]></rule>
+  </businessRules>
 </dataController>

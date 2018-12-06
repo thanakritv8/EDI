@@ -10,7 +10,8 @@
                 <asp:Label ID="Label1" runat="server" Text="Delivery Date :"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="TextBox1" runat="server" Text="2018-10-15" class="date"></asp:TextBox>
+                
+                <asp:TextBox ID="TextBox1" runat="server" Text="2018-10-15" class="dateStart"></asp:TextBox>
                 <%--  <act:CalendarExtender ID="TextBox1_CalendarExtender" runat="server" 
                     TargetControlID="TextBox1">
                 </act:CalendarExtender>--%>
@@ -19,7 +20,7 @@
                 To
             </td>
             <td>
-                <asp:TextBox ID="TextBox2" runat="server" Text="2018-10-24" class="date"></asp:TextBox>
+                <asp:TextBox ID="TextBox2" runat="server" Text="2018-10-24" class="dateEnd"></asp:TextBox>
                 <%-- <act:CalendarExtender ID="TextBox2_CalendarExtender" runat="server" 
                     TargetControlID="TextBox2">
                 </act:CalendarExtender>--%>
@@ -79,11 +80,23 @@
 </div>
 
 <script type="text/javascript">
-     //$(function () {
-     jQuery(document).ready(function () {
-         $('.date').datepicker({ dateFormat: 'yy-mm-dd' });
-         $('.date').on('change', function () {
+    //$(function () {
+    var d = new Date();
+    jQuery(document).ready(function () {
+        $('.dateStart').datepicker({ dateFormat: 'yyyy-MM-dd' });
+        $('.dateEnd').datepicker({ dateFormat: 'yyyy-MM-dd' });
+        $('.dateStart').on('change', function () {
+            var d1 = new Date(document.getElementById('<%= TextBox1.ClientID %>').value.substring(4));
+            document.getElementById('<%=TextBox1.ClientID %>').value = d1.format('yyyy-MM-dd');
+        });
+        $('.dateEnd').on('change', function () {
+            var d2 = new Date(document.getElementById('<%= TextBox2.ClientID %>').value.substring(4));
+            document.getElementById('<%=TextBox2.ClientID %>').value = d2.format('yyyy-MM-dd');
 
-         });         
-     });
+
+        });     
+        document.getElementById('<%=TextBox1.ClientID %>').value = d.format('yyyy-MM-dd');
+        document.getElementById('<%=TextBox2.ClientID %>').value = d.format('yyyy-MM-dd');
+
+    });
 </script>
