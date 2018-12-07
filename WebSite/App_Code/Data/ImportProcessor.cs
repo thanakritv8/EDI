@@ -18,85 +18,85 @@ using System.Collections;
 
 namespace MyCompany.Data
 {
-    public class ImportMapDictionary : SortedDictionary<int, DataField>
+	public class ImportMapDictionary : SortedDictionary<int, DataField>
     {
     }
-
+    
     public class ImportLookupDictionary : SortedDictionary<string, DataField>
     {
     }
-
+    
     public partial class ImportProcessor : ImportProcessorBase
     {
     }
-
+    
     public partial class CsvImportProcessor : ImportProcessorBase
     {
-
+        
         public override IDataReader OpenRead(string fileName, string selectClause)
         {
             return new CsvReader(new StreamReader(fileName, true), true);
         }
-
+        
         public override int CountRecords(string fileName)
         {
             int count = 0;
             using (CsvReader reader = new CsvReader(new StreamReader(fileName), true))
-                while (reader.ReadNextRecord())
-                    count++;
-            return count;
+            	while (reader.ReadNextRecord())
+                	count++;
+                return count;
         }
     }
-
+    
     public partial class ImportProcessorFactory : ImportProcessorFactoryBase
     {
     }
-
+    
     public class ImportProcessorFactoryBase
     {
-
+        
         public virtual ImportProcessorBase CreateProcessor(string fileName)
         {
             string extension = Path.GetExtension(fileName).ToLower();
             if (extension.Contains(".xls") || extension.Contains(".xlsx"))
-                return new ImportProcessor();
+            	return new ImportProcessor();
             if (extension.Contains(".csv") || extension.Contains(".txt"))
-                return new CsvImportProcessor();
+            	return new CsvImportProcessor();
             throw new Exception(String.Format("The format of file <b>{0}</b> is not supported.", Path.GetFileName(fileName)));
         }
-
+        
         public static ImportProcessorBase Create(string fileName)
         {
             ImportProcessorFactoryBase factory = new ImportProcessorFactory();
             return factory.CreateProcessor(fileName);
         }
     }
-
+    
     public class ImportProcessorBase
     {
-
+        
         public ImportProcessorBase()
         {
         }
-
+        
         public static string SharedTempPath
         {
             get
             {
                 string p = WebConfigurationManager.AppSettings["SharedTempPath"];
                 if (String.IsNullOrEmpty(p))
-                    p = Path.GetTempPath();
+                	p = Path.GetTempPath();
                 if (!(Path.IsPathRooted(p)))
-                    p = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, p);
+                	p = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, p);
                 return p;
             }
         }
-
+        
         public static void Execute(ActionArgs args)
         {
             Process(args);
         }
-
+        
         private static void Process(object args)
         {
             List<string> arguments = new List<string>(((ActionArgs)(args)).CommandArgument.Split(';'));
@@ -116,16 +116,16 @@ namespace MyCompany.Data
             finally
             {
                 if (File.Exists(fileName))
-                    try
+                	try
                     {
                         File.Delete(fileName);
                     }
-                    catch (Exception)
+                    catch (Exception )
                     {
                     }
             }
         }
-
+        
         public virtual IDataReader OpenRead(string fileName, string selectClause)
         {
             string extension = Path.GetExtension(fileName).ToLower();
@@ -139,13 +139,13 @@ namespace MyCompany.Data
                 tableName = Path.GetFileName(fileName);
             }
             else
-                if (extension == ".xls")
+            	if (extension == ".xls")
                 {
                     connectionString["Extended Properties"] = "Excel 8.0;HDR=Yes;IMEX=1";
                     connectionString.DataSource = fileName;
                 }
                 else
-                    if (extension == ".xlsx")
+                	if (extension == ".xlsx")
                     {
                         connectionString["Extended Properties"] = "Excel 12.0 Xml;HDR=YES";
                         connectionString.DataSource = fileName;
@@ -163,13 +163,13 @@ namespace MyCompany.Data
                 command.CommandText = String.Format("select {0} from [{1}]", selectClause, tableName);
                 return command.ExecuteReader(CommandBehavior.CloseConnection);
             }
-            catch (Exception)
+            catch (Exception )
             {
                 connection.Close();
                 throw;
             }
         }
-
+        
         private void EnumerateFields(IDataReader reader, ViewPage page, ImportMapDictionary map, ImportLookupDictionary lookups, List<string> userMapping)
         {
             List<String> mappedFields = new List<string>();
@@ -183,21 +183,21 @@ namespace MyCompany.Data
                     string mappedFieldName = userMapping[i];
                     autoDetect = String.IsNullOrEmpty(mappedFieldName);
                     if (!(autoDetect))
-                        fieldName = mappedFieldName;
+                    	fieldName = mappedFieldName;
                 }
                 if (autoDetect)
-                    foreach (DataField f in page.Fields)
-                        if (fieldName.Equals(f.HeaderText, StringComparison.CurrentCultureIgnoreCase) || fieldName.Equals(f.Label, StringComparison.CurrentCultureIgnoreCase))
+                	foreach (DataField f in page.Fields)
+                    	if (fieldName.Equals(f.HeaderText, StringComparison.CurrentCultureIgnoreCase) || fieldName.Equals(f.Label, StringComparison.CurrentCultureIgnoreCase))
                         {
                             field = f;
                             break;
                         }
                 if (field == null)
-                    field = page.FindField(fieldName);
+                	field = page.FindField(fieldName);
                 if (field != null)
                 {
                     if (!(String.IsNullOrEmpty(field.AliasName)))
-                        field = page.FindField(field.AliasName);
+                    	field = page.FindField(field.AliasName);
                     if (!(field.ReadOnly))
                     {
                         if (!(mappedFields.Contains(field.Name)))
@@ -207,8 +207,8 @@ namespace MyCompany.Data
                         }
                     }
                     else
-                        foreach (DataField f in page.Fields)
-                            if (f.AliasName == field.Name)
+                    	foreach (DataField f in page.Fields)
+                        	if (f.AliasName == field.Name)
                             {
                                 map.Add(i, field);
                                 lookups.Add(field.Name, f);
@@ -217,7 +217,7 @@ namespace MyCompany.Data
                 }
             }
         }
-
+        
         public void ResolveLookups(ImportLookupDictionary lookups)
         {
             foreach (string fieldName in lookups.Keys)
@@ -231,15 +231,15 @@ namespace MyCompany.Data
                     lookupRequest.RequiresMetaData = true;
                     ViewPage lp = ControllerFactory.CreateDataController().GetPage(lookupRequest.Controller, lookupRequest.View, lookupRequest);
                     if (String.IsNullOrEmpty(lookupField.ItemsDataValueField))
-                        foreach (DataField f in lp.Fields)
-                            if (f.IsPrimaryKey)
+                    	foreach (DataField f in lp.Fields)
+                        	if (f.IsPrimaryKey)
                             {
                                 lookupField.ItemsDataValueField = f.Name;
                                 break;
                             }
                     if (String.IsNullOrEmpty(lookupField.ItemsDataTextField))
-                        foreach (DataField f in lp.Fields)
-                            if ((!(f.IsPrimaryKey) && !(f.Hidden)) && (!(f.AllowNulls) || (f.Type == "String")))
+                    	foreach (DataField f in lp.Fields)
+                        	if ((!(f.IsPrimaryKey) && !(f.Hidden)) && (!(f.AllowNulls) || (f.Type == "String")))
                             {
                                 lookupField.ItemsDataTextField = f.Name;
                                 break;
@@ -247,15 +247,15 @@ namespace MyCompany.Data
                 }
             }
         }
-
+        
         protected virtual void BeforeProcess(string fileName, string controller, string view, string notify, List<string> userMapping)
         {
         }
-
+        
         protected virtual void AfterProcess(string fileName, string controller, string view, string notify, List<string> userMapping)
         {
         }
-
+        
         public virtual void Process(string fileName, string controller, string view, string notify, List<string> userMapping)
         {
             BeforeProcess(fileName, controller, view, notify, userMapping);
@@ -282,8 +282,8 @@ namespace MyCompany.Data
             Regex numberCleanupRegex = new Regex(String.Format("[^\\d\\{0}\\{1}\\{2}]", nfi.CurrencyDecimalSeparator, nfi.NegativeSign, nfi.NumberDecimalSeparator));
             SortedDictionary<string, object> externalFilterValues = new SortedDictionary<string, object>();
             if (ActionArgs.Current.ExternalFilter != null)
-                foreach (FieldValue fv in ActionArgs.Current.ExternalFilter)
-                    externalFilterValues[fv.Name] = fv.Value;
+            	foreach (FieldValue fv in ActionArgs.Current.ExternalFilter)
+                	externalFilterValues[fv.Name] = fv.Value;
             // prepare default values
             PageRequest newRequest = new PageRequest();
             newRequest.RequiresMetaData = true;
@@ -295,7 +295,7 @@ namespace MyCompany.Data
             ViewPage newPage = ControllerFactory.CreateDataController().GetPage(controller, view, newRequest);
             SortedDictionary<string, object> defaultValues = new SortedDictionary<string, object>();
             for (int i = 0; (i < newPage.Fields.Count); i++)
-                defaultValues[newPage.Fields[i].Name] = newPage.NewRow[i];
+            	defaultValues[newPage.Fields[i].Name] = newPage.NewRow[i];
             // process data rows
             while (reader.Read())
             {
@@ -311,29 +311,29 @@ namespace MyCompany.Data
                     DataField field = map[index];
                     object v = reader[index];
                     if (String.Empty.Equals(v))
-                        v = DBNull.Value;
+                    	v = DBNull.Value;
                     if (DBNull.Value.Equals(v))
-                        v = defaultValues[field.Name];
+                    	v = defaultValues[field.Name];
                     else
-                        if (field.Type != "String" && (v is string))
+                    	if (field.Type != "String" && (v is string))
                         {
                             string s = ((string)(v));
                             if (field.Type == "Boolean")
-                                v = s.ToLower();
+                            	v = s.ToLower();
                             else
-                                if (!(field.Type.StartsWith("Date")) && field.Type != "Time")
-                                    v = numberCleanupRegex.Replace(s, String.Empty);
+                            	if (!(field.Type.StartsWith("Date")) && field.Type != "Time")
+                                	v = numberCleanupRegex.Replace(s, String.Empty);
                         }
                     if (v != null)
                     {
                         DataField lookupField = null;
                         if (lookups.TryGetValue(field.Name, out lookupField))
-                            if (lookupField.Items.Count > 0)
+                        	if (lookupField.Items.Count > 0)
                             {
                                 // copy static values
                                 foreach (object[] item in lookupField.Items)
-                                    if (Convert.ToString(item[1]).Equals(Convert.ToString(v), StringComparison.CurrentCultureIgnoreCase))
-                                        values.Add(new FieldValue(lookupField.Name, item[0]));
+                                	if (Convert.ToString(item[1]).Equals(Convert.ToString(v), StringComparison.CurrentCultureIgnoreCase))
+                                    	values.Add(new FieldValue(lookupField.Name, item[0]));
                             }
                             else
                             {
@@ -346,10 +346,10 @@ namespace MyCompany.Data
                                         String.Format("{0}:={1}{2}", lookupField.ItemsDataTextField, v, Convert.ToChar(0))};
                                 ViewPage vp = ControllerFactory.CreateDataController().GetPage(lookupRequest.Controller, lookupRequest.View, lookupRequest);
                                 if (vp.Rows.Count > 0)
-                                    values.Add(new FieldValue(lookupField.Name, vp.Rows[0][vp.Fields.IndexOf(vp.FindField(lookupField.ItemsDataValueField))]));
+                                	values.Add(new FieldValue(lookupField.Name, vp.Rows[0][vp.Fields.IndexOf(vp.FindField(lookupField.ItemsDataValueField))]));
                             }
                         else
-                            values.Add(new FieldValue(field.Name, v));
+                        	values.Add(new FieldValue(field.Name, v));
                         if (values.Count > 0)
                         {
                             FieldValue lastValue = values[(values.Count - 1)];
@@ -361,7 +361,7 @@ namespace MyCompany.Data
                 if (values.Count > 0)
                 {
                     foreach (DataField field in page.Fields)
-                        if (!(valueDictionary.ContainsKey(field.Name)))
+                    	if (!(valueDictionary.ContainsKey(field.Name)))
                         {
                             FieldValue missingField = new FieldValue(field.Name);
                             object missingValue = null;
@@ -381,10 +381,10 @@ namespace MyCompany.Data
                             log.WriteLine("{0:s} Error importing record #{1}.", DateTime.Now, recordCount);
                             log.WriteLine();
                             foreach (string s in r.Errors)
-                                log.WriteLine(s);
+                            	log.WriteLine(s);
                             foreach (FieldValue v in values)
-                                if (v.Modified)
-                                    log.WriteLine("{0}={1};", v.Name, v.Value);
+                            	if (v.Modified)
+                                	log.WriteLine("{0}={1};", v.Name, v.Value);
                             log.WriteLine();
                             errorCount++;
                         }
@@ -400,11 +400,11 @@ namespace MyCompany.Data
             log.WriteLine("{0:s} Processed {1} records. Detected {2} errors.", DateTime.Now, recordCount, errorCount);
             log.Close();
             if (!(String.IsNullOrEmpty(notify)))
-                ReportErrors(controller, notify, logFileName);
+            	ReportErrors(controller, notify, logFileName);
             File.Delete(logFileName);
             AfterProcess(fileName, controller, view, notify, userMapping);
         }
-
+        
         protected virtual void ReportErrors(string controller, string recipients, string logFileName)
         {
             string[] recipientsList = recipients.Split(',');
@@ -422,18 +422,18 @@ namespace MyCompany.Data
                         message.Body = File.ReadAllText(logFileName);
                         client.Send(message);
                     }
-                    catch (Exception)
+                    catch (Exception )
                     {
                     }
                 }
             }
         }
-
+        
         protected virtual bool HandleError(ActionResult r, ActionArgs args)
         {
             return false;
         }
-
+        
         public virtual int CountRecords(string fileName)
         {
             IDataReader reader = OpenRead(fileName, "count(*)");
@@ -447,17 +447,17 @@ namespace MyCompany.Data
                 reader.Close();
             }
         }
-
+        
         public virtual string MapFieldName(DataField field)
         {
             string s = field.HeaderText;
             if (String.IsNullOrEmpty(s))
-                s = field.Label;
+            	s = field.Label;
             if (String.IsNullOrEmpty(s))
-                s = field.Name;
+            	s = field.Name;
             return s;
         }
-
+        
         public string CreateListOfAvailableFields(string controller, string view)
         {
             PageRequest request = new PageRequest();
@@ -467,17 +467,17 @@ namespace MyCompany.Data
             ViewPage page = ControllerFactory.CreateDataController().GetPage(controller, view, request);
             StringBuilder sb = new StringBuilder();
             foreach (DataField f in page.Fields)
-                if (!(f.Hidden) && !(f.ReadOnly))
+            	if (!(f.Hidden) && !(f.ReadOnly))
                 {
                     sb.AppendFormat("{0}=", f.Name);
                     DataField field = f;
                     if (!(String.IsNullOrEmpty(f.AliasName)))
-                        field = page.FindField(f.AliasName);
+                    	field = page.FindField(f.AliasName);
                     sb.AppendLine(MapFieldName(field));
                 }
             return sb.ToString();
         }
-
+        
         public string CreateInitialFieldMap(string fileName, string controller, string view)
         {
             // retreive metadata
@@ -498,107 +498,16 @@ namespace MyCompany.Data
                 {
                     sb.AppendFormat("{0}=", reader.GetName(i));
                     DataField field = null;
-                    if (controller.Equals("CustomerImport"))
+                    if (map.TryGetValue(i, out field))
                     {
-                        switch (i)
-                        {
-                            case 1:
-                                sb.Append("Code");
+                        string fieldName = field.Name;
+                        foreach (DataField lookupField in lookups.Values)
+                        	if (lookupField.AliasName == field.Name)
+                            {
+                                fieldName = lookupField.Name;
                                 break;
-                            case 3:
-                                sb.Append("Name");
-                                break;
-                            case 4:
-                                sb.Append("Code2");
-                                break;
-                            case 5:
-                                sb.Append("Code3");
-                                break;
-                            case 7:
-                                sb.Append("LocationCode");
-                                break;
-                            case 8:
-                                sb.Append("PlantCode");
-                                break;
-                            case 9:
-                                sb.Append("ZIPCode");
-                                break;
-                            case 10:
-                                sb.Append("State");
-                                break;
-                            case 11:
-                                sb.Append("City");
-                                break;
-                            case 12:
-                                sb.Append("Address");
-                                break;
-                            case 25:
-                                sb.Append("Country");
-                                break;
-                            case 42:
-                                sb.Append("Phone");
-                                break;
-                            case 45:
-                                sb.Append("Fax");
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                    else if (controller.Equals("MaterialNumberImport"))
-                    {
-                        switch (i)
-                        {
-                            case 1:
-                                sb.Append("SoldtoParty");
-                                break;
-                            case 2:
-                                sb.Append("ShiptoParty");
-                                break;
-                            case 3:
-                                sb.Append("MassPartsIDFlag");
-                                break;
-                            case 4:
-                                sb.Append("ExpansionKey1");
-                                break;
-                            case 5:
-                                sb.Append("ExpansionKey2");
-                                break;
-                            case 6:
-                                sb.Append("ExpansionKey3");
-                                break;
-                            case 7:
-                                sb.Append("CustomerItemNumber");
-                                break;
-                            case 8:
-                                sb.Append("VaridityDateTo");
-                                break;
-                            case 9:
-                                sb.Append("ValiditydateFrom");
-                                break;
-                            case 10:
-                                sb.Append("PLANT");
-                                break;
-                            case 11:
-                                sb.Append("MaterialNumber");
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                    else
-                    {
-                        if (map.TryGetValue(i, out field))
-                        {
-                            string fieldName = field.Name;
-                            foreach (DataField lookupField in lookups.Values)
-                                if (lookupField.AliasName == field.Name)
-                                {
-                                    fieldName = lookupField.Name;
-                                    break;
-                                }
-                            sb.Append(fieldName);
-                        }
+                            }
+                        sb.Append(fieldName);
                     }
                     sb.AppendLine();
                 }
@@ -610,7 +519,7 @@ namespace MyCompany.Data
             return sb.ToString();
         }
     }
-
+    
     /// Copyright (c) 2005 Sébastien Lorion
     /// MIT license (http://en.wikipedia.org/wiki/MIT_License)
     /// Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -628,113 +537,113 @@ namespace MyCompany.Data
     /// ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     public partial class CsvReader : IDataReader, IDisposable
     {
-
+        
         public const int DefaultBufferSize = 4096;
-
+        
         public const char DefaultDelimiter = ',';
-
+        
         public const char DefaultQuote = '\"';
-
+        
         public const char DefaultEscape = '\"';
-
+        
         public const char DefaultComment = '#';
-
+        
         private StringComparer _fieldHeaderComparer = StringComparer.CurrentCultureIgnoreCase;
-
+        
         private TextReader _reader;
-
+        
         private char _comment;
-
+        
         private char _escape;
-
+        
         private char _delimiter;
-
+        
         private char _quote;
-
+        
         private bool _hasHeaders;
-
+        
         private ValueTrimmingOptions _trimmingOptions;
-
+        
         private int _bufferSize;
-
+        
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private ParseErrorAction _defaultParseErrorAction;
-
+        
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private MissingFieldAction _missingFieldAction;
-
+        
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private bool _supportsMultiline;
-
+        
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private bool _skipEmptyLines;
-
+        
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private string _defaultHeaderName;
-
+        
         private int _fieldCount;
-
+        
         private bool _eof;
-
+        
         private string[] _fieldHeaders;
-
+        
         private Dictionary<string, int> _fieldHeaderIndexes;
-
+        
         private long _currentRecordIndex;
-
+        
         private bool _missingFieldFlag;
-
+        
         private bool _parseErrorFlag;
-
+        
         private bool _initialized;
-
+        
         private char[] _buffer;
-
+        
         private int _bufferLength;
-
+        
         private string[] _fields;
-
+        
         private int _nextFieldStart;
-
+        
         private int _nextFieldIndex;
-
+        
         private bool _eol;
-
+        
         private bool _firstRecordInCache;
-
+        
         private bool _isDisposed = false;
-
-        public CsvReader(TextReader reader, bool hasHeaders) :
-            this(reader, hasHeaders, DefaultDelimiter, DefaultQuote, DefaultEscape, DefaultComment, ValueTrimmingOptions.UnquotedOnly, DefaultBufferSize)
+        
+        public CsvReader(TextReader reader, bool hasHeaders) : 
+                this(reader, hasHeaders, DefaultDelimiter, DefaultQuote, DefaultEscape, DefaultComment, ValueTrimmingOptions.UnquotedOnly, DefaultBufferSize)
         {
         }
-
-        public CsvReader(TextReader reader, bool hasHeaders, int bufferSize) :
-            this(reader, hasHeaders, DefaultDelimiter, DefaultQuote, DefaultEscape, DefaultComment, ValueTrimmingOptions.UnquotedOnly, bufferSize)
+        
+        public CsvReader(TextReader reader, bool hasHeaders, int bufferSize) : 
+                this(reader, hasHeaders, DefaultDelimiter, DefaultQuote, DefaultEscape, DefaultComment, ValueTrimmingOptions.UnquotedOnly, bufferSize)
         {
         }
-
-        public CsvReader(TextReader reader, bool hasHeaders, char delimiter) :
-            this(reader, hasHeaders, delimiter, DefaultQuote, DefaultEscape, DefaultComment, ValueTrimmingOptions.UnquotedOnly, DefaultBufferSize)
+        
+        public CsvReader(TextReader reader, bool hasHeaders, char delimiter) : 
+                this(reader, hasHeaders, delimiter, DefaultQuote, DefaultEscape, DefaultComment, ValueTrimmingOptions.UnquotedOnly, DefaultBufferSize)
         {
         }
-
-        public CsvReader(TextReader reader, bool hasHeaders, char delimiter, int bufferSize) :
-            this(reader, hasHeaders, delimiter, DefaultQuote, DefaultEscape, DefaultComment, ValueTrimmingOptions.UnquotedOnly, bufferSize)
+        
+        public CsvReader(TextReader reader, bool hasHeaders, char delimiter, int bufferSize) : 
+                this(reader, hasHeaders, delimiter, DefaultQuote, DefaultEscape, DefaultComment, ValueTrimmingOptions.UnquotedOnly, bufferSize)
         {
         }
-
-        public CsvReader(TextReader reader, bool hasHeaders, char delimiter, char quote, char escape, char comment, ValueTrimmingOptions trimmingOptions) :
-            this(reader, hasHeaders, delimiter, quote, escape, comment, trimmingOptions, DefaultBufferSize)
+        
+        public CsvReader(TextReader reader, bool hasHeaders, char delimiter, char quote, char escape, char comment, ValueTrimmingOptions trimmingOptions) : 
+                this(reader, hasHeaders, delimiter, quote, escape, comment, trimmingOptions, DefaultBufferSize)
         {
         }
-
+        
         public CsvReader(TextReader reader, bool hasHeaders, char delimiter, char quote, char escape, char comment, ValueTrimmingOptions trimmingOptions, int bufferSize)
         {
             if (reader == null)
-                throw new ArgumentNullException("reader");
+            	throw new ArgumentNullException("reader");
             if (bufferSize <= 0)
-                throw new ArgumentOutOfRangeException("bufferSize", bufferSize, ExceptionMessage.BufferSizeTooSmall);
+            	throw new ArgumentOutOfRangeException("bufferSize", bufferSize, ExceptionMessage.BufferSizeTooSmall);
             _bufferSize = bufferSize;
             if (reader is StreamReader)
             {
@@ -742,7 +651,7 @@ namespace MyCompany.Data
                 if (stream.CanSeek)
                 {
                     if (stream.Length > 0)
-                        _bufferSize = ((int)(Math.Min(bufferSize, stream.Length)));
+                    	_bufferSize = ((int)(Math.Min(bufferSize, stream.Length)));
                 }
             }
             _reader = reader;
@@ -758,7 +667,7 @@ namespace MyCompany.Data
             _currentRecordIndex = -1;
             _defaultParseErrorAction = ParseErrorAction.RaiseEvent;
         }
-
+        
         public char Comment
         {
             get
@@ -766,7 +675,7 @@ namespace MyCompany.Data
                 return _comment;
             }
         }
-
+        
         public char Escape
         {
             get
@@ -774,7 +683,7 @@ namespace MyCompany.Data
                 return _escape;
             }
         }
-
+        
         public char Delimiter
         {
             get
@@ -782,7 +691,7 @@ namespace MyCompany.Data
                 return _delimiter;
             }
         }
-
+        
         public char Quote
         {
             get
@@ -790,7 +699,7 @@ namespace MyCompany.Data
                 return _quote;
             }
         }
-
+        
         public bool HasHeaders
         {
             get
@@ -798,7 +707,7 @@ namespace MyCompany.Data
                 return _hasHeaders;
             }
         }
-
+        
         public ValueTrimmingOptions TrimmingOptions
         {
             get
@@ -806,7 +715,7 @@ namespace MyCompany.Data
                 return _trimmingOptions;
             }
         }
-
+        
         public int BufferSize
         {
             get
@@ -814,7 +723,7 @@ namespace MyCompany.Data
                 return _bufferSize;
             }
         }
-
+        
         public ParseErrorAction DefaultParseErrorAction
         {
             get
@@ -826,7 +735,7 @@ namespace MyCompany.Data
                 this._defaultParseErrorAction = value;
             }
         }
-
+        
         public MissingFieldAction MissingFieldAction
         {
             get
@@ -838,7 +747,7 @@ namespace MyCompany.Data
                 this._missingFieldAction = value;
             }
         }
-
+        
         public bool SupportsMultiline
         {
             get
@@ -850,7 +759,7 @@ namespace MyCompany.Data
                 this._supportsMultiline = value;
             }
         }
-
+        
         public bool SkipEmptyLines
         {
             get
@@ -862,7 +771,7 @@ namespace MyCompany.Data
                 this._skipEmptyLines = value;
             }
         }
-
+        
         public string DefaultHeaderName
         {
             get
@@ -874,7 +783,7 @@ namespace MyCompany.Data
                 this._defaultHeaderName = value;
             }
         }
-
+        
         int IDataRecord.FieldCount
         {
             get
@@ -883,7 +792,7 @@ namespace MyCompany.Data
                 return _fieldCount;
             }
         }
-
+        
         public virtual bool EndOfStream
         {
             get
@@ -891,7 +800,7 @@ namespace MyCompany.Data
                 return _eof;
             }
         }
-
+        
         public long CurrentRecordIndex
         {
             get
@@ -899,7 +808,7 @@ namespace MyCompany.Data
                 return _currentRecordIndex;
             }
         }
-
+        
         public bool MissingFieldFlag
         {
             get
@@ -907,7 +816,7 @@ namespace MyCompany.Data
                 return _missingFieldFlag;
             }
         }
-
+        
         public bool ParseErrorFlag
         {
             get
@@ -915,42 +824,42 @@ namespace MyCompany.Data
                 return _parseErrorFlag;
             }
         }
-
+        
         public string this[int record, string field]
         {
             get
             {
                 if (!(MoveTo(record)))
-                    throw new InvalidOperationException(String.Format(CultureInfo.InvariantCulture, ExceptionMessage.CannotReadRecordAtIndex, record));
+                	throw new InvalidOperationException(String.Format(CultureInfo.InvariantCulture, ExceptionMessage.CannotReadRecordAtIndex, record));
                 return this[field];
             }
         }
-
+        
         public string this[int record, int field]
         {
             get
             {
                 if (!(MoveTo(record)))
-                    throw new InvalidOperationException(String.Format(CultureInfo.InvariantCulture, ExceptionMessage.CannotReadRecordAtIndex, record));
+                	throw new InvalidOperationException(String.Format(CultureInfo.InvariantCulture, ExceptionMessage.CannotReadRecordAtIndex, record));
                 return this[field];
             }
         }
-
+        
         public string this[string field]
         {
             get
             {
                 if (String.IsNullOrEmpty(field))
-                    throw new ArgumentNullException("field");
+                	throw new ArgumentNullException("field");
                 if (!(_hasHeaders))
-                    throw new InvalidOperationException(ExceptionMessage.NoHeaders);
+                	throw new InvalidOperationException(ExceptionMessage.NoHeaders);
                 int index = GetFieldIndex(field);
                 if (index < 0)
-                    throw new ArgumentException(String.Format(CultureInfo.InvariantCulture, ExceptionMessage.FieldHeaderNotFound, field), "field");
+                	throw new ArgumentException(String.Format(CultureInfo.InvariantCulture, ExceptionMessage.FieldHeaderNotFound, field), "field");
                 return this[index];
             }
         }
-
+        
         public virtual string this[int field]
         {
             get
@@ -958,7 +867,7 @@ namespace MyCompany.Data
                 return ReadField(field, false, false);
             }
         }
-
+        
         int IDataReader.RecordsAffected
         {
             get
@@ -966,7 +875,7 @@ namespace MyCompany.Data
                 return -1;
             }
         }
-
+        
         bool IDataReader.IsClosed
         {
             get
@@ -974,7 +883,7 @@ namespace MyCompany.Data
                 return _eof;
             }
         }
-
+        
         int IDataReader.Depth
         {
             get
@@ -983,7 +892,7 @@ namespace MyCompany.Data
                 return 0;
             }
         }
-
+        
         object IDataRecord.this[string name]
         {
             get
@@ -992,7 +901,7 @@ namespace MyCompany.Data
                 return this[name];
             }
         }
-
+        
         object IDataRecord.this[int i]
         {
             get
@@ -1001,7 +910,7 @@ namespace MyCompany.Data
                 return this[i];
             }
         }
-
+        
         public bool IsDisposed
         {
             get
@@ -1009,105 +918,105 @@ namespace MyCompany.Data
                 return _isDisposed;
             }
         }
-
+        
         public event EventHandler<ParseErrorEventArgs> ParseError;
-
+        
         public event EventHandler Disposed;
-
+        
         public string[] GetFieldHeaders()
         {
             EnsureInitialize();
             string[] fieldHeaders = new string[_fieldHeaders.Length];
             for (int i = 0; (i < fieldHeaders.Length); i++)
-                fieldHeaders[i] = _fieldHeaders[i];
+            	fieldHeaders[i] = _fieldHeaders[i];
             return fieldHeaders;
         }
-
+        
         protected virtual void OnParseError(ParseErrorEventArgs e)
         {
             EventHandler<ParseErrorEventArgs> handler = this.ParseError;
             if (handler != null)
-                handler(this, e);
+            	handler(this, e);
         }
-
+        
         private void EnsureInitialize()
         {
             if (!(_initialized))
-                this.ReadNextRecord(true, false);
+            	this.ReadNextRecord(true, false);
         }
-
+        
         public int GetFieldIndex(string header)
         {
             EnsureInitialize();
             int index;
             if ((_fieldHeaderIndexes != null) && _fieldHeaderIndexes.TryGetValue(header, out index))
-                return index;
+            	return index;
             else
-                return -1;
+            	return -1;
         }
-
+        
         public void CopyCurrentRecordTo(string[] array)
         {
             CopyCurrentRecordTo(array, 0);
         }
-
+        
         public void CopyCurrentRecordTo(string[] array, int index)
         {
             if (array == null)
-                throw new ArgumentNullException("array");
+            	throw new ArgumentNullException("array");
             if ((index < 0) || (index >= array.Length))
-                throw new ArgumentOutOfRangeException("index", index, String.Empty);
+            	throw new ArgumentOutOfRangeException("index", index, String.Empty);
             if ((_currentRecordIndex < 0) || !(_initialized))
-                throw new InvalidOperationException(ExceptionMessage.NoCurrentRecord);
+            	throw new InvalidOperationException(ExceptionMessage.NoCurrentRecord);
             if ((array.Length - index) < _fieldCount)
-                throw new ArgumentException(ExceptionMessage.NotEnoughSpaceInArray, "array");
+            	throw new ArgumentException(ExceptionMessage.NotEnoughSpaceInArray, "array");
             for (int i = 0; (i < _fieldCount); i++)
-                if (_parseErrorFlag)
-                    array[(index + i)] = null;
+            	if (_parseErrorFlag)
+                	array[(index + i)] = null;
                 else
-                    array[(index + i)] = this[i];
+                	array[(index + i)] = this[i];
         }
-
+        
         public string GetCurrentRawData()
         {
             if ((_buffer != null) & (_bufferLength > 0))
-                return new String(_buffer, 0, _bufferLength);
+            	return new String(_buffer, 0, _bufferLength);
             else
-                return String.Empty;
+            	return String.Empty;
         }
-
+        
         private bool IsWhiteSpace(char c)
         {
             if (c == _delimiter)
-                return false;
+            	return false;
             else
-                if (c <= Convert.ToChar(255))
-                    return ((c == ' ') || (c == '\t'));
+            	if (c <= Convert.ToChar(255))
+                	return ((c == ' ') || (c == '\t'));
                 else
-                    return (System.Globalization.CharUnicodeInfo.GetUnicodeCategory(c) == System.Globalization.UnicodeCategory.SpaceSeparator);
+                	return (System.Globalization.CharUnicodeInfo.GetUnicodeCategory(c) == System.Globalization.UnicodeCategory.SpaceSeparator);
         }
-
+        
         public virtual bool MoveTo(long record)
         {
             if (record < _currentRecordIndex)
-                return false;
+            	return false;
             long offset = (record - _currentRecordIndex);
             while (offset > 0)
             {
                 if (!(ReadNextRecord()))
-                    return false;
+                	return false;
                 offset--;
             }
             return true;
         }
-
+        
         private bool ParseNewLine(ref int pos)
         {
             if (pos == _bufferLength)
             {
                 pos = 0;
                 if (!(ReadBuffer()))
-                    return false;
+                	return false;
             }
             char c = _buffer[pos];
             if ((c == '\r') && !((_delimiter == '\r')))
@@ -1116,14 +1025,14 @@ namespace MyCompany.Data
                 if (pos < _bufferLength)
                 {
                     if (_buffer[pos] == '\n')
-                        pos++;
+                    	pos++;
                 }
                 else
-                    if (ReadBuffer())
-                        if (_buffer[0] == '\n')
-                            pos = 1;
+                	if (ReadBuffer())
+                    	if (_buffer[0] == '\n')
+                        	pos = 1;
                         else
-                            pos = 0;
+                        	pos = 0;
                 if (pos >= _bufferLength)
                 {
                     ReadBuffer();
@@ -1132,7 +1041,7 @@ namespace MyCompany.Data
                 return true;
             }
             else
-                if (c == '\n')
+            	if (c == '\n')
                 {
                     pos++;
                     if (pos >= _bufferLength)
@@ -1144,25 +1053,25 @@ namespace MyCompany.Data
                 }
             return false;
         }
-
+        
         bool IsNewLine(int pos)
         {
             char c = _buffer[pos];
             if (c == '\n')
-                return true;
+            	return true;
             if ((c == '\r') && !((_delimiter == '\r')))
-                return true;
+            	return true;
             return false;
         }
-
+        
         private bool ReadBuffer()
         {
             if (_eof)
-                return false;
+            	return false;
             CheckDisposed();
             _bufferLength = _reader.Read(_buffer, 0, _bufferSize);
             if (_bufferLength > 0)
-                return true;
+            	return true;
             else
             {
                 _eof = true;
@@ -1170,20 +1079,20 @@ namespace MyCompany.Data
                 return false;
             }
         }
-
+        
         private string ReadField(int field, bool initializing, bool discardValue)
         {
             if (!(initializing))
             {
                 if ((field < 0) || (field >= _fieldCount))
-                    throw new ArgumentOutOfRangeException("field", field, String.Format(CultureInfo.InvariantCulture, ExceptionMessage.FieldIndexOutOfRange, field));
+                	throw new ArgumentOutOfRangeException("field", field, String.Format(CultureInfo.InvariantCulture, ExceptionMessage.FieldIndexOutOfRange, field));
                 if (_currentRecordIndex < 0)
-                    throw new InvalidOperationException(ExceptionMessage.NoCurrentRecord);
+                	throw new InvalidOperationException(ExceptionMessage.NoCurrentRecord);
                 if (_fields[field] != null)
-                    return _fields[field];
+                	return _fields[field];
                 else
-                    if (_missingFieldFlag)
-                        return HandleMissingField(null, field, ref _nextFieldStart);
+                	if (_missingFieldFlag)
+                    	return HandleMissingField(null, field, ref _nextFieldStart);
             }
             CheckDisposed();
             int index = _nextFieldIndex;
@@ -1196,10 +1105,10 @@ namespace MyCompany.Data
                 }
                 string value = null;
                 if (_missingFieldFlag)
-                    value = HandleMissingField(value, index, ref _nextFieldStart);
+                	value = HandleMissingField(value, index, ref _nextFieldStart);
                 else
-                    if (_nextFieldStart == _bufferLength)
-                        if (index == field)
+                	if (_nextFieldStart == _bufferLength)
+                    	if (index == field)
                         {
                             if (!(discardValue))
                             {
@@ -1209,20 +1118,20 @@ namespace MyCompany.Data
                             _missingFieldFlag = true;
                         }
                         else
-                            value = HandleMissingField(value, index, ref _nextFieldStart);
+                        	value = HandleMissingField(value, index, ref _nextFieldStart);
                     else
                     {
                         if ((_trimmingOptions & ValueTrimmingOptions.UnquotedOnly) != 0)
-                            SkipWhiteSpaces(ref _nextFieldStart);
+                        	SkipWhiteSpaces(ref _nextFieldStart);
                         if (_eof)
                         {
                             value = String.Empty;
                             _fields[field] = value;
                             if (field < _fieldCount)
-                                _missingFieldFlag = true;
+                            	_missingFieldFlag = true;
                         }
                         else
-                            if (!((_buffer[_nextFieldStart] == _quote)))
+                        	if (!((_buffer[_nextFieldStart] == _quote)))
                             {
                                 int start = _nextFieldStart;
                                 int pos = _nextFieldStart;
@@ -1238,26 +1147,26 @@ namespace MyCompany.Data
                                             break;
                                         }
                                         else
-                                            if ((c == '\r') || (c == '\n'))
+                                        	if ((c == '\r') || (c == '\n'))
                                             {
                                                 _nextFieldStart = pos;
                                                 _eol = true;
                                                 break;
                                             }
                                             else
-                                                pos++;
+                                            	pos++;
                                     }
                                     if (pos < _bufferLength)
-                                        break;
+                                    	break;
                                     else
                                     {
                                         if (!(discardValue))
-                                            value = (value + new string(_buffer, start, (pos - start)));
+                                        	value = (value + new string(_buffer, start, (pos - start)));
                                         start = 0;
                                         pos = 0;
                                         _nextFieldStart = 0;
                                         if (!(ReadBuffer()))
-                                            break;
+                                        	break;
                                     }
                                 }
                                 if (!(discardValue))
@@ -1265,7 +1174,7 @@ namespace MyCompany.Data
                                     if ((_trimmingOptions & ValueTrimmingOptions.UnquotedOnly) == 0)
                                     {
                                         if (!(_eof) && (pos > start))
-                                            value = (value + new string(_buffer, start, (pos - start)));
+                                        	value = (value + new string(_buffer, start, (pos - start)));
                                     }
                                     else
                                     {
@@ -1273,28 +1182,28 @@ namespace MyCompany.Data
                                         {
                                             pos--;
                                             while ((pos > -1) && IsWhiteSpace(_buffer[pos]))
-                                                pos--;
+                                            	pos--;
                                             pos++;
                                             if (pos > 0)
-                                                value = (value + new string(_buffer, start, (pos - start)));
+                                            	value = (value + new string(_buffer, start, (pos - start)));
                                         }
                                         else
-                                            pos = -1;
+                                        	pos = -1;
                                         if (pos <= 0)
                                         {
                                             if (value == null)
-                                                pos = -1;
+                                            	pos = -1;
                                             else
-                                                pos = (value.Length - 1);
+                                            	pos = (value.Length - 1);
                                             while ((pos > -1) && IsWhiteSpace(value[pos]))
-                                                pos--;
+                                            	pos--;
                                             pos++;
                                             if ((pos > 0) && pos != value.Length)
-                                                value = value.Substring(0, pos);
+                                            	value = value.Substring(0, pos);
                                         }
                                     }
                                     if (value == null)
-                                        value = string.Empty;
+                                    	value = string.Empty;
                                 }
                                 if (_eol || _eof)
                                 {
@@ -1302,12 +1211,12 @@ namespace MyCompany.Data
                                     if (!(initializing) && !((index == (_fieldCount - 1))))
                                     {
                                         if ((value != null) && (value.Length == 0))
-                                            value = null;
+                                        	value = null;
                                         value = HandleMissingField(value, index, ref _nextFieldStart);
                                     }
                                 }
                                 if (!(discardValue))
-                                    _fields[index] = value;
+                                	_fields[index] = value;
                             }
                             else
                             {
@@ -1332,14 +1241,14 @@ namespace MyCompany.Data
                                             start = pos;
                                         }
                                         else
-                                            if ((c == _escape) && (_escape != _quote || ((((pos + 1) < _bufferLength) && (_buffer[(pos + 1)] == _quote)) || (((pos + 1) == _bufferLength) && _reader.Peek().Equals(_quote)))))
+                                        	if ((c == _escape) && (_escape != _quote || ((((pos + 1) < _bufferLength) && (_buffer[(pos + 1)] == _quote)) || (((pos + 1) == _bufferLength) && _reader.Peek().Equals(_quote)))))
                                             {
                                                 if (!(discardValue))
-                                                    value = (value + new string(_buffer, start, (pos - start)));
+                                                	value = (value + new string(_buffer, start, (pos - start)));
                                                 escaped = true;
                                             }
                                             else
-                                                if (c == _quote)
+                                            	if (c == _quote)
                                                 {
                                                     quoted = false;
                                                     break;
@@ -1347,11 +1256,11 @@ namespace MyCompany.Data
                                         pos++;
                                     }
                                     if (!(quoted))
-                                        break;
+                                    	break;
                                     else
                                     {
                                         if (!(discardValue) && !(escaped))
-                                            value = (value + new string(_buffer, start, (pos - start)));
+                                        	value = (value + new string(_buffer, start, (pos - start)));
                                         start = 0;
                                         pos = 0;
                                         _nextFieldStart = 0;
@@ -1365,14 +1274,14 @@ namespace MyCompany.Data
                                 if (!(_eof))
                                 {
                                     if (!(discardValue) && (pos > start))
-                                        value = (value + new string(_buffer, start, (pos - start)));
+                                    	value = (value + new string(_buffer, start, (pos - start)));
                                     if ((!(discardValue) && (value != null)) && !(((_trimmingOptions & ValueTrimmingOptions.QuotedOnly) == 0)))
                                     {
                                         int newLength = value.Length;
                                         while ((newLength > 0) && IsWhiteSpace(value[(newLength - 1)]))
-                                            newLength--;
+                                        	newLength--;
                                         if (newLength < value.Length)
-                                            value = value.Substring(0, newLength);
+                                        	value = value.Substring(0, newLength);
                                     }
                                     _nextFieldStart = (pos + 1);
                                     SkipWhiteSpaces(ref _nextFieldStart);
@@ -1383,16 +1292,16 @@ namespace MyCompany.Data
                                         _nextFieldStart++;
                                     }
                                     else
-                                        delimiterSkipped = false;
+                                    	delimiterSkipped = false;
                                     if ((!(_eof) && !(delimiterSkipped)) && (initializing || (index == (_fieldCount - 1))))
-                                        _eol = ParseNewLine(ref _nextFieldStart);
+                                    	_eol = ParseNewLine(ref _nextFieldStart);
                                     if ((!(delimiterSkipped) && !(_eof)) && !((_eol || IsNewLine(_nextFieldStart))))
-                                        HandleParseError(new MalformedCsvException(GetCurrentRawData(), _nextFieldStart, Math.Max(0, _currentRecordIndex), index), ref _nextFieldStart);
+                                    	HandleParseError(new MalformedCsvException(GetCurrentRawData(), _nextFieldStart, Math.Max(0, _currentRecordIndex), index), ref _nextFieldStart);
                                 }
                                 if (!(discardValue))
                                 {
                                     if (value == null)
-                                        value = string.Empty;
+                                    	value = string.Empty;
                                     _fields[index] = value;
                                 }
                             }
@@ -1402,51 +1311,51 @@ namespace MyCompany.Data
                 }
                 _nextFieldIndex = Math.Max((index + 1), _nextFieldIndex);
                 if (index == field)
-                    if (initializing)
-                        if (_eol || _eof)
-                            return null;
+                	if (initializing)
+                    	if (_eol || _eof)
+                        	return null;
                         else
-                            if (string.IsNullOrEmpty(value))
-                                return string.Empty;
+                        	if (string.IsNullOrEmpty(value))
+                            	return string.Empty;
                             else
-                                return value;
+                            	return value;
                     else
-                        return value;
+                    	return value;
                 index++;
             }
             HandleParseError(new MalformedCsvException(GetCurrentRawData(), _nextFieldStart, Math.Max(0, _currentRecordIndex), index), ref _nextFieldStart);
             return null;
         }
-
+        
         public bool ReadNextRecord()
         {
             return ReadNextRecord(false, false);
         }
-
+        
         protected virtual bool ReadNextRecord(bool onlyReadHeaders, bool skipToNextLine)
         {
             if (_eof)
-                if (_firstRecordInCache)
+            	if (_firstRecordInCache)
                 {
                     _firstRecordInCache = false;
                     _currentRecordIndex++;
                     return true;
                 }
                 else
-                    return false;
+                	return false;
             CheckDisposed();
             if (!(_initialized))
             {
                 _buffer = new char[_bufferSize];
                 _fieldHeaders = new string[0];
                 if (!(ReadBuffer()))
-                    return false;
+                	return false;
                 if (!(SkipEmptyAndCommentedLines(ref _nextFieldStart)))
-                    return false;
+                	return false;
                 _fieldCount = 0;
                 _fields = new string[512];
                 while (ReadField(_fieldCount, true, false) != null)
-                    if (_parseErrorFlag)
+                	if (_parseErrorFlag)
                     {
                         _fieldCount = 0;
                         System.Array.Clear(_fields, 0, _fields.Length);
@@ -1454,13 +1363,13 @@ namespace MyCompany.Data
                         _nextFieldIndex = 0;
                     }
                     else
-                        _fieldCount++;
-                if (_fieldCount == _fields.Length)
-                    System.Array.Resize<string>(ref _fields, ((_fieldCount + 1)
-                                    * 2));
+                    	_fieldCount++;
+                        if (_fieldCount == _fields.Length)
+                        	System.Array.Resize<string>(ref _fields, ((_fieldCount + 1) 
+                                            * 2));
                 _fieldCount++;
                 if (_fields.Length != _fieldCount)
-                    System.Array.Resize<string>(ref _fields, _fieldCount);
+                	System.Array.Resize<string>(ref _fields, _fieldCount);
                 _initialized = true;
                 if (_hasHeaders)
                 {
@@ -1472,14 +1381,14 @@ namespace MyCompany.Data
                     {
                         string headerName = _fields[i];
                         if (String.IsNullOrEmpty(headerName) || (headerName.Trim().Length == 0))
-                            headerName = (this.DefaultHeaderName + i.ToString());
+                        	headerName = (this.DefaultHeaderName + i.ToString());
                         _fieldHeaders[i] = headerName;
                         _fieldHeaderIndexes.Add(headerName, i);
                     }
                     if (!(onlyReadHeaders))
                     {
                         if (!(SkipEmptyAndCommentedLines(ref _nextFieldStart)))
-                            return false;
+                        	return false;
                         Array.Clear(_fields, 0, _fields.Length);
                         _nextFieldIndex = 0;
                         _eol = false;
@@ -1488,7 +1397,7 @@ namespace MyCompany.Data
                     }
                 }
                 else
-                    if (onlyReadHeaders)
+                	if (onlyReadHeaders)
                     {
                         _firstRecordInCache = true;
                         _currentRecordIndex = -1;
@@ -1502,24 +1411,24 @@ namespace MyCompany.Data
             else
             {
                 if (skipToNextLine)
-                    this.SkipToNextLine(ref _nextFieldStart);
+                	this.SkipToNextLine(ref _nextFieldStart);
                 else
-                    if ((_currentRecordIndex > -1) && !(_missingFieldFlag))
+                	if ((_currentRecordIndex > -1) && !(_missingFieldFlag))
                     {
                         if (!(_eol) && !(_eof))
-                            if (!(_supportsMultiline))
-                                this.SkipToNextLine(ref _nextFieldStart);
+                        	if (!(_supportsMultiline))
+                            	this.SkipToNextLine(ref _nextFieldStart);
                             else
-                                while (ReadField(_nextFieldIndex, true, true) != null)
+                            	while (ReadField(_nextFieldIndex, true, true) != null)
                                 {
                                 }
                     }
                 if (!(_firstRecordInCache) && !(SkipEmptyAndCommentedLines(ref _nextFieldStart)))
-                    return false;
+                	return false;
                 if (_hasHeaders || !(_firstRecordInCache))
-                    _eol = false;
+                	_eol = false;
                 if (_firstRecordInCache)
-                    _firstRecordInCache = false;
+                	_firstRecordInCache = false;
                 else
                 {
                     Array.Clear(_fields, 0, _fields.Length);
@@ -1531,54 +1440,54 @@ namespace MyCompany.Data
             }
             return true;
         }
-
+        
         private bool SkipEmptyAndCommentedLines(ref int pos)
         {
             if (pos < _bufferLength)
-                DoSkipEmptyAndCommentedLines(ref pos);
+            	DoSkipEmptyAndCommentedLines(ref pos);
             while ((pos >= _bufferLength) && !(_eof))
-                if (ReadBuffer())
+            	if (ReadBuffer())
                 {
                     pos = 0;
                     DoSkipEmptyAndCommentedLines(ref pos);
                 }
                 else
-                    return false;
+                	return false;
             return !(_eof);
         }
-
+        
         private void DoSkipEmptyAndCommentedLines(ref int pos)
         {
             while (pos < _bufferLength)
-                if (_buffer[pos] == _comment)
+            	if (_buffer[pos] == _comment)
                 {
                     pos++;
                     SkipToNextLine(ref pos);
                 }
                 else
-                    if (!((_skipEmptyLines && ParseNewLine(ref pos))))
-                        break;
+                	if (!((_skipEmptyLines && ParseNewLine(ref pos))))
+                    	break;
         }
-
+        
         private bool SkipWhiteSpaces(ref int pos)
         {
             while (true)
             {
                 // skip spaces
                 while ((pos < _bufferLength) && IsWhiteSpace(_buffer[pos]))
-                    pos++;
+                	pos++;
                 if (pos < _bufferLength)
-                    break;
+                	break;
                 else
                 {
                     pos = 0;
                     if (!(ReadBuffer()))
-                        return false;
+                    	return false;
                 }
             }
             return true;
         }
-
+        
         private bool SkipToNextLine(ref int pos)
         {
             // It should be ((pos = 0) == 0), double-check to ensure it works
@@ -1590,49 +1499,49 @@ namespace MyCompany.Data
             }
             return !(_eof);
         }
-
+        
         private void HandleParseError(MalformedCsvException error, ref int pos)
         {
             // check this one as well, uses switches
             if (error == null)
-                throw new ArgumentNullException("error");
+            	throw new ArgumentNullException("error");
             _parseErrorFlag = true;
             if (_defaultParseErrorAction == ParseErrorAction.ThrowException)
-                throw error;
+            	throw error;
             if (_defaultParseErrorAction == ParseErrorAction.RaiseEvent)
             {
                 ParseErrorEventArgs e = new ParseErrorEventArgs(error, ParseErrorAction.ThrowException);
                 OnParseError(e);
                 if (e.Action == ParseErrorAction.ThrowException)
-                    throw e.Error;
+                	throw e.Error;
                 if (e.Action == ParseErrorAction.RaiseEvent)
-                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, ExceptionMessage.ParseErrorActionInvalidInsideParseErrorEvent, e.Action), e.Error);
+                	throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, ExceptionMessage.ParseErrorActionInvalidInsideParseErrorEvent, e.Action), e.Error);
                 if (e.Action == ParseErrorAction.AdvanceToNextLine)
                 {
                     if (!(_missingFieldFlag) && (pos >= 0))
-                        SkipToNextLine(ref pos);
+                    	SkipToNextLine(ref pos);
                 }
                 else
-                    throw new NotSupportedException(string.Format(CultureInfo.InvariantCulture, ExceptionMessage.ParseErrorActionNotSupported, e.Action), e.Error);
+                	throw new NotSupportedException(string.Format(CultureInfo.InvariantCulture, ExceptionMessage.ParseErrorActionNotSupported, e.Action), e.Error);
             }
             if (_defaultParseErrorAction == ParseErrorAction.AdvanceToNextLine)
             {
                 if (!(_missingFieldFlag) && (pos >= 0))
-                    SkipToNextLine(ref pos);
+                	SkipToNextLine(ref pos);
             }
             else
-                throw new NotSupportedException(string.Format(CultureInfo.InvariantCulture, ExceptionMessage.ParseErrorActionNotSupported, _defaultParseErrorAction), error);
+            	throw new NotSupportedException(string.Format(CultureInfo.InvariantCulture, ExceptionMessage.ParseErrorActionNotSupported, _defaultParseErrorAction), error);
         }
-
+        
         private string HandleMissingField(string value, int fieldIndex, ref int currentPosition)
         {
             if ((fieldIndex < 0) || (fieldIndex >= _fieldCount))
-                throw new ArgumentOutOfRangeException("fieldIndex", fieldIndex, string.Format(CultureInfo.InvariantCulture, ExceptionMessage.FieldIndexOutOfRange, fieldIndex));
+            	throw new ArgumentOutOfRangeException("fieldIndex", fieldIndex, string.Format(CultureInfo.InvariantCulture, ExceptionMessage.FieldIndexOutOfRange, fieldIndex));
             _missingFieldFlag = true;
             for (int i = (fieldIndex + 1); (i < _fieldCount); i++)
-                _fields[i] = null;
+            	_fields[i] = null;
             if (value != null)
-                return value;
+            	return value;
             else
             {
                 if (_missingFieldAction == MissingFieldAction.ParseError)
@@ -1641,63 +1550,63 @@ namespace MyCompany.Data
                     return value;
                 }
                 if (_missingFieldAction == MissingFieldAction.ReplaceByEmpty)
-                    return string.Empty;
+                	return string.Empty;
                 if (_missingFieldAction == MissingFieldAction.ReplaceByNull)
-                    return null;
+                	return null;
                 throw new NotSupportedException(string.Format(CultureInfo.InvariantCulture, ExceptionMessage.MissingFieldActionNotSupported, _missingFieldAction));
             }
         }
-
+        
         private void ValidateDataReader(DataReaderValidations validations)
         {
             if (!(((validations & DataReaderValidations.IsInitialized) == 0)) && !(_initialized))
-                throw new InvalidOperationException(ExceptionMessage.NoCurrentRecord);
+            	throw new InvalidOperationException(ExceptionMessage.NoCurrentRecord);
             if (!(((validations & DataReaderValidations.IsNotClosed) == 0)) && _isDisposed)
-                throw new InvalidOperationException(ExceptionMessage.ReaderClosed);
+            	throw new InvalidOperationException(ExceptionMessage.ReaderClosed);
         }
-
+        
         private long CopyFieldToArray(int field, long fieldOffset, Array destinationArray, int destinationOffset, int length)
         {
             EnsureInitialize();
             if ((field < 0) || (field >= _fieldCount))
-                throw new ArgumentOutOfRangeException("field", field, string.Format(CultureInfo.InvariantCulture, ExceptionMessage.FieldIndexOutOfRange, field));
+            	throw new ArgumentOutOfRangeException("field", field, string.Format(CultureInfo.InvariantCulture, ExceptionMessage.FieldIndexOutOfRange, field));
             if ((fieldOffset < 0) || (fieldOffset >= int.MaxValue))
-                throw new ArgumentOutOfRangeException("fieldOffset");
+            	throw new ArgumentOutOfRangeException("fieldOffset");
             if (length == 0)
-                return 0;
+            	return 0;
             string value = this[field];
             if (value == null)
-                value = string.Empty;
+            	value = string.Empty;
             if (destinationArray.GetType() == typeof(char[]))
-                Array.Copy(value.ToCharArray(((int)(fieldOffset)), length), 0, destinationArray, destinationOffset, length);
+            	Array.Copy(value.ToCharArray(((int)(fieldOffset)), length), 0, destinationArray, destinationOffset, length);
             else
             {
                 char[] chars = value.ToCharArray(((int)(fieldOffset)), length);
                 byte[] source = new byte[chars.Length];
                 for (int i = 0; (i < chars.Length); i++)
-                    source[i] = Convert.ToByte(chars[i]);
+                	source[i] = Convert.ToByte(chars[i]);
                 Array.Copy(source, 0, destinationArray, destinationOffset, length);
             }
             return length;
         }
-
+        
         bool IDataReader.NextResult()
         {
             ValidateDataReader(DataReaderValidations.IsNotClosed);
             return false;
         }
-
+        
         void IDataReader.Close()
         {
             ((IDataReader)(this)).Dispose();
         }
-
+        
         bool IDataReader.Read()
         {
             ValidateDataReader(DataReaderValidations.IsNotClosed);
             return ReadNextRecord();
         }
-
+        
         DataTable IDataReader.GetSchemaTable()
         {
             EnsureInitialize();
@@ -1729,12 +1638,12 @@ namespace MyCompany.Data
             schema.Columns.Add(SchemaTableOptionalColumn.IsRowVersion, typeof(bool)).ReadOnly = true;
             string[] columnNames;
             if (_hasHeaders)
-                columnNames = _fieldHeaders;
+            	columnNames = _fieldHeaders;
             else
             {
                 columnNames = new string[_fieldCount];
                 for (int i = 0; (i < _fieldCount); i++)
-                    columnNames[i] = ("Column" + i.ToString(CultureInfo.InvariantCulture));
+                	columnNames[i] = ("Column" + i.ToString(CultureInfo.InvariantCulture));
             }
             object[] schemaRow = new object[] {
                     true,
@@ -1768,188 +1677,188 @@ namespace MyCompany.Data
             }
             return schema;
         }
-
+        
         int IDataRecord.GetInt32(int i)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             string value = this[i];
             if (value == null)
-                return int.Parse(string.Empty);
+            	return int.Parse(string.Empty);
             else
-                return int.Parse(value, CultureInfo.InvariantCulture);
+            	return int.Parse(value, CultureInfo.InvariantCulture);
         }
-
+        
         object IDataRecord.GetValue(int i)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             bool isNull = ((IDataRecord)(this)).IsDBNull(i);
             if (isNull)
-                return DBNull.Value;
+            	return DBNull.Value;
             else
-                return this[i];
+            	return this[i];
         }
-
+        
         bool IDataRecord.IsDBNull(int i)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             return String.IsNullOrEmpty(this[i]);
         }
-
+        
         long IDataRecord.GetBytes(int i, long fieldOffset, byte[] buffer, int bufferoffset, int length)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             return CopyFieldToArray(i, fieldOffset, buffer, bufferoffset, length);
         }
-
+        
         byte IDataRecord.GetByte(int i)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             return byte.Parse(this[i], CultureInfo.CurrentCulture);
         }
-
+        
         Type IDataRecord.GetFieldType(int i)
         {
             EnsureInitialize();
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             if ((i < 0) || (i >= _fieldCount))
-                throw new ArgumentOutOfRangeException("i", i, string.Format(CultureInfo.InvariantCulture, ExceptionMessage.FieldIndexOutOfRange, i));
+            	throw new ArgumentOutOfRangeException("i", i, string.Format(CultureInfo.InvariantCulture, ExceptionMessage.FieldIndexOutOfRange, i));
             return typeof(string);
         }
-
+        
         decimal IDataRecord.GetDecimal(int i)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             return decimal.Parse(this[i], CultureInfo.CurrentCulture);
         }
-
+        
         int IDataRecord.GetValues(object[] values)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             IDataRecord record = ((IDataRecord)(this));
             for (int i = 0; (i < _fieldCount); i++)
-                values[i] = record.GetValue(i);
+            	values[i] = record.GetValue(i);
             return _fieldCount;
         }
-
+        
         string IDataRecord.GetName(int i)
         {
             ValidateDataReader(DataReaderValidations.IsNotClosed);
             if ((i < 0) || (i >= _fieldCount))
-                throw new ArgumentOutOfRangeException("i", i, string.Format(CultureInfo.InvariantCulture, ExceptionMessage.FieldIndexOutOfRange, i));
+            	throw new ArgumentOutOfRangeException("i", i, string.Format(CultureInfo.InvariantCulture, ExceptionMessage.FieldIndexOutOfRange, i));
             if (_hasHeaders)
-                return _fieldHeaders[i];
+            	return _fieldHeaders[i];
             else
-                return ("Column" + i.ToString(CultureInfo.InvariantCulture));
+            	return ("Column" + i.ToString(CultureInfo.InvariantCulture));
         }
-
+        
         long IDataRecord.GetInt64(int i)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             return long.Parse(this[i], CultureInfo.CurrentCulture);
         }
-
+        
         double IDataRecord.GetDouble(int i)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             return double.Parse(this[i], CultureInfo.CurrentCulture);
         }
-
+        
         bool IDataRecord.GetBoolean(int i)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             string value = this[i];
             int result;
             if (int.TryParse(value, out result))
-                return result != 0;
+            	return result != 0;
             else
-                return bool.Parse(value);
+            	return bool.Parse(value);
         }
-
+        
         Guid IDataRecord.GetGuid(int i)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             return new Guid(this[i]);
         }
-
+        
         DateTime IDataRecord.GetDateTime(int i)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             return DateTime.Parse(this[i], CultureInfo.CurrentCulture);
         }
-
+        
         int IDataRecord.GetOrdinal(string name)
         {
             EnsureInitialize();
             ValidateDataReader(DataReaderValidations.IsNotClosed);
             int index;
             if (!(_fieldHeaderIndexes.TryGetValue(name, out index)))
-                throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, ExceptionMessage.FieldHeaderNotFound, name), "name");
+            	throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, ExceptionMessage.FieldHeaderNotFound, name), "name");
             return index;
         }
-
+        
         string IDataRecord.GetDataTypeName(int i)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             return typeof(string).FullName;
         }
-
+        
         float IDataRecord.GetFloat(int i)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             return float.Parse(this[i], CultureInfo.CurrentCulture);
         }
-
+        
         IDataReader IDataRecord.GetData(int i)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             if (i == 0)
-                return this;
+            	return this;
             else
-                return null;
+            	return null;
         }
-
+        
         long IDataRecord.GetChars(int i, long fieldoffset, char[] buffer, int bufferoffset, int length)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             return CopyFieldToArray(i, fieldoffset, buffer, bufferoffset, length);
         }
-
+        
         string IDataRecord.GetString(int i)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             return this[i];
         }
-
+        
         char IDataRecord.GetChar(int i)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             return char.Parse(this[i]);
         }
-
+        
         short IDataRecord.GetInt16(int i)
         {
             ValidateDataReader((DataReaderValidations.IsInitialized | DataReaderValidations.IsNotClosed));
             return short.Parse(this[i], CultureInfo.CurrentCulture);
         }
-
+        
         public CsvReaderRecordEnumerator GetEnumerator()
         {
             return new CsvReaderRecordEnumerator(this);
         }
-
+        
         protected virtual void OnDisposed(EventArgs e)
         {
             EventHandler handler = this.Disposed;
             if (handler != null)
-                handler(this, e);
+            	handler(this, e);
         }
-
+        
         protected void CheckDisposed()
         {
             if (_isDisposed)
-                throw new ObjectDisposedException(this.GetType().FullName);
+            	throw new ObjectDisposedException(this.GetType().FullName);
         }
-
+        
         void IDisposable.Dispose()
         {
             if (!(_isDisposed))
@@ -1958,11 +1867,11 @@ namespace MyCompany.Data
                 GC.SuppressFinalize(this);
             }
         }
-
+        
         protected virtual void Dispose(bool disposing)
         {
             if (!(_isDisposed))
-                try
+            	try
                 {
                     if (disposing)
                     {
@@ -1985,41 +1894,41 @@ namespace MyCompany.Data
                     {
                         OnDisposed(EventArgs.Empty);
                     }
-                    catch (Exception)
+                    catch (Exception )
                     {
                     }
                 }
         }
     }
-
+    
     internal enum DataReaderValidations
     {
-
+        
         None = 0,
-
+        
         IsInitialized = 1,
-
+        
         IsNotClosed = 2,
     }
-
+    
     public class CsvReaderRecordEnumerator : IEnumerator, IDisposable
     {
-
+        
         private string[] _current;
-
+        
         private long _currentRecordIndex;
-
+        
         private CsvReader _reader;
-
+        
         public CsvReaderRecordEnumerator(CsvReader reader)
         {
             if (reader == null)
-                throw new ArgumentNullException("reader");
+            	throw new ArgumentNullException("reader");
             _reader = reader;
             _current = null;
             _currentRecordIndex = reader.CurrentRecordIndex;
         }
-
+        
         public string[] Current
         {
             get
@@ -2027,21 +1936,21 @@ namespace MyCompany.Data
                 return _current;
             }
         }
-
+        
         object IEnumerator.Current
         {
             get
             {
                 if (_reader.CurrentRecordIndex != _currentRecordIndex)
-                    throw new InvalidOperationException(ExceptionMessage.EnumerationVersionCheckFailed);
+                	throw new InvalidOperationException(ExceptionMessage.EnumerationVersionCheckFailed);
                 return this.Current;
             }
         }
-
+        
         bool IEnumerator.MoveNext()
         {
             if (_reader.CurrentRecordIndex != _currentRecordIndex)
-                throw new InvalidOperationException(ExceptionMessage.EnumerationVersionCheckFailed);
+            	throw new InvalidOperationException(ExceptionMessage.EnumerationVersionCheckFailed);
             if (_reader.ReadNextRecord())
             {
                 _current = new string[((IDataRecord)(_reader)).FieldCount];
@@ -2056,70 +1965,70 @@ namespace MyCompany.Data
                 return false;
             }
         }
-
+        
         void IEnumerator.Reset()
         {
             if (_reader.CurrentRecordIndex != _currentRecordIndex)
-                throw new InvalidOperationException(ExceptionMessage.EnumerationVersionCheckFailed);
+            	throw new InvalidOperationException(ExceptionMessage.EnumerationVersionCheckFailed);
             _reader.MoveTo(-1);
             _current = null;
             _currentRecordIndex = _reader.CurrentRecordIndex;
         }
-
+        
         void IDisposable.Dispose()
         {
             _reader = null;
             _current = null;
         }
     }
-
+    
     public enum MissingFieldAction
     {
-
+        
         ParseError = 0,
-
+        
         ReplaceByEmpty = 1,
-
+        
         ReplaceByNull = 2,
     }
-
+    
     public enum ParseErrorAction
     {
-
+        
         RaiseEvent = 0,
-
+        
         AdvanceToNextLine = 1,
-
+        
         ThrowException = 2,
     }
-
+    
     [Flags]
     public enum ValueTrimmingOptions
     {
-
+        
         None = 0,
-
+        
         UnquotedOnly = 1,
-
+        
         QuotedOnly = 2,
-
+        
         All = (UnquotedOnly | QuotedOnly),
     }
-
+    
     public class ParseErrorEventArgs : EventArgs
     {
-
+        
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private MalformedCsvException _error;
-
+        
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private ParseErrorAction _action;
-
-        public ParseErrorEventArgs(MalformedCsvException error, ParseErrorAction defaultAction) :
-            base()
+        
+        public ParseErrorEventArgs(MalformedCsvException error, ParseErrorAction defaultAction) : 
+                base()
         {
         }
-
+        
         public MalformedCsvException Error
         {
             get
@@ -2131,7 +2040,7 @@ namespace MyCompany.Data
                 this._error = value;
             }
         }
-
+        
         public ParseErrorAction Action
         {
             get
@@ -2144,62 +2053,62 @@ namespace MyCompany.Data
             }
         }
     }
-
+    
     public class MalformedCsvException : Exception
     {
-
+        
         private string _message;
-
+        
         private string _rawData;
-
+        
         private int _currentFieldIndex;
-
+        
         private long _currentRecordIndex;
-
+        
         private int _currentPosition;
-
-        public MalformedCsvException() :
-            this(((string)(null)), null)
+        
+        public MalformedCsvException() : 
+                this(((string)(null)), null)
         {
         }
-
-        public MalformedCsvException(string message) :
-            this(message, null)
+        
+        public MalformedCsvException(string message) : 
+                this(message, null)
         {
         }
-
-        public MalformedCsvException(string message, Exception innerException) :
-            base(String.Empty, innerException)
+        
+        public MalformedCsvException(string message, Exception innerException) : 
+                base(String.Empty, innerException)
         {
             if (message == null)
-                _message = string.Empty;
+            	_message = string.Empty;
             else
-                _message = message;
+            	_message = message;
             _rawData = string.Empty;
             _currentPosition = -1;
             _currentRecordIndex = -1;
             _currentFieldIndex = -1;
         }
-
-        public MalformedCsvException(string rawData, int currentPosition, long currentRecordIndex, int currentFieldIndex) :
-            this(rawData, currentPosition, currentRecordIndex, currentFieldIndex, null)
+        
+        public MalformedCsvException(string rawData, int currentPosition, long currentRecordIndex, int currentFieldIndex) : 
+                this(rawData, currentPosition, currentRecordIndex, currentFieldIndex, null)
         {
         }
-
-        public MalformedCsvException(string rawData, int currentPosition, long currentRecordIndex, int currentFieldIndex, Exception innerException) :
-            base(String.Empty, innerException)
+        
+        public MalformedCsvException(string rawData, int currentPosition, long currentRecordIndex, int currentFieldIndex, Exception innerException) : 
+                base(String.Empty, innerException)
         {
             if (rawData == null)
-                _rawData = string.Empty;
+            	_rawData = string.Empty;
             else
-                _rawData = rawData;
+            	_rawData = rawData;
             _currentPosition = currentPosition;
             _currentRecordIndex = currentRecordIndex;
             _currentFieldIndex = currentFieldIndex;
         }
-
-        protected MalformedCsvException(SerializationInfo info, StreamingContext context) :
-            base(info, context)
+        
+        protected MalformedCsvException(SerializationInfo info, StreamingContext context) : 
+                base(info, context)
         {
             _message = info.GetString("MyMessage");
             _rawData = info.GetString("RawData");
@@ -2207,7 +2116,7 @@ namespace MyCompany.Data
             _currentRecordIndex = info.GetInt64("currentRecordIndex");
             _currentFieldIndex = info.GetInt32("currentFieldIndex");
         }
-
+        
         public string RawData
         {
             get
@@ -2215,7 +2124,7 @@ namespace MyCompany.Data
                 return _rawData;
             }
         }
-
+        
         public int CurrentPosition
         {
             get
@@ -2223,7 +2132,7 @@ namespace MyCompany.Data
                 return _currentPosition;
             }
         }
-
+        
         public long CurrentRecordIndex
         {
             get
@@ -2231,7 +2140,7 @@ namespace MyCompany.Data
                 return _currentRecordIndex;
             }
         }
-
+        
         public int CurrentFieldIndex
         {
             get
@@ -2239,7 +2148,7 @@ namespace MyCompany.Data
                 return _currentFieldIndex;
             }
         }
-
+        
         public override string Message
         {
             get
@@ -2247,7 +2156,7 @@ namespace MyCompany.Data
                 return _message;
             }
         }
-
+        
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
@@ -2258,50 +2167,50 @@ namespace MyCompany.Data
             info.AddValue("CurrentFieldIndex", _currentFieldIndex);
         }
     }
-
+    
     [Serializable]
     public class MissingFieldCsvException : MalformedCsvException
     {
-
-        public MissingFieldCsvException() :
-            base()
+        
+        public MissingFieldCsvException() : 
+                base()
         {
         }
-
-        public MissingFieldCsvException(string message) :
-            base(message)
+        
+        public MissingFieldCsvException(string message) : 
+                base(message)
         {
         }
-
-        public MissingFieldCsvException(string message, Exception innerException) :
-            base(message, innerException)
+        
+        public MissingFieldCsvException(string message, Exception innerException) : 
+                base(message, innerException)
         {
         }
-
-        public MissingFieldCsvException(string rawData, int currentPosition, long currentRecordIndex, int currentFieldIndex) :
-            base(rawData, currentPosition, currentRecordIndex, currentFieldIndex)
+        
+        public MissingFieldCsvException(string rawData, int currentPosition, long currentRecordIndex, int currentFieldIndex) : 
+                base(rawData, currentPosition, currentRecordIndex, currentFieldIndex)
         {
         }
-
-        public MissingFieldCsvException(string rawData, int currentPosition, long currentRecordIndex, int currentFieldIndex, Exception innerException) :
-            base(rawData, currentPosition, currentRecordIndex, currentFieldIndex, innerException)
+        
+        public MissingFieldCsvException(string rawData, int currentPosition, long currentRecordIndex, int currentFieldIndex, Exception innerException) : 
+                base(rawData, currentPosition, currentRecordIndex, currentFieldIndex, innerException)
         {
         }
-
-        protected MissingFieldCsvException(SerializationInfo info, StreamingContext context) :
-            base(info, context)
+        
+        protected MissingFieldCsvException(SerializationInfo info, StreamingContext context) : 
+                base(info, context)
         {
         }
     }
-
+    
     [System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal class ExceptionMessage
     {
-
+        
         internal ExceptionMessage()
         {
         }
-
+        
         internal static string BufferSizeTooSmall
         {
             get
@@ -2309,7 +2218,7 @@ namespace MyCompany.Data
                 return "Buffer size is too small.";
             }
         }
-
+        
         internal static string CannotMovePreviousRecordInForwardOnly
         {
             get
@@ -2317,7 +2226,7 @@ namespace MyCompany.Data
                 return "Cannot move previous record in forward only.";
             }
         }
-
+        
         internal static string CannotReadRecordAtIndex
         {
             get
@@ -2325,7 +2234,7 @@ namespace MyCompany.Data
                 return "Cannot read record at index.";
             }
         }
-
+        
         internal static string EnumerationFinishedOrNotStarted
         {
             get
@@ -2333,7 +2242,7 @@ namespace MyCompany.Data
                 return "Enumeration finished or not started.";
             }
         }
-
+        
         internal static string EnumerationVersionCheckFailed
         {
             get
@@ -2341,7 +2250,7 @@ namespace MyCompany.Data
                 return "Enumeration version check failed.";
             }
         }
-
+        
         internal static string FieldHeaderNotFound
         {
             get
@@ -2349,7 +2258,7 @@ namespace MyCompany.Data
                 return "Field header not found.";
             }
         }
-
+        
         internal static string FieldIndexOutOfRange
         {
             get
@@ -2357,7 +2266,7 @@ namespace MyCompany.Data
                 return "Field index out of range.";
             }
         }
-
+        
         internal static string MalformedCsvException
         {
             get
@@ -2365,7 +2274,7 @@ namespace MyCompany.Data
                 return "Malformed CSV exception.";
             }
         }
-
+        
         internal static string MissingFieldActionNotSupported
         {
             get
@@ -2373,7 +2282,7 @@ namespace MyCompany.Data
                 return "Missing field action not supported.";
             }
         }
-
+        
         internal static string NoCurrentRecord
         {
             get
@@ -2381,7 +2290,7 @@ namespace MyCompany.Data
                 return "No current record.";
             }
         }
-
+        
         internal static string NoHeaders
         {
             get
@@ -2389,7 +2298,7 @@ namespace MyCompany.Data
                 return "No headers.";
             }
         }
-
+        
         internal static string NotEnoughSpaceInArray
         {
             get
@@ -2397,7 +2306,7 @@ namespace MyCompany.Data
                 return "Not enough space in array.";
             }
         }
-
+        
         internal static string ParseErrorActionInvalidInsideParseErrorEvent
         {
             get
@@ -2405,7 +2314,7 @@ namespace MyCompany.Data
                 return "Parse error action invalid inside parse error event.";
             }
         }
-
+        
         internal static string ParseErrorActionNotSupported
         {
             get
@@ -2413,7 +2322,7 @@ namespace MyCompany.Data
                 return "Parse error action not supported.";
             }
         }
-
+        
         internal static string ReaderClosed
         {
             get
@@ -2421,7 +2330,7 @@ namespace MyCompany.Data
                 return "Reader closed.";
             }
         }
-
+        
         internal static string RecordIndexLessThanZero
         {
             get

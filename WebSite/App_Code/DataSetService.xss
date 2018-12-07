@@ -8,7 +8,7 @@
   <Shapes>
     <Shape ID="DesignTable:sp_Calendar_ViewDate" ZOrder="3" X="164" Y="93" Height="115" Width="274" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:sp_Report_SDT08" ZOrder="2" X="658" Y="322" Height="305" Width="245" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:sp_Report_SDT05" ZOrder="1" X="351" Y="543" Height="305" Width="245" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:sp_Report_SDT05" ZOrder="1" X="222" Y="501" Height="305" Width="252" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

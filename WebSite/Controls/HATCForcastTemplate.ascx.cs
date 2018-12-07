@@ -150,8 +150,23 @@ public partial class Controls_HATCForcastTemplate : System.Web.UI.UserControl
                                 if (materialTemp.Length > 1)
                                 {
                                     forcast.SAPCode = materialTemp[0];
-                                    forcast.PartsDevision = materialTemp[1];
+                                    if (materialTemp[1] == "1A")
+                                    {
+                                        forcast.PartsDevision = "1";
+                                    }
+                                    else if (materialTemp[1] == "1B")
+                                    {
+                                        forcast.PartsDevision = "2";
+                                    }
+                                    else
+                                    {
+                                        forcast.PartsDevision = materialTemp[1];
+                                    }
+                                    
                                     forcast.DeliveryDestinationCode = materialTemp[2];
+                                    forcast.Key1 = materialTemp[3];
+                                    forcast.Key2 = materialTemp[4];
+                                    forcast.Key3 = materialTemp[5];
                                 }
                                 forcast.CustomerPO = "";
                                 forcast.ReliabilityDevision = ReliabilityDevision;

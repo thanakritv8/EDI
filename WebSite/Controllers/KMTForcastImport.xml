@@ -21,6 +21,8 @@ select
 	,"KMTForcastImport"."SAPCode" "SAPCode"
 	,"KMTForcastImport"."FileId" "FileId"
 	,"KMTForcastImport"."StatusCode" "StatusCode"
+	,"KMTForcastImport"."FileName" "FileName"
+	,"KMTForcastImport"."DeliveryDestinationCode" "DeliveryDestinationCode"
 from "dbo"."KMTForcastImport" "KMTForcastImport"
 ]]></text>
     </command>
@@ -43,12 +45,13 @@ from "dbo"."KMTForcastImport" "KMTForcastImport"
     <field name="Key3" type="String" label="Key3" length="50" />
     <field name="ReliabilityDevision" type="String" label="Reliability Devision" length="50" />
     <field name="DeliveryDate" type="DateTime" label="Delivery Date" />
-    <field name="Quantity" type="String" label="Quantity" length="50" />
+    <field name="Quantity" type="Int32" label="Quantity" />
     <field name="Unit" type="String" label="Unit" length="50" />
     <field name="PlngPeriod" type="String" label="Plng Period" length="50" />
     <field name="SAPCode" type="String" label="SAP Code" length="50" />
-    <field name="FileId" type="Decimal" label="File#" />
     <field name="StatusCode" type="String" label="Status Code" length="100" />
+    <field name="FileName" type="String" allowQBE="false" allowSorting="false" label="File Name" />
+    <field name="DeliveryDestinationCode" type="String" label="Delivery Destination Code" length="50" />
   </fields>
   <views>
     <view id="grid1" type="Grid" commandId="command1" label="KMT Forcast Import">
@@ -64,13 +67,17 @@ from "dbo"."KMTForcastImport" "KMTForcastImport"
         <dataField fieldName="Key3" columns="50" />
         <dataField fieldName="ReliabilityDevision" columns="50" />
         <dataField fieldName="DeliveryDate" columns="10" />
-        <dataField fieldName="Quantity" columns="50" />
+        <dataField fieldName="Quantity" columns="15" />
         <dataField fieldName="Unit" columns="50" />
         <dataField fieldName="PlngPeriod" columns="50" />
         <dataField fieldName="SAPCode" columns="50" />
-        <dataField fieldName="FileId" columns="15" />
         <dataField fieldName="StatusCode" />
+        <dataField fieldName="FileName" rows="5" />
+        <dataField fieldName="DeliveryDestinationCode" columns="50" />
       </dataFields>
+      <styles>
+        <expression type="ClientScript" result="StatusExecuteError" test="[StatusCode] == &quot;Error&quot;" />
+      </styles>
     </view>
     <view id="editForm1" type="Form" commandId="command1" label="Review KMT Forcast Import">
       <headerText>$DefaultEditViewDescription</headerText>
@@ -88,12 +95,13 @@ from "dbo"."KMTForcastImport" "KMTForcastImport"
             <dataField fieldName="Key3" columns="50" />
             <dataField fieldName="ReliabilityDevision" columns="50" />
             <dataField fieldName="DeliveryDate" columns="10" />
-            <dataField fieldName="Quantity" columns="50" />
+            <dataField fieldName="Quantity" columns="15" />
             <dataField fieldName="Unit" columns="50" />
             <dataField fieldName="PlngPeriod" columns="50" />
             <dataField fieldName="SAPCode" columns="50" />
-            <dataField fieldName="FileId" columns="15" />
             <dataField fieldName="StatusCode" />
+            <dataField fieldName="FileName" rows="5" />
+            <dataField fieldName="DeliveryDestinationCode" columns="50" />
           </dataFields>
         </category>
       </categories>
@@ -114,12 +122,13 @@ from "dbo"."KMTForcastImport" "KMTForcastImport"
             <dataField fieldName="Key3" columns="50" />
             <dataField fieldName="ReliabilityDevision" columns="50" />
             <dataField fieldName="DeliveryDate" columns="10" />
-            <dataField fieldName="Quantity" columns="50" />
+            <dataField fieldName="Quantity" columns="15" />
             <dataField fieldName="Unit" columns="50" />
             <dataField fieldName="PlngPeriod" columns="50" />
             <dataField fieldName="SAPCode" columns="50" />
-            <dataField fieldName="FileId" columns="15" />
             <dataField fieldName="StatusCode" />
+            <dataField fieldName="FileName" rows="5" />
+            <dataField fieldName="DeliveryDestinationCode" columns="50" />
           </dataFields>
         </category>
       </categories>
@@ -148,7 +157,6 @@ from "dbo"."KMTForcastImport" "KMTForcastImport"
       <action id="a13" whenLastCommandName="Insert" whenView="createForm1" commandName="Select" commandArgument="editForm1" whenKeySelected="true" whenClientScript="this.hasDetails()" />
     </actionGroup>
     <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
-      <action id="a1" commandName="New" commandArgument="createForm1" cssClass="NewIcon" roles="SystemAdmin" />
       <action id="a100" commandName="Custom" commandArgument="Execute" headerText="Execute" causesValidation="true" confirmation="Confirm ?" />
       <action id="a101" commandName="Custom" commandArgument="ClearData" headerText="Clear Data" causesValidation="true" />
     </actionGroup>
@@ -156,27 +164,11 @@ from "dbo"."KMTForcastImport" "KMTForcastImport"
       <action id="a1" whenKeySelected="true" commandName="Edit" commandArgument="editForm1" cssClass="EditIcon" whenView="grid1" />
       <action id="a2" whenKeySelected="true" commandName="Delete" cssClass="DeleteIcon" whenView="grid1" />
     </actionGroup>
-    <actionGroup id="ag5" scope="ActionBar" headerText="Actions">
-      <action id="a1" commandName="ExportCsv" />
-      <action id="a2" />
-      <action id="a3" commandName="ExportRowset" />
-      <action id="a4" commandName="ExportRss" />
-      <action id="a5" />
-      <action id="a6" commandName="Import" commandArgument="createForm1" />
-      <action id="a7" commandName="DataSheet" />
-      <action id="a8" commandName="Grid" />
-    </actionGroup>
     <actionGroup id="ag6" scope="ActionBar" headerText="Record">
       <action id="a1" whenLastCommandName="Edit" commandName="Update" />
       <action id="a2" whenLastCommandName="Edit" commandName="Cancel" />
       <action id="a3" whenLastCommandName="New" commandName="Insert" />
       <action id="a4" whenLastCommandName="New" commandName="Cancel" />
-    </actionGroup>
-    <actionGroup id="ag7" scope="ActionBar" headerText="Report">
-      <action id="a1" commandName="ReportAsPdf" />
-      <action id="a2" commandName="ReportAsImage" />
-      <action id="a3" commandName="ReportAsExcel" />
-      <action id="a4" commandName="ReportAsWord" />
     </actionGroup>
     <actionGroup id="ag8" scope="Row">
       <action id="a4" whenLastCommandName="Edit" commandName="Update" />
@@ -185,4 +177,8 @@ from "dbo"."KMTForcastImport" "KMTForcastImport"
       <action id="a7" whenLastCommandName="New" commandName="Cancel" />
     </actionGroup>
   </actions>
+  <businessRules>
+    <rule id="r100" commandName="Custom" commandArgument="ClearData" type="Sql" phase="Execute"><![CDATA[EXEC sp_KMT_Forcast_ClearData]]></rule>
+    <rule id="r101" commandName="Custom" commandArgument="Execute" type="Sql" phase="Execute"><![CDATA[EXEC sp_KMT_Forcast_Execute @Session_UserName]]></rule>
+  </businessRules>
 </dataController>

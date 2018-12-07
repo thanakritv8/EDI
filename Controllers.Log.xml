@@ -3372,4 +3372,78 @@
       <GenerateDataAccessObjects>true</GenerateDataAccessObjects>
     </update>
   </c>
+  <c y="NodeSet" t="2018-12-07T08:09:28">
+    <controller name="KMTForcastImport" />
+    <update>
+      <GenerateDataAccessObjects>true</GenerateDataAccessObjects>
+    </update>
+  </c>
+  <c y="NodeSet" t="2018-12-07T08:09:43">
+    <controller name="KMTForcastImport" />
+    <actionGroup id="ag5" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2018-12-07T08:09:47">
+    <controller name="KMTForcastImport" />
+    <actionGroup id="ag7" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2018-12-07T08:10:01">
+    <controller name="KMTForcastImport" />
+    <actionGroup id="ag3" />
+    <action id="a1" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2018-12-07T08:10:50">
+    <controller name="KMTForcastImport" />
+    <insert type="rule">
+      <Type>Sql</Type>
+      <CommandName>Custom</CommandName>
+      <CommandArgument>ClearData</CommandArgument>
+      <Phase>Execute</Phase>
+      <Script>EXEC sp_KMT_Forcast_ClearData</Script>
+    </insert>
+  </c>
+  <c y="NodeSet" t="2018-12-07T08:11:22">
+    <controller name="KMTForcastImport" />
+    <insert type="rule">
+      <Type>Sql</Type>
+      <CommandName>Custom</CommandName>
+      <CommandArgument>Execute</CommandArgument>
+      <Phase>Execute</Phase>
+      <Script>EXEC sp_KMT_Forcast_Execute @Session_UserName</Script>
+    </insert>
+  </c>
+  <c y="NodeSet" t="2018-12-07T09:56:59">
+    <controller name="KMTForcastImport" />
+    <view id="grid1" />
+    <dataField fieldName="FileId" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2018-12-07T09:57:06">
+    <controller name="KMTForcastImport" />
+    <field name="FileId" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2018-12-07T09:58:06">
+    <controller name="KMTForcastImport" />
+    <view id="grid1" />
+    <insert type="style">
+      <CssClass>StatusExecuteError</CssClass>
+      <Test>[StatusCode] == "Error"</Test>
+    </insert>
+  </c>
+  <c y="NodeSet" t="2018-12-07T09:58:31">
+    <controller name="HATCForcastImport" />
+    <field name="FileId" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2018-12-07T09:58:51">
+    <controller name="HATCForcastImport" />
+    <view id="grid1" />
+    <insert type="style">
+      <CssClass>StatusExecuteError</CssClass>
+      <Test>[StatusCode] == "Error"</Test>
+    </insert>
+  </c>
 </log>

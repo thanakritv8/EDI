@@ -28,7 +28,7 @@ public partial class Controls_SDT05Template : System.Web.UI.UserControl
         using (DataSetServiceTableAdapters.sp_Report_SDT05TableAdapter da = new DataSetServiceTableAdapters.sp_Report_SDT05TableAdapter())
         {
             DataSetService.sp_Report_SDT05DataTable dt = new DataSetService.sp_Report_SDT05DataTable();
-            da.Fill(dt, Convert.ToDateTime(TextBox1.Text.Trim()), Convert.ToDateTime(TextBox2.Text.Trim()));
+            da.Fill(dt, Convert.ToDateTime(TextBox1.Text.Trim()), Convert.ToDateTime(TextBox2.Text.Trim()), DropDownList1.Text);
             var dv = dt.DefaultView.ToTable(true, "CustomerMatCode", "DeliveryDestination", "CustomerPO", "PartsDevision");
             foreach (DataRow _Item in dv.Rows)
             {

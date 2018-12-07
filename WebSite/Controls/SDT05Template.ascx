@@ -26,6 +26,26 @@
                 </act:CalendarExtender>--%>
             </td>
             <td>
+                Customer
+            </td>
+            <td>
+                <asp:DropDownList ID="DropDownList1" runat="server" 
+                    DataSourceID="SqlDataSource1" DataTextField="SoldtoParty" 
+                    DataValueField="SoldtoParty">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                    ConnectionString="<%$ ConnectionStrings:ROKI_EDIConnectionString %>" 
+                    SelectCommand="GetMatCode" SelectCommandType="StoredProcedure" 
+                    UpdateCommand="GetMatCode" UpdateCommandType="StoredProcedure">
+                </asp:SqlDataSource>
+                <asp:EntityDataSource ID="EntityDataSource1" runat="server">
+                </asp:EntityDataSource>
+                <%-- <act:CalendarExtender ID="TextBox2_CalendarExtender" runat="server" 
+                    TargetControlID="TextBox2">
+                </act:CalendarExtender>--%>
+            </td>
+            <td>
+                
                 &nbsp;&nbsp;
                 <asp:Button ID="btnExecute" runat="server" Text="Execute" OnClick="btnExecute_Click"
                     Style="height: 26px" />
@@ -94,7 +114,8 @@
             document.getElementById('<%=TextBox2.ClientID %>').value = d2.format('yyyy-MM-dd');
 
 
-        });     
+        });  
+ 
         document.getElementById('<%=TextBox1.ClientID %>').value = d.format('yyyy-MM-dd');
         document.getElementById('<%=TextBox2.ClientID %>').value = d.format('yyyy-MM-dd');
 

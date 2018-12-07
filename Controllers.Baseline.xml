@@ -1,5 +1,5 @@
 <dataControllerCollection snapshot="false" xmlns="urn:schemas-codeontime-com:data-aquarium">
-  <dataController name="AATForcastImport" conflictDetection="overwriteChanges" label="AAT Forcast Import" nativeSchema="dbo" nativeTableName="AATForcastImport">
+  <dataController name="AATForcastImport" conflictDetection="overwriteChanges" label="AAT Forcast Import" nativeSchema="dbo" nativeTableName="AATForcastImport" xmlns="urn:schemas-codeontime-com:data-aquarium">
     <commands>
       <command id="command1" type="Text">
         <text>
@@ -3872,7 +3872,7 @@ from "dbo"."IMCTOrderImport" "IMCTOrderImport"
       </actionGroup>
     </actions>
   </dataController>
-  <dataController name="KMTForcastImport" conflictDetection="overwriteChanges" label="KMT Forcast Import" nativeSchema="dbo" nativeTableName="KMTForcastImport" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <dataController name="KMTForcastImport" conflictDetection="overwriteChanges" label="KMT Forcast Import" nativeSchema="dbo" nativeTableName="KMTForcastImport">
     <commands>
       <command id="command1" type="Text">
         <text>
@@ -3894,6 +3894,8 @@ select
 	,"KMTForcastImport"."SAPCode" "SAPCode"
 	,"KMTForcastImport"."FileId" "FileId"
 	,"KMTForcastImport"."StatusCode" "StatusCode"
+	,"KMTForcastImport"."FileName" "FileName"
+	,"KMTForcastImport"."DeliveryDestinationCode" "DeliveryDestinationCode"
 from "dbo"."KMTForcastImport" "KMTForcastImport"
 </text>
       </command>
@@ -3916,12 +3918,14 @@ from "dbo"."KMTForcastImport" "KMTForcastImport"
       <field name="Key3" type="String" label="Key3" length="50" />
       <field name="ReliabilityDevision" type="String" label="Reliability Devision" length="50" />
       <field name="DeliveryDate" type="DateTime" label="Delivery Date" />
-      <field name="Quantity" type="String" label="Quantity" length="50" />
+      <field name="Quantity" type="Int32" label="Quantity" />
       <field name="Unit" type="String" label="Unit" length="50" />
       <field name="PlngPeriod" type="String" label="Plng Period" length="50" />
       <field name="SAPCode" type="String" label="SAP Code" length="50" />
       <field name="FileId" type="Decimal" label="File#" />
       <field name="StatusCode" type="String" label="Status Code" length="100" />
+      <field name="FileName" type="String" allowQBE="false" allowSorting="false" label="File Name" />
+      <field name="DeliveryDestinationCode" type="String" label="Delivery Destination Code" length="50" />
     </fields>
     <views>
       <view id="grid1" type="Grid" commandId="command1" label="KMT Forcast Import">
@@ -3937,12 +3941,14 @@ from "dbo"."KMTForcastImport" "KMTForcastImport"
           <dataField fieldName="Key3" columns="50" />
           <dataField fieldName="ReliabilityDevision" columns="50" />
           <dataField fieldName="DeliveryDate" columns="10" />
-          <dataField fieldName="Quantity" columns="50" />
+          <dataField fieldName="Quantity" columns="15" />
           <dataField fieldName="Unit" columns="50" />
           <dataField fieldName="PlngPeriod" columns="50" />
           <dataField fieldName="SAPCode" columns="50" />
           <dataField fieldName="FileId" columns="15" />
           <dataField fieldName="StatusCode" />
+          <dataField fieldName="FileName" rows="5" />
+          <dataField fieldName="DeliveryDestinationCode" columns="50" />
         </dataFields>
       </view>
       <view id="editForm1" type="Form" commandId="command1" label="Review KMT Forcast Import">
@@ -3961,12 +3967,14 @@ from "dbo"."KMTForcastImport" "KMTForcastImport"
               <dataField fieldName="Key3" columns="50" />
               <dataField fieldName="ReliabilityDevision" columns="50" />
               <dataField fieldName="DeliveryDate" columns="10" />
-              <dataField fieldName="Quantity" columns="50" />
+              <dataField fieldName="Quantity" columns="15" />
               <dataField fieldName="Unit" columns="50" />
               <dataField fieldName="PlngPeriod" columns="50" />
               <dataField fieldName="SAPCode" columns="50" />
               <dataField fieldName="FileId" columns="15" />
               <dataField fieldName="StatusCode" />
+              <dataField fieldName="FileName" rows="5" />
+              <dataField fieldName="DeliveryDestinationCode" columns="50" />
             </dataFields>
           </category>
         </categories>
@@ -3987,12 +3995,14 @@ from "dbo"."KMTForcastImport" "KMTForcastImport"
               <dataField fieldName="Key3" columns="50" />
               <dataField fieldName="ReliabilityDevision" columns="50" />
               <dataField fieldName="DeliveryDate" columns="10" />
-              <dataField fieldName="Quantity" columns="50" />
+              <dataField fieldName="Quantity" columns="15" />
               <dataField fieldName="Unit" columns="50" />
               <dataField fieldName="PlngPeriod" columns="50" />
               <dataField fieldName="SAPCode" columns="50" />
               <dataField fieldName="FileId" columns="15" />
               <dataField fieldName="StatusCode" />
+              <dataField fieldName="FileName" rows="5" />
+              <dataField fieldName="DeliveryDestinationCode" columns="50" />
             </dataFields>
           </category>
         </categories>

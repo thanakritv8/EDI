@@ -2448,6 +2448,12 @@
       <Tables>
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <TABLE_TYPE>BASE TABLE</TABLE_TYPE>
+      </Tables>
+      <Tables>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>CustomerLog</TABLE_NAME>
         <TABLE_TYPE>BASE TABLE</TABLE_TYPE>
       </Tables>
@@ -2515,12 +2521,6 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>ForcastImportLog</TABLE_NAME>
-        <TABLE_TYPE>BASE TABLE</TABLE_TYPE>
-      </Tables>
-      <Tables>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
         <TABLE_TYPE>BASE TABLE</TABLE_TYPE>
       </Tables>
       <Tables>
@@ -7957,6 +7957,21 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
+        <ORDINAL_POSITION>19</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
         <COLUMN_NAME>FileId</COLUMN_NAME>
         <ORDINAL_POSITION>16</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
@@ -7964,6 +7979,21 @@
         <NUMERIC_PRECISION>18</NUMERIC_PRECISION>
         <NUMERIC_PRECISION_RADIX>10</NUMERIC_PRECISION_RADIX>
         <NUMERIC_SCALE>0</NUMERIC_SCALE>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>FileName</COLUMN_NAME>
+        <ORDINAL_POSITION>18</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>-1</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>-1</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
         <IS_SPARSE>false</IS_SPARSE>
         <IS_COLUMN_SET>false</IS_COLUMN_SET>
         <IS_FILESTREAM>false</IS_FILESTREAM>
@@ -8065,10 +8095,10 @@
         <COLUMN_NAME>Quantity</COLUMN_NAME>
         <ORDINAL_POSITION>12</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
-        <DATA_TYPE>nvarchar</DATA_TYPE>
-        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
-        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
-        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <DATA_TYPE>int</DATA_TYPE>
+        <NUMERIC_PRECISION>10</NUMERIC_PRECISION>
+        <NUMERIC_PRECISION_RADIX>10</NUMERIC_PRECISION_RADIX>
+        <NUMERIC_SCALE>0</NUMERIC_SCALE>
         <IS_SPARSE>false</IS_SPARSE>
         <IS_COLUMN_SET>false</IS_COLUMN_SET>
         <IS_FILESTREAM>false</IS_FILESTREAM>
@@ -21198,6 +21228,21 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
+        <ORDINAL_POSITION>19</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </AllColumns>
+      <AllColumns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
         <COLUMN_NAME>FileId</COLUMN_NAME>
         <ORDINAL_POSITION>16</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
@@ -21205,6 +21250,21 @@
         <NUMERIC_PRECISION>18</NUMERIC_PRECISION>
         <NUMERIC_PRECISION_RADIX>10</NUMERIC_PRECISION_RADIX>
         <NUMERIC_SCALE>0</NUMERIC_SCALE>
+        <IS_SPARSE>false</IS_SPARSE>
+        <IS_COLUMN_SET>false</IS_COLUMN_SET>
+        <IS_FILESTREAM>false</IS_FILESTREAM>
+      </AllColumns>
+      <AllColumns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>FileName</COLUMN_NAME>
+        <ORDINAL_POSITION>18</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>-1</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>-1</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
         <IS_SPARSE>false</IS_SPARSE>
         <IS_COLUMN_SET>false</IS_COLUMN_SET>
         <IS_FILESTREAM>false</IS_FILESTREAM>
@@ -21306,10 +21366,10 @@
         <COLUMN_NAME>Quantity</COLUMN_NAME>
         <ORDINAL_POSITION>12</ORDINAL_POSITION>
         <IS_NULLABLE>YES</IS_NULLABLE>
-        <DATA_TYPE>nvarchar</DATA_TYPE>
-        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
-        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
-        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <DATA_TYPE>int</DATA_TYPE>
+        <NUMERIC_PRECISION>10</NUMERIC_PRECISION>
+        <NUMERIC_PRECISION_RADIX>10</NUMERIC_PRECISION_RADIX>
+        <NUMERIC_SCALE>0</NUMERIC_SCALE>
         <IS_SPARSE>false</IS_SPARSE>
         <IS_COLUMN_SET>false</IS_COLUMN_SET>
         <IS_FILESTREAM>false</IS_FILESTREAM>
@@ -44497,6 +44557,523 @@
         </Column>
       </DocumentElement>
     </Table>
+    <Table Schema="dbo" Name="KMTForcastImport">
+      <DocumentElement>
+        <Column>
+          <ColumnName>AutoId</ColumnName>
+          <ColumnOrdinal>0</ColumnOrdinal>
+          <ColumnSize>17</ColumnSize>
+          <NumericPrecision>18</NumericPrecision>
+          <NumericScale>0</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>true</IsKey>
+          <BaseColumnName>AutoId</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>false</AllowDBNull>
+          <ProviderType>5</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>true</IsIdentity>
+          <IsAutoIncrement>true</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>true</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlDecimal, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>decimal</DataTypeName>
+          <NonVersionedProviderType>5</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>OrderBy</ColumnName>
+          <ColumnOrdinal>1</ColumnOrdinal>
+          <ColumnSize>50</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>OrderBy</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>DeliveryDestination</ColumnName>
+          <ColumnOrdinal>2</ColumnOrdinal>
+          <ColumnSize>250</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>DeliveryDestination</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>CustomerMatCode</ColumnName>
+          <ColumnOrdinal>3</ColumnOrdinal>
+          <ColumnSize>50</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>CustomerMatCode</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>PartsDevision</ColumnName>
+          <ColumnOrdinal>4</ColumnOrdinal>
+          <ColumnSize>10</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>PartsDevision</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>CustomerPO</ColumnName>
+          <ColumnOrdinal>5</ColumnOrdinal>
+          <ColumnSize>50</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>CustomerPO</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>Key1</ColumnName>
+          <ColumnOrdinal>6</ColumnOrdinal>
+          <ColumnSize>50</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>Key1</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>Key2</ColumnName>
+          <ColumnOrdinal>7</ColumnOrdinal>
+          <ColumnSize>50</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>Key2</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>Key3</ColumnName>
+          <ColumnOrdinal>8</ColumnOrdinal>
+          <ColumnSize>50</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>Key3</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>ReliabilityDevision</ColumnName>
+          <ColumnOrdinal>9</ColumnOrdinal>
+          <ColumnSize>50</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>ReliabilityDevision</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>DeliveryDate</ColumnName>
+          <ColumnOrdinal>10</ColumnOrdinal>
+          <ColumnSize>8</ColumnSize>
+          <NumericPrecision>23</NumericPrecision>
+          <NumericScale>3</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>DeliveryDate</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>4</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlDateTime, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>datetime</DataTypeName>
+          <NonVersionedProviderType>4</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>Quantity</ColumnName>
+          <ColumnOrdinal>11</ColumnOrdinal>
+          <ColumnSize>4</ColumnSize>
+          <NumericPrecision>10</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>Quantity</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>8</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlInt32, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>int</DataTypeName>
+          <NonVersionedProviderType>8</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>Unit</ColumnName>
+          <ColumnOrdinal>12</ColumnOrdinal>
+          <ColumnSize>50</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>Unit</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>PlngPeriod</ColumnName>
+          <ColumnOrdinal>13</ColumnOrdinal>
+          <ColumnSize>50</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>PlngPeriod</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>SAPCode</ColumnName>
+          <ColumnOrdinal>14</ColumnOrdinal>
+          <ColumnSize>50</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>SAPCode</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>FileId</ColumnName>
+          <ColumnOrdinal>15</ColumnOrdinal>
+          <ColumnSize>17</ColumnSize>
+          <NumericPrecision>18</NumericPrecision>
+          <NumericScale>0</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>FileId</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>5</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlDecimal, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>decimal</DataTypeName>
+          <NonVersionedProviderType>5</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>StatusCode</ColumnName>
+          <ColumnOrdinal>16</ColumnOrdinal>
+          <ColumnSize>100</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>StatusCode</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>FileName</ColumnName>
+          <ColumnOrdinal>17</ColumnOrdinal>
+          <ColumnSize>2147483647</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>FileName</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>true</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+        <Column>
+          <ColumnName>DeliveryDestinationCode</ColumnName>
+          <ColumnOrdinal>18</ColumnOrdinal>
+          <ColumnSize>50</ColumnSize>
+          <NumericPrecision>255</NumericPrecision>
+          <NumericScale>255</NumericScale>
+          <IsUnique>false</IsUnique>
+          <IsKey>false</IsKey>
+          <BaseColumnName>DeliveryDestinationCode</BaseColumnName>
+          <BaseSchemaName>dbo</BaseSchemaName>
+          <BaseTableName>KMTForcastImport</BaseTableName>
+          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
+          <AllowDBNull>true</AllowDBNull>
+          <ProviderType>12</ProviderType>
+          <IsAliased>false</IsAliased>
+          <IsExpression>false</IsExpression>
+          <IsIdentity>false</IsIdentity>
+          <IsAutoIncrement>false</IsAutoIncrement>
+          <IsRowVersion>false</IsRowVersion>
+          <IsHidden>false</IsHidden>
+          <IsLong>false</IsLong>
+          <IsReadOnly>false</IsReadOnly>
+          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
+          <DataTypeName>nvarchar</DataTypeName>
+          <NonVersionedProviderType>12</NonVersionedProviderType>
+          <IsColumnSet>false</IsColumnSet>
+        </Column>
+      </DocumentElement>
+    </Table>
     <Table Schema="dbo" Name="CustomerLog">
       <DocumentElement>
         <Column>
@@ -50782,469 +51359,6 @@
         </Column>
       </DocumentElement>
     </Table>
-    <Table Schema="dbo" Name="KMTForcastImport">
-      <DocumentElement>
-        <Column>
-          <ColumnName>AutoId</ColumnName>
-          <ColumnOrdinal>0</ColumnOrdinal>
-          <ColumnSize>17</ColumnSize>
-          <NumericPrecision>18</NumericPrecision>
-          <NumericScale>0</NumericScale>
-          <IsUnique>false</IsUnique>
-          <IsKey>true</IsKey>
-          <BaseColumnName>AutoId</BaseColumnName>
-          <BaseSchemaName>dbo</BaseSchemaName>
-          <BaseTableName>KMTForcastImport</BaseTableName>
-          <DataType>System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
-          <AllowDBNull>false</AllowDBNull>
-          <ProviderType>5</ProviderType>
-          <IsAliased>false</IsAliased>
-          <IsExpression>false</IsExpression>
-          <IsIdentity>true</IsIdentity>
-          <IsAutoIncrement>true</IsAutoIncrement>
-          <IsRowVersion>false</IsRowVersion>
-          <IsHidden>false</IsHidden>
-          <IsLong>false</IsLong>
-          <IsReadOnly>true</IsReadOnly>
-          <ProviderSpecificDataType>System.Data.SqlTypes.SqlDecimal, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
-          <DataTypeName>decimal</DataTypeName>
-          <NonVersionedProviderType>5</NonVersionedProviderType>
-          <IsColumnSet>false</IsColumnSet>
-        </Column>
-        <Column>
-          <ColumnName>OrderBy</ColumnName>
-          <ColumnOrdinal>1</ColumnOrdinal>
-          <ColumnSize>50</ColumnSize>
-          <NumericPrecision>255</NumericPrecision>
-          <NumericScale>255</NumericScale>
-          <IsUnique>false</IsUnique>
-          <IsKey>false</IsKey>
-          <BaseColumnName>OrderBy</BaseColumnName>
-          <BaseSchemaName>dbo</BaseSchemaName>
-          <BaseTableName>KMTForcastImport</BaseTableName>
-          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
-          <AllowDBNull>true</AllowDBNull>
-          <ProviderType>12</ProviderType>
-          <IsAliased>false</IsAliased>
-          <IsExpression>false</IsExpression>
-          <IsIdentity>false</IsIdentity>
-          <IsAutoIncrement>false</IsAutoIncrement>
-          <IsRowVersion>false</IsRowVersion>
-          <IsHidden>false</IsHidden>
-          <IsLong>false</IsLong>
-          <IsReadOnly>false</IsReadOnly>
-          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
-          <DataTypeName>nvarchar</DataTypeName>
-          <NonVersionedProviderType>12</NonVersionedProviderType>
-          <IsColumnSet>false</IsColumnSet>
-        </Column>
-        <Column>
-          <ColumnName>DeliveryDestination</ColumnName>
-          <ColumnOrdinal>2</ColumnOrdinal>
-          <ColumnSize>250</ColumnSize>
-          <NumericPrecision>255</NumericPrecision>
-          <NumericScale>255</NumericScale>
-          <IsUnique>false</IsUnique>
-          <IsKey>false</IsKey>
-          <BaseColumnName>DeliveryDestination</BaseColumnName>
-          <BaseSchemaName>dbo</BaseSchemaName>
-          <BaseTableName>KMTForcastImport</BaseTableName>
-          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
-          <AllowDBNull>true</AllowDBNull>
-          <ProviderType>12</ProviderType>
-          <IsAliased>false</IsAliased>
-          <IsExpression>false</IsExpression>
-          <IsIdentity>false</IsIdentity>
-          <IsAutoIncrement>false</IsAutoIncrement>
-          <IsRowVersion>false</IsRowVersion>
-          <IsHidden>false</IsHidden>
-          <IsLong>false</IsLong>
-          <IsReadOnly>false</IsReadOnly>
-          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
-          <DataTypeName>nvarchar</DataTypeName>
-          <NonVersionedProviderType>12</NonVersionedProviderType>
-          <IsColumnSet>false</IsColumnSet>
-        </Column>
-        <Column>
-          <ColumnName>CustomerMatCode</ColumnName>
-          <ColumnOrdinal>3</ColumnOrdinal>
-          <ColumnSize>50</ColumnSize>
-          <NumericPrecision>255</NumericPrecision>
-          <NumericScale>255</NumericScale>
-          <IsUnique>false</IsUnique>
-          <IsKey>false</IsKey>
-          <BaseColumnName>CustomerMatCode</BaseColumnName>
-          <BaseSchemaName>dbo</BaseSchemaName>
-          <BaseTableName>KMTForcastImport</BaseTableName>
-          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
-          <AllowDBNull>true</AllowDBNull>
-          <ProviderType>12</ProviderType>
-          <IsAliased>false</IsAliased>
-          <IsExpression>false</IsExpression>
-          <IsIdentity>false</IsIdentity>
-          <IsAutoIncrement>false</IsAutoIncrement>
-          <IsRowVersion>false</IsRowVersion>
-          <IsHidden>false</IsHidden>
-          <IsLong>false</IsLong>
-          <IsReadOnly>false</IsReadOnly>
-          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
-          <DataTypeName>nvarchar</DataTypeName>
-          <NonVersionedProviderType>12</NonVersionedProviderType>
-          <IsColumnSet>false</IsColumnSet>
-        </Column>
-        <Column>
-          <ColumnName>PartsDevision</ColumnName>
-          <ColumnOrdinal>4</ColumnOrdinal>
-          <ColumnSize>10</ColumnSize>
-          <NumericPrecision>255</NumericPrecision>
-          <NumericScale>255</NumericScale>
-          <IsUnique>false</IsUnique>
-          <IsKey>false</IsKey>
-          <BaseColumnName>PartsDevision</BaseColumnName>
-          <BaseSchemaName>dbo</BaseSchemaName>
-          <BaseTableName>KMTForcastImport</BaseTableName>
-          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
-          <AllowDBNull>true</AllowDBNull>
-          <ProviderType>12</ProviderType>
-          <IsAliased>false</IsAliased>
-          <IsExpression>false</IsExpression>
-          <IsIdentity>false</IsIdentity>
-          <IsAutoIncrement>false</IsAutoIncrement>
-          <IsRowVersion>false</IsRowVersion>
-          <IsHidden>false</IsHidden>
-          <IsLong>false</IsLong>
-          <IsReadOnly>false</IsReadOnly>
-          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
-          <DataTypeName>nvarchar</DataTypeName>
-          <NonVersionedProviderType>12</NonVersionedProviderType>
-          <IsColumnSet>false</IsColumnSet>
-        </Column>
-        <Column>
-          <ColumnName>CustomerPO</ColumnName>
-          <ColumnOrdinal>5</ColumnOrdinal>
-          <ColumnSize>50</ColumnSize>
-          <NumericPrecision>255</NumericPrecision>
-          <NumericScale>255</NumericScale>
-          <IsUnique>false</IsUnique>
-          <IsKey>false</IsKey>
-          <BaseColumnName>CustomerPO</BaseColumnName>
-          <BaseSchemaName>dbo</BaseSchemaName>
-          <BaseTableName>KMTForcastImport</BaseTableName>
-          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
-          <AllowDBNull>true</AllowDBNull>
-          <ProviderType>12</ProviderType>
-          <IsAliased>false</IsAliased>
-          <IsExpression>false</IsExpression>
-          <IsIdentity>false</IsIdentity>
-          <IsAutoIncrement>false</IsAutoIncrement>
-          <IsRowVersion>false</IsRowVersion>
-          <IsHidden>false</IsHidden>
-          <IsLong>false</IsLong>
-          <IsReadOnly>false</IsReadOnly>
-          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
-          <DataTypeName>nvarchar</DataTypeName>
-          <NonVersionedProviderType>12</NonVersionedProviderType>
-          <IsColumnSet>false</IsColumnSet>
-        </Column>
-        <Column>
-          <ColumnName>Key1</ColumnName>
-          <ColumnOrdinal>6</ColumnOrdinal>
-          <ColumnSize>50</ColumnSize>
-          <NumericPrecision>255</NumericPrecision>
-          <NumericScale>255</NumericScale>
-          <IsUnique>false</IsUnique>
-          <IsKey>false</IsKey>
-          <BaseColumnName>Key1</BaseColumnName>
-          <BaseSchemaName>dbo</BaseSchemaName>
-          <BaseTableName>KMTForcastImport</BaseTableName>
-          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
-          <AllowDBNull>true</AllowDBNull>
-          <ProviderType>12</ProviderType>
-          <IsAliased>false</IsAliased>
-          <IsExpression>false</IsExpression>
-          <IsIdentity>false</IsIdentity>
-          <IsAutoIncrement>false</IsAutoIncrement>
-          <IsRowVersion>false</IsRowVersion>
-          <IsHidden>false</IsHidden>
-          <IsLong>false</IsLong>
-          <IsReadOnly>false</IsReadOnly>
-          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
-          <DataTypeName>nvarchar</DataTypeName>
-          <NonVersionedProviderType>12</NonVersionedProviderType>
-          <IsColumnSet>false</IsColumnSet>
-        </Column>
-        <Column>
-          <ColumnName>Key2</ColumnName>
-          <ColumnOrdinal>7</ColumnOrdinal>
-          <ColumnSize>50</ColumnSize>
-          <NumericPrecision>255</NumericPrecision>
-          <NumericScale>255</NumericScale>
-          <IsUnique>false</IsUnique>
-          <IsKey>false</IsKey>
-          <BaseColumnName>Key2</BaseColumnName>
-          <BaseSchemaName>dbo</BaseSchemaName>
-          <BaseTableName>KMTForcastImport</BaseTableName>
-          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
-          <AllowDBNull>true</AllowDBNull>
-          <ProviderType>12</ProviderType>
-          <IsAliased>false</IsAliased>
-          <IsExpression>false</IsExpression>
-          <IsIdentity>false</IsIdentity>
-          <IsAutoIncrement>false</IsAutoIncrement>
-          <IsRowVersion>false</IsRowVersion>
-          <IsHidden>false</IsHidden>
-          <IsLong>false</IsLong>
-          <IsReadOnly>false</IsReadOnly>
-          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
-          <DataTypeName>nvarchar</DataTypeName>
-          <NonVersionedProviderType>12</NonVersionedProviderType>
-          <IsColumnSet>false</IsColumnSet>
-        </Column>
-        <Column>
-          <ColumnName>Key3</ColumnName>
-          <ColumnOrdinal>8</ColumnOrdinal>
-          <ColumnSize>50</ColumnSize>
-          <NumericPrecision>255</NumericPrecision>
-          <NumericScale>255</NumericScale>
-          <IsUnique>false</IsUnique>
-          <IsKey>false</IsKey>
-          <BaseColumnName>Key3</BaseColumnName>
-          <BaseSchemaName>dbo</BaseSchemaName>
-          <BaseTableName>KMTForcastImport</BaseTableName>
-          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
-          <AllowDBNull>true</AllowDBNull>
-          <ProviderType>12</ProviderType>
-          <IsAliased>false</IsAliased>
-          <IsExpression>false</IsExpression>
-          <IsIdentity>false</IsIdentity>
-          <IsAutoIncrement>false</IsAutoIncrement>
-          <IsRowVersion>false</IsRowVersion>
-          <IsHidden>false</IsHidden>
-          <IsLong>false</IsLong>
-          <IsReadOnly>false</IsReadOnly>
-          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
-          <DataTypeName>nvarchar</DataTypeName>
-          <NonVersionedProviderType>12</NonVersionedProviderType>
-          <IsColumnSet>false</IsColumnSet>
-        </Column>
-        <Column>
-          <ColumnName>ReliabilityDevision</ColumnName>
-          <ColumnOrdinal>9</ColumnOrdinal>
-          <ColumnSize>50</ColumnSize>
-          <NumericPrecision>255</NumericPrecision>
-          <NumericScale>255</NumericScale>
-          <IsUnique>false</IsUnique>
-          <IsKey>false</IsKey>
-          <BaseColumnName>ReliabilityDevision</BaseColumnName>
-          <BaseSchemaName>dbo</BaseSchemaName>
-          <BaseTableName>KMTForcastImport</BaseTableName>
-          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
-          <AllowDBNull>true</AllowDBNull>
-          <ProviderType>12</ProviderType>
-          <IsAliased>false</IsAliased>
-          <IsExpression>false</IsExpression>
-          <IsIdentity>false</IsIdentity>
-          <IsAutoIncrement>false</IsAutoIncrement>
-          <IsRowVersion>false</IsRowVersion>
-          <IsHidden>false</IsHidden>
-          <IsLong>false</IsLong>
-          <IsReadOnly>false</IsReadOnly>
-          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
-          <DataTypeName>nvarchar</DataTypeName>
-          <NonVersionedProviderType>12</NonVersionedProviderType>
-          <IsColumnSet>false</IsColumnSet>
-        </Column>
-        <Column>
-          <ColumnName>DeliveryDate</ColumnName>
-          <ColumnOrdinal>10</ColumnOrdinal>
-          <ColumnSize>8</ColumnSize>
-          <NumericPrecision>23</NumericPrecision>
-          <NumericScale>3</NumericScale>
-          <IsUnique>false</IsUnique>
-          <IsKey>false</IsKey>
-          <BaseColumnName>DeliveryDate</BaseColumnName>
-          <BaseSchemaName>dbo</BaseSchemaName>
-          <BaseTableName>KMTForcastImport</BaseTableName>
-          <DataType>System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
-          <AllowDBNull>true</AllowDBNull>
-          <ProviderType>4</ProviderType>
-          <IsAliased>false</IsAliased>
-          <IsExpression>false</IsExpression>
-          <IsIdentity>false</IsIdentity>
-          <IsAutoIncrement>false</IsAutoIncrement>
-          <IsRowVersion>false</IsRowVersion>
-          <IsHidden>false</IsHidden>
-          <IsLong>false</IsLong>
-          <IsReadOnly>false</IsReadOnly>
-          <ProviderSpecificDataType>System.Data.SqlTypes.SqlDateTime, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
-          <DataTypeName>datetime</DataTypeName>
-          <NonVersionedProviderType>4</NonVersionedProviderType>
-          <IsColumnSet>false</IsColumnSet>
-        </Column>
-        <Column>
-          <ColumnName>Quantity</ColumnName>
-          <ColumnOrdinal>11</ColumnOrdinal>
-          <ColumnSize>50</ColumnSize>
-          <NumericPrecision>255</NumericPrecision>
-          <NumericScale>255</NumericScale>
-          <IsUnique>false</IsUnique>
-          <IsKey>false</IsKey>
-          <BaseColumnName>Quantity</BaseColumnName>
-          <BaseSchemaName>dbo</BaseSchemaName>
-          <BaseTableName>KMTForcastImport</BaseTableName>
-          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
-          <AllowDBNull>true</AllowDBNull>
-          <ProviderType>12</ProviderType>
-          <IsAliased>false</IsAliased>
-          <IsExpression>false</IsExpression>
-          <IsIdentity>false</IsIdentity>
-          <IsAutoIncrement>false</IsAutoIncrement>
-          <IsRowVersion>false</IsRowVersion>
-          <IsHidden>false</IsHidden>
-          <IsLong>false</IsLong>
-          <IsReadOnly>false</IsReadOnly>
-          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
-          <DataTypeName>nvarchar</DataTypeName>
-          <NonVersionedProviderType>12</NonVersionedProviderType>
-          <IsColumnSet>false</IsColumnSet>
-        </Column>
-        <Column>
-          <ColumnName>Unit</ColumnName>
-          <ColumnOrdinal>12</ColumnOrdinal>
-          <ColumnSize>50</ColumnSize>
-          <NumericPrecision>255</NumericPrecision>
-          <NumericScale>255</NumericScale>
-          <IsUnique>false</IsUnique>
-          <IsKey>false</IsKey>
-          <BaseColumnName>Unit</BaseColumnName>
-          <BaseSchemaName>dbo</BaseSchemaName>
-          <BaseTableName>KMTForcastImport</BaseTableName>
-          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
-          <AllowDBNull>true</AllowDBNull>
-          <ProviderType>12</ProviderType>
-          <IsAliased>false</IsAliased>
-          <IsExpression>false</IsExpression>
-          <IsIdentity>false</IsIdentity>
-          <IsAutoIncrement>false</IsAutoIncrement>
-          <IsRowVersion>false</IsRowVersion>
-          <IsHidden>false</IsHidden>
-          <IsLong>false</IsLong>
-          <IsReadOnly>false</IsReadOnly>
-          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
-          <DataTypeName>nvarchar</DataTypeName>
-          <NonVersionedProviderType>12</NonVersionedProviderType>
-          <IsColumnSet>false</IsColumnSet>
-        </Column>
-        <Column>
-          <ColumnName>PlngPeriod</ColumnName>
-          <ColumnOrdinal>13</ColumnOrdinal>
-          <ColumnSize>50</ColumnSize>
-          <NumericPrecision>255</NumericPrecision>
-          <NumericScale>255</NumericScale>
-          <IsUnique>false</IsUnique>
-          <IsKey>false</IsKey>
-          <BaseColumnName>PlngPeriod</BaseColumnName>
-          <BaseSchemaName>dbo</BaseSchemaName>
-          <BaseTableName>KMTForcastImport</BaseTableName>
-          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
-          <AllowDBNull>true</AllowDBNull>
-          <ProviderType>12</ProviderType>
-          <IsAliased>false</IsAliased>
-          <IsExpression>false</IsExpression>
-          <IsIdentity>false</IsIdentity>
-          <IsAutoIncrement>false</IsAutoIncrement>
-          <IsRowVersion>false</IsRowVersion>
-          <IsHidden>false</IsHidden>
-          <IsLong>false</IsLong>
-          <IsReadOnly>false</IsReadOnly>
-          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
-          <DataTypeName>nvarchar</DataTypeName>
-          <NonVersionedProviderType>12</NonVersionedProviderType>
-          <IsColumnSet>false</IsColumnSet>
-        </Column>
-        <Column>
-          <ColumnName>SAPCode</ColumnName>
-          <ColumnOrdinal>14</ColumnOrdinal>
-          <ColumnSize>50</ColumnSize>
-          <NumericPrecision>255</NumericPrecision>
-          <NumericScale>255</NumericScale>
-          <IsUnique>false</IsUnique>
-          <IsKey>false</IsKey>
-          <BaseColumnName>SAPCode</BaseColumnName>
-          <BaseSchemaName>dbo</BaseSchemaName>
-          <BaseTableName>KMTForcastImport</BaseTableName>
-          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
-          <AllowDBNull>true</AllowDBNull>
-          <ProviderType>12</ProviderType>
-          <IsAliased>false</IsAliased>
-          <IsExpression>false</IsExpression>
-          <IsIdentity>false</IsIdentity>
-          <IsAutoIncrement>false</IsAutoIncrement>
-          <IsRowVersion>false</IsRowVersion>
-          <IsHidden>false</IsHidden>
-          <IsLong>false</IsLong>
-          <IsReadOnly>false</IsReadOnly>
-          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
-          <DataTypeName>nvarchar</DataTypeName>
-          <NonVersionedProviderType>12</NonVersionedProviderType>
-          <IsColumnSet>false</IsColumnSet>
-        </Column>
-        <Column>
-          <ColumnName>FileId</ColumnName>
-          <ColumnOrdinal>15</ColumnOrdinal>
-          <ColumnSize>17</ColumnSize>
-          <NumericPrecision>18</NumericPrecision>
-          <NumericScale>0</NumericScale>
-          <IsUnique>false</IsUnique>
-          <IsKey>false</IsKey>
-          <BaseColumnName>FileId</BaseColumnName>
-          <BaseSchemaName>dbo</BaseSchemaName>
-          <BaseTableName>KMTForcastImport</BaseTableName>
-          <DataType>System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
-          <AllowDBNull>true</AllowDBNull>
-          <ProviderType>5</ProviderType>
-          <IsAliased>false</IsAliased>
-          <IsExpression>false</IsExpression>
-          <IsIdentity>false</IsIdentity>
-          <IsAutoIncrement>false</IsAutoIncrement>
-          <IsRowVersion>false</IsRowVersion>
-          <IsHidden>false</IsHidden>
-          <IsLong>false</IsLong>
-          <IsReadOnly>false</IsReadOnly>
-          <ProviderSpecificDataType>System.Data.SqlTypes.SqlDecimal, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
-          <DataTypeName>decimal</DataTypeName>
-          <NonVersionedProviderType>5</NonVersionedProviderType>
-          <IsColumnSet>false</IsColumnSet>
-        </Column>
-        <Column>
-          <ColumnName>StatusCode</ColumnName>
-          <ColumnOrdinal>16</ColumnOrdinal>
-          <ColumnSize>100</ColumnSize>
-          <NumericPrecision>255</NumericPrecision>
-          <NumericScale>255</NumericScale>
-          <IsUnique>false</IsUnique>
-          <IsKey>false</IsKey>
-          <BaseColumnName>StatusCode</BaseColumnName>
-          <BaseSchemaName>dbo</BaseSchemaName>
-          <BaseTableName>KMTForcastImport</BaseTableName>
-          <DataType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</DataType>
-          <AllowDBNull>true</AllowDBNull>
-          <ProviderType>12</ProviderType>
-          <IsAliased>false</IsAliased>
-          <IsExpression>false</IsExpression>
-          <IsIdentity>false</IsIdentity>
-          <IsAutoIncrement>false</IsAutoIncrement>
-          <IsRowVersion>false</IsRowVersion>
-          <IsHidden>false</IsHidden>
-          <IsLong>false</IsLong>
-          <IsReadOnly>false</IsReadOnly>
-          <ProviderSpecificDataType>System.Data.SqlTypes.SqlString, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ProviderSpecificDataType>
-          <DataTypeName>nvarchar</DataTypeName>
-          <NonVersionedProviderType>12</NonVersionedProviderType>
-          <IsColumnSet>false</IsColumnSet>
-        </Column>
-      </DocumentElement>
-    </Table>
     <Table Schema="dbo" Name="AATOrderImport">
       <DocumentElement>
         <Column>
@@ -54795,6 +54909,12 @@
       <Tables>
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <TABLE_TYPE>BASE TABLE</TABLE_TYPE>
+      </Tables>
+      <Tables>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>CustomerLog</TABLE_NAME>
         <TABLE_TYPE>BASE TABLE</TABLE_TYPE>
       </Tables>
@@ -54862,12 +54982,6 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>ForcastImportLog</TABLE_NAME>
-        <TABLE_TYPE>BASE TABLE</TABLE_TYPE>
-      </Tables>
-      <Tables>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
         <TABLE_TYPE>BASE TABLE</TABLE_TYPE>
       </Tables>
       <Tables>
@@ -61507,6 +61621,247 @@
       <Columns>
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>AutoId</COLUMN_NAME>
+        <ORDINAL_POSITION>1</ORDINAL_POSITION>
+        <IS_NULLABLE>NO</IS_NULLABLE>
+        <DATA_TYPE>decimal</DATA_TYPE>
+        <NUMERIC_PRECISION>18</NUMERIC_PRECISION>
+        <NUMERIC_PRECISION_RADIX>10</NUMERIC_PRECISION_RADIX>
+        <NUMERIC_SCALE>0</NUMERIC_SCALE>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>OrderBy</COLUMN_NAME>
+        <ORDINAL_POSITION>2</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>DeliveryDestination</COLUMN_NAME>
+        <ORDINAL_POSITION>3</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>250</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>500</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>CustomerMatCode</COLUMN_NAME>
+        <ORDINAL_POSITION>4</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>PartsDevision</COLUMN_NAME>
+        <ORDINAL_POSITION>5</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>10</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>20</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>CustomerPO</COLUMN_NAME>
+        <ORDINAL_POSITION>6</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>Key1</COLUMN_NAME>
+        <ORDINAL_POSITION>7</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>Key2</COLUMN_NAME>
+        <ORDINAL_POSITION>8</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>Key3</COLUMN_NAME>
+        <ORDINAL_POSITION>9</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>ReliabilityDevision</COLUMN_NAME>
+        <ORDINAL_POSITION>10</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>DeliveryDate</COLUMN_NAME>
+        <ORDINAL_POSITION>11</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>datetime</DATA_TYPE>
+        <DATETIME_PRECISION>3</DATETIME_PRECISION>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>Quantity</COLUMN_NAME>
+        <ORDINAL_POSITION>12</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>int</DATA_TYPE>
+        <NUMERIC_PRECISION>10</NUMERIC_PRECISION>
+        <NUMERIC_PRECISION_RADIX>10</NUMERIC_PRECISION_RADIX>
+        <NUMERIC_SCALE>0</NUMERIC_SCALE>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>Unit</COLUMN_NAME>
+        <ORDINAL_POSITION>13</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>PlngPeriod</COLUMN_NAME>
+        <ORDINAL_POSITION>14</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>SAPCode</COLUMN_NAME>
+        <ORDINAL_POSITION>15</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>FileId</COLUMN_NAME>
+        <ORDINAL_POSITION>16</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>decimal</DATA_TYPE>
+        <NUMERIC_PRECISION>18</NUMERIC_PRECISION>
+        <NUMERIC_PRECISION_RADIX>10</NUMERIC_PRECISION_RADIX>
+        <NUMERIC_SCALE>0</NUMERIC_SCALE>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>StatusCode</COLUMN_NAME>
+        <ORDINAL_POSITION>17</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>100</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>200</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>FileName</COLUMN_NAME>
+        <ORDINAL_POSITION>18</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>-1</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>-1</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>DeliveryDestinationCode</COLUMN_NAME>
+        <ORDINAL_POSITION>19</ORDINAL_POSITION>
+        <IS_NULLABLE>YES</IS_NULLABLE>
+        <DATA_TYPE>nvarchar</DATA_TYPE>
+        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
+        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
+        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
+        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
+      </Columns>
+      <Columns>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>CustomerLog</TABLE_NAME>
         <COLUMN_NAME>AutoId</COLUMN_NAME>
         <ORDINAL_POSITION>1</ORDINAL_POSITION>
@@ -64430,222 +64785,6 @@
       <Columns>
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>AutoId</COLUMN_NAME>
-        <ORDINAL_POSITION>1</ORDINAL_POSITION>
-        <IS_NULLABLE>NO</IS_NULLABLE>
-        <DATA_TYPE>decimal</DATA_TYPE>
-        <NUMERIC_PRECISION>18</NUMERIC_PRECISION>
-        <NUMERIC_PRECISION_RADIX>10</NUMERIC_PRECISION_RADIX>
-        <NUMERIC_SCALE>0</NUMERIC_SCALE>
-      </Columns>
-      <Columns>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>OrderBy</COLUMN_NAME>
-        <ORDINAL_POSITION>2</ORDINAL_POSITION>
-        <IS_NULLABLE>YES</IS_NULLABLE>
-        <DATA_TYPE>nvarchar</DATA_TYPE>
-        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
-        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
-        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
-        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
-      </Columns>
-      <Columns>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>DeliveryDestination</COLUMN_NAME>
-        <ORDINAL_POSITION>3</ORDINAL_POSITION>
-        <IS_NULLABLE>YES</IS_NULLABLE>
-        <DATA_TYPE>nvarchar</DATA_TYPE>
-        <CHARACTER_MAXIMUM_LENGTH>250</CHARACTER_MAXIMUM_LENGTH>
-        <CHARACTER_OCTET_LENGTH>500</CHARACTER_OCTET_LENGTH>
-        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
-        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
-      </Columns>
-      <Columns>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>CustomerMatCode</COLUMN_NAME>
-        <ORDINAL_POSITION>4</ORDINAL_POSITION>
-        <IS_NULLABLE>YES</IS_NULLABLE>
-        <DATA_TYPE>nvarchar</DATA_TYPE>
-        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
-        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
-        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
-        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
-      </Columns>
-      <Columns>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>PartsDevision</COLUMN_NAME>
-        <ORDINAL_POSITION>5</ORDINAL_POSITION>
-        <IS_NULLABLE>YES</IS_NULLABLE>
-        <DATA_TYPE>nvarchar</DATA_TYPE>
-        <CHARACTER_MAXIMUM_LENGTH>10</CHARACTER_MAXIMUM_LENGTH>
-        <CHARACTER_OCTET_LENGTH>20</CHARACTER_OCTET_LENGTH>
-        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
-        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
-      </Columns>
-      <Columns>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>CustomerPO</COLUMN_NAME>
-        <ORDINAL_POSITION>6</ORDINAL_POSITION>
-        <IS_NULLABLE>YES</IS_NULLABLE>
-        <DATA_TYPE>nvarchar</DATA_TYPE>
-        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
-        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
-        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
-        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
-      </Columns>
-      <Columns>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>Key1</COLUMN_NAME>
-        <ORDINAL_POSITION>7</ORDINAL_POSITION>
-        <IS_NULLABLE>YES</IS_NULLABLE>
-        <DATA_TYPE>nvarchar</DATA_TYPE>
-        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
-        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
-        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
-        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
-      </Columns>
-      <Columns>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>Key2</COLUMN_NAME>
-        <ORDINAL_POSITION>8</ORDINAL_POSITION>
-        <IS_NULLABLE>YES</IS_NULLABLE>
-        <DATA_TYPE>nvarchar</DATA_TYPE>
-        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
-        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
-        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
-        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
-      </Columns>
-      <Columns>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>Key3</COLUMN_NAME>
-        <ORDINAL_POSITION>9</ORDINAL_POSITION>
-        <IS_NULLABLE>YES</IS_NULLABLE>
-        <DATA_TYPE>nvarchar</DATA_TYPE>
-        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
-        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
-        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
-        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
-      </Columns>
-      <Columns>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>ReliabilityDevision</COLUMN_NAME>
-        <ORDINAL_POSITION>10</ORDINAL_POSITION>
-        <IS_NULLABLE>YES</IS_NULLABLE>
-        <DATA_TYPE>nvarchar</DATA_TYPE>
-        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
-        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
-        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
-        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
-      </Columns>
-      <Columns>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>DeliveryDate</COLUMN_NAME>
-        <ORDINAL_POSITION>11</ORDINAL_POSITION>
-        <IS_NULLABLE>YES</IS_NULLABLE>
-        <DATA_TYPE>datetime</DATA_TYPE>
-        <DATETIME_PRECISION>3</DATETIME_PRECISION>
-      </Columns>
-      <Columns>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>Quantity</COLUMN_NAME>
-        <ORDINAL_POSITION>12</ORDINAL_POSITION>
-        <IS_NULLABLE>YES</IS_NULLABLE>
-        <DATA_TYPE>nvarchar</DATA_TYPE>
-        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
-        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
-        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
-        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
-      </Columns>
-      <Columns>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>Unit</COLUMN_NAME>
-        <ORDINAL_POSITION>13</ORDINAL_POSITION>
-        <IS_NULLABLE>YES</IS_NULLABLE>
-        <DATA_TYPE>nvarchar</DATA_TYPE>
-        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
-        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
-        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
-        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
-      </Columns>
-      <Columns>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>PlngPeriod</COLUMN_NAME>
-        <ORDINAL_POSITION>14</ORDINAL_POSITION>
-        <IS_NULLABLE>YES</IS_NULLABLE>
-        <DATA_TYPE>nvarchar</DATA_TYPE>
-        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
-        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
-        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
-        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
-      </Columns>
-      <Columns>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>SAPCode</COLUMN_NAME>
-        <ORDINAL_POSITION>15</ORDINAL_POSITION>
-        <IS_NULLABLE>YES</IS_NULLABLE>
-        <DATA_TYPE>nvarchar</DATA_TYPE>
-        <CHARACTER_MAXIMUM_LENGTH>50</CHARACTER_MAXIMUM_LENGTH>
-        <CHARACTER_OCTET_LENGTH>100</CHARACTER_OCTET_LENGTH>
-        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
-        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
-      </Columns>
-      <Columns>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>FileId</COLUMN_NAME>
-        <ORDINAL_POSITION>16</ORDINAL_POSITION>
-        <IS_NULLABLE>YES</IS_NULLABLE>
-        <DATA_TYPE>decimal</DATA_TYPE>
-        <NUMERIC_PRECISION>18</NUMERIC_PRECISION>
-        <NUMERIC_PRECISION_RADIX>10</NUMERIC_PRECISION_RADIX>
-        <NUMERIC_SCALE>0</NUMERIC_SCALE>
-      </Columns>
-      <Columns>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
-        <COLUMN_NAME>StatusCode</COLUMN_NAME>
-        <ORDINAL_POSITION>17</ORDINAL_POSITION>
-        <IS_NULLABLE>YES</IS_NULLABLE>
-        <DATA_TYPE>nvarchar</DATA_TYPE>
-        <CHARACTER_MAXIMUM_LENGTH>100</CHARACTER_MAXIMUM_LENGTH>
-        <CHARACTER_OCTET_LENGTH>200</CHARACTER_OCTET_LENGTH>
-        <CHARACTER_SET_NAME>UNICODE</CHARACTER_SET_NAME>
-        <COLLATION_NAME>SQL_Latin1_General_CP1_CI_AS</COLLATION_NAME>
-      </Columns>
-      <Columns>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>AATOrderImport</TABLE_NAME>
         <COLUMN_NAME>AutoId</COLUMN_NAME>
         <ORDINAL_POSITION>1</ORDINAL_POSITION>
@@ -66483,6 +66622,16 @@
       <PrimaryKeyColumns>
         <CONSTRAINT_CATALOG>ROKI_EDI</CONSTRAINT_CATALOG>
         <CONSTRAINT_SCHEMA>dbo</CONSTRAINT_SCHEMA>
+        <CONSTRAINT_NAME>PK_KMTForcast</CONSTRAINT_NAME>
+        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
+        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
+        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
+        <COLUMN_NAME>AutoId</COLUMN_NAME>
+        <ORDINAL_POSITION>1</ORDINAL_POSITION>
+      </PrimaryKeyColumns>
+      <PrimaryKeyColumns>
+        <CONSTRAINT_CATALOG>ROKI_EDI</CONSTRAINT_CATALOG>
+        <CONSTRAINT_SCHEMA>dbo</CONSTRAINT_SCHEMA>
         <CONSTRAINT_NAME>PK_CustomerLog</CONSTRAINT_NAME>
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
@@ -66597,16 +66746,6 @@
         <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
         <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
         <TABLE_NAME>ForcastImportLog</TABLE_NAME>
-        <COLUMN_NAME>AutoId</COLUMN_NAME>
-        <ORDINAL_POSITION>1</ORDINAL_POSITION>
-      </PrimaryKeyColumns>
-      <PrimaryKeyColumns>
-        <CONSTRAINT_CATALOG>ROKI_EDI</CONSTRAINT_CATALOG>
-        <CONSTRAINT_SCHEMA>dbo</CONSTRAINT_SCHEMA>
-        <CONSTRAINT_NAME>PK_KMTForcast</CONSTRAINT_NAME>
-        <TABLE_CATALOG>ROKI_EDI</TABLE_CATALOG>
-        <TABLE_SCHEMA>dbo</TABLE_SCHEMA>
-        <TABLE_NAME>KMTForcastImport</TABLE_NAME>
         <COLUMN_NAME>AutoId</COLUMN_NAME>
         <ORDINAL_POSITION>1</ORDINAL_POSITION>
       </PrimaryKeyColumns>

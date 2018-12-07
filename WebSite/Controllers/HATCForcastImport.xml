@@ -49,7 +49,6 @@ from "dbo"."HATCForcastImport" "HATCForcastImport"
     <field name="Unit" type="String" label="Unit" length="50" />
     <field name="PlngPeriod" type="String" label="Plng Period" length="50" />
     <field name="SAPCode" type="String" label="SAP Code" length="50" />
-    <field name="FileId" type="Decimal" label="File#" />
     <field name="StatusCode" type="String" label="Status Code" length="100" />
     <field name="FileName" type="String" allowQBE="false" allowSorting="false" label="File Name" />
     <field name="DeliveryDestinationCode" type="String" label="Delivery Destination Code" length="50" />
@@ -76,6 +75,9 @@ from "dbo"."HATCForcastImport" "HATCForcastImport"
         <dataField fieldName="FileName" rows="5" />
         <dataField fieldName="DeliveryDestinationCode" columns="50" />
       </dataFields>
+      <styles>
+        <expression type="ClientScript" result="StatusExecuteError" test="[StatusCode] == &quot;Error&quot;" />
+      </styles>
     </view>
     <view id="editForm1" type="Form" commandId="command1" label="Review HATC Forcast Import">
       <headerText>$DefaultEditViewDescription</headerText>
@@ -97,7 +99,6 @@ from "dbo"."HATCForcastImport" "HATCForcastImport"
             <dataField fieldName="Unit" columns="50" />
             <dataField fieldName="PlngPeriod" columns="50" />
             <dataField fieldName="SAPCode" columns="50" />
-            <dataField fieldName="FileId" columns="15" />
             <dataField fieldName="StatusCode" />
             <dataField fieldName="FileName" rows="5" />
             <dataField fieldName="DeliveryDestinationCode" columns="50" />
@@ -125,7 +126,6 @@ from "dbo"."HATCForcastImport" "HATCForcastImport"
             <dataField fieldName="Unit" columns="50" />
             <dataField fieldName="PlngPeriod" columns="50" />
             <dataField fieldName="SAPCode" columns="50" />
-            <dataField fieldName="FileId" columns="15" />
             <dataField fieldName="StatusCode" />
             <dataField fieldName="FileName" rows="5" />
             <dataField fieldName="DeliveryDestinationCode" columns="50" />
