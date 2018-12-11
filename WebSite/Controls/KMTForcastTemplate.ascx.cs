@@ -24,24 +24,45 @@ public partial class Controls_KMTForcastTemplate : System.Web.UI.UserControl
     {
     }
 
-    static void ExcelToCSVCoversion(string sourceFile,  string targetFile)
+    private void ExcelToCSVCoversion(string sourceFile, string targetFile)
     {
         Excel.Application rawData = new Excel.Application();
 
         try
         {
             Excel.Workbook workbook = rawData.Workbooks.Open(sourceFile);
-            Excel.Worksheet ws = (Excel.Worksheet) workbook.Sheets[1];
+            Excel.Worksheet ws = (Excel.Worksheet)workbook.Sheets[1];
             ws.SaveAs(targetFile, Excel.XlFileFormat.xlCSV);
             Marshal.ReleaseComObject(ws);
+            System.Diagnostics.Debug.WriteLine("TEST"); 
+        }
+        catch(Exception ex)
+        {
+            using (StreamWriter sw = new StreamWriter(Path.Combine(Server.MapPath("~/Files/"), "KMTError.txt"), true))
+            {
+                sw.WriteLine(ex.Message);
+            }
         }
 
         finally
         {
-            rawData.DisplayAlerts = false;
-            rawData.Quit();
-            Marshal.ReleaseComObject(rawData);
+            try
+            {
+                rawData.DisplayAlerts = false;
+                rawData.Quit();
+                Marshal.ReleaseComObject(rawData);
+            }
+            catch (Exception ex)
+            {
+                using (StreamWriter sw = new StreamWriter(Path.Combine(Server.MapPath("~/Files/"), "KMTError.txt"), true))
+                {
+                    sw.WriteLine(ex.Message);
+                }
+            }
+            
         }
+        
+        
     }
 
     protected void AsyncFileUpload1_UploadedComplete(object sender, AjaxControlToolkit.AsyncFileUploadEventArgs e)

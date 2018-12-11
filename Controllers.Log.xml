@@ -3446,4 +3446,110 @@
       <Test>[StatusCode] == "Error"</Test>
     </insert>
   </c>
+  <c y="NodeSet" t="2018-12-07T13:53:02">
+    <controller name="HATCForcastImport" />
+    <actionGroup id="ag3" />
+    <action id="a100" />
+    <update>
+      <Notification>test</Notification>
+    </update>
+  </c>
+  <c y="NodeSet" t="2018-12-07T13:53:13">
+    <controller name="HATCForcastImport" />
+    <actionGroup id="ag3" />
+    <action id="a100" />
+    <update>
+      <Notification />
+    </update>
+  </c>
+  <c y="NodeSet" t="2018-12-11T09:46:53">
+    <controller name="M3Import" />
+    <actionGroup id="ag1" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2018-12-11T09:46:56">
+    <controller name="M3Import" />
+    <actionGroup id="ag2" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2018-12-11T09:47:01">
+    <controller name="M3Import" />
+    <actionGroup id="ag8" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2018-12-11T09:47:03">
+    <controller name="M3Import" />
+    <actionGroup id="ag7" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2018-12-11T09:47:06">
+    <controller name="M3Import" />
+    <actionGroup id="ag6" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2018-12-11T09:47:08">
+    <controller name="M3Import" />
+    <actionGroup id="ag5" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2018-12-11T09:47:11">
+    <controller name="M3Import" />
+    <actionGroup id="ag4" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2018-12-11T09:47:43">
+    <controller name="M3Import" />
+    <actionGroup id="ag3" />
+    <insert type="action">
+      <CommandName>Import</CommandName>
+      <CommandArgument>Import</CommandArgument>
+      <HeaderText>From Excel</HeaderText>
+      <CausesValidation>true</CausesValidation>
+    </insert>
+  </c>
+  <c y="NodeSet" t="2018-12-11T09:47:47">
+    <controller name="M3Import" />
+    <actionGroup id="ag3" />
+    <action id="a1" />
+    <delete />
+  </c>
+  <c y="NodeSet" t="2018-12-11T09:48:01">
+    <controller name="M3Import" />
+    <actionGroup id="ag3" />
+    <action id="a100" />
+    <update>
+      <CommandArgument />
+    </update>
+  </c>
+  <c y="NodeSet" t="2018-12-11T09:48:26">
+    <controller name="M3Import" />
+    <actionGroup id="ag3" />
+    <insert type="action">
+      <CommandName>Custom</CommandName>
+      <CommandArgument>Execute</CommandArgument>
+      <HeaderText>Execute</HeaderText>
+      <CausesValidation>true</CausesValidation>
+    </insert>
+  </c>
+  <c y="NodeSet" t="2018-12-11T09:49:12">
+    <controller name="M3Import" />
+    <actionGroup id="ag3" />
+    <insert type="action">
+      <CommandName>SQL</CommandName>
+      <CommandArgument>ClearData</CommandArgument>
+      <HeaderText>Clear Data</HeaderText>
+      <CausesValidation>true</CausesValidation>
+      <Data>delete from M3Import</Data>
+    </insert>
+  </c>
+  <c y="NodeSet" t="2018-12-11T09:49:48">
+    <controller name="M3Import" />
+    <insert type="rule">
+      <Type>Sql</Type>
+      <CommandName>Custom</CommandName>
+      <CommandArgument>ClearData</CommandArgument>
+      <Phase>Execute</Phase>
+      <Script>exec sp_M3Import @Session_UserName</Script>
+    </insert>
+  </c>
 </log>

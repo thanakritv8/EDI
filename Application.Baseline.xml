@@ -641,6 +641,28 @@
       <controls />
       <about>This page allows imct forcast import management.</about>
     </page>
+    <page name="p181211093643" title="New Pages" externalUrl="about:blank" index="8930" path="New Pages" />
+    <page name="M3Import" title="M3 Import" description="View M3 Import" index="9030" path="New Pages | M3 Import" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="M3Import" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows m3 import management.</about>
+    </page>
+    <page name="p181211094553" title="New Pages" externalUrl="about:blank" index="9130" path="New Pages" />
+    <page name="M3" title="M3" description="View M3" index="9230" path="New Pages | M3" xmlns="urn:schemas-codeontime-com:data-aquarium-application">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="M3" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows m3 management.</about>
+    </page>
   </pages>
   <userControls>
     <userControl name="TableOfContents" prefix="uc" generate="Always">

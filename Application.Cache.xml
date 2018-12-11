@@ -1,4 +1,5 @@
-<application snapshot="true" integrity="checked" xmlns="urn:schemas-codeontime-com:data-aquarium-application" xmlns:m="urn:codeontime:data-map" xmlns:dm="urn:schemas-codeontime-com:data-model">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<application snapshot="true" xmlns="urn:schemas-codeontime-com:data-aquarium-application" xmlns:m="urn:codeontime:data-map" xmlns:dm="urn:schemas-codeontime-com:data-model" integrity="checked">
   <pages xmlns="urn:schemas-codeontime-com:data-aquarium-application">
     <page name="Home" title="^HomeTitle^Start^HomeTitle^" description="^HomeDesc^Application home page^HomeDesc^" path="^HomePath^Home^HomePath^" style="HomePage" customStyle="Wide" index="1000">
       <containers>
@@ -564,7 +565,27 @@
         <control id="control1" name="MembershipManager" container="container1" />
       </controls>
     </page>
-    <page name="WorkingDate" title="Working Date" description="View Working Date" index="1540" path="Master Data | Working Date">
+    <page name="M3" title="M3" description="View M3" index="1540" path="Master Data | M3">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="M3" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows m3 management.</about>
+    </page>
+    <page name="M3Import" title="M3 Import" description="View M3 Import" index="1550" path="Master Data | M3 | M3 Import" useExtenders="false">
+      <containers>
+        <container id="container1" flow="NewRow" />
+      </containers>
+      <dataViews>
+        <dataView id="view1" controller="M3Import" view="grid1" showInSummary="true" container="container1" activator="None" text="" showModalForms="true" />
+      </dataViews>
+      <controls />
+      <about>This page allows m3 import management.</about>
+    </page>
+    <page name="WorkingDate" title="Working Date" description="View Working Date" index="1560" path="Master Data | Working Date">
       <containers>
         <container id="container1" flow="NewRow" />
       </containers>
@@ -574,7 +595,7 @@
       <controls />
       <about>This page allows working date management.</about>
     </page>
-    <page name="WorkingType" title="Working Type" description="View Working Type" index="1550" path="Master Data | Working Date | Working Type">
+    <page name="WorkingType" title="Working Type" description="View Working Type" index="1570" path="Master Data | Working Date | Working Type">
       <containers>
         <container id="container1" flow="NewRow" />
       </containers>
@@ -584,8 +605,8 @@
       <controls />
       <about>This page allows working type management.</about>
     </page>
-    <page name="p181114030734" title="New Pages" externalUrl="about:blank" index="1560" path="New Pages" />
-    <page name="CalDate" title="Cal Date" description="View Cal Date" index="1570" path="New Pages | Cal Date">
+    <page name="p181114030734" title="New Pages" externalUrl="about:blank" index="1580" path="New Pages" />
+    <page name="CalDate" title="Cal Date" description="View Cal Date" index="1590" path="New Pages | Cal Date">
       <containers>
         <container id="container1" flow="NewRow" />
       </containers>
@@ -595,7 +616,7 @@
       <controls />
       <about>This page allows cal date management.</about>
     </page>
-    <page name="CustomerLog" title="Customer Log" description="View Customer Log" index="1580" path="New Pages | Customer Log">
+    <page name="CustomerLog" title="Customer Log" description="View Customer Log" index="1600" path="New Pages | Customer Log">
       <containers>
         <container id="container1" flow="NewRow" />
       </containers>
@@ -605,7 +626,7 @@
       <controls />
       <about>This page allows customer log management.</about>
     </page>
-    <page name="ForcastImportLog" title="Forcast Import Log" description="View Forcast Import Log" index="1590" path="New Pages | Forcast Import Log">
+    <page name="ForcastImportLog" title="Forcast Import Log" description="View Forcast Import Log" index="1610" path="New Pages | Forcast Import Log">
       <containers>
         <container id="container1" flow="NewRow" />
       </containers>
@@ -615,7 +636,7 @@
       <controls />
       <about>This page allows forcast import log management.</about>
     </page>
-    <page name="ForcastMonthImportLog" title="Forcast Month Import Log" description="View Forcast Month Import Log" index="1600" path="New Pages | Forcast Month Import Log">
+    <page name="ForcastMonthImportLog" title="Forcast Month Import Log" description="View Forcast Month Import Log" index="1620" path="New Pages | Forcast Month Import Log">
       <containers>
         <container id="container1" flow="NewRow" />
       </containers>
@@ -625,7 +646,7 @@
       <controls />
       <about>This page allows forcast month import log management.</about>
     </page>
-    <page name="MaterialNumberLog" title="Material Number Log" description="View Material Number Log" index="1610" path="New Pages | Material Number Log">
+    <page name="MaterialNumberLog" title="Material Number Log" description="View Material Number Log" index="1630" path="New Pages | Material Number Log">
       <containers>
         <container id="container1" flow="NewRow" />
       </containers>
@@ -635,7 +656,7 @@
       <controls />
       <about>This page allows material number log management.</about>
     </page>
-    <page name="OrderImportLog" title="Order Import Log" description="View Order Import Log" index="1620" path="New Pages | Order Import Log">
+    <page name="OrderImportLog" title="Order Import Log" description="View Order Import Log" index="1640" path="New Pages | Order Import Log">
       <containers>
         <container id="container1" flow="NewRow" />
       </containers>
@@ -904,33 +925,33 @@
 
             </body>
     </userControl>
-    <userControl name="FileImportTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="HATCOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="HATCForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="AATOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="APCOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="IMCTOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="KMTForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="KMTOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="KYBOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="KYBForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="MMTHOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="TYMOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="TYMForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="TSMOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="THMOrderTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="THMForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="SA_HATCForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="SA_APCForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="SA_THMForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="SA_TSMForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="OrderManualTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="ForcastManualTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="ForcastMonthManulaTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="NMTForcastTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="TYMForcastMonthTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="APCForcastMonthTextTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
-    <userControl name="HATCForcastMonthExcelTemplate" prefix="uc" generate="FirstTimeOnly" xmlns="urn:schemas-codeontime-com:data-aquarium-application" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="FileImportTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="HATCOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="HATCForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="AATOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="APCOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="IMCTOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="KMTForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="KMTOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="KYBOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="KYBForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="MMTHOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="TYMOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="TYMForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="TSMOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="THMOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="THMForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="SA_HATCForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="SA_APCForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="SA_THMForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="SA_TSMForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="OrderManualTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="ForcastManualTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="ForcastMonthManulaTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="NMTForcastTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="TYMForcastMonthTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="APCForcastMonthTextTemplate" prefix="uc" generate="FirstTimeOnly" />
+    <userControl xmlns="urn:schemas-codeontime-com:data-aquarium-application" name="HATCForcastMonthExcelTemplate" prefix="uc" generate="FirstTimeOnly" />
     <userControl name="HATCForcastMonthTemplate" prefix="uc" generate="FirstTimeOnly" />
     <userControl name="NMTOrderTemplate" prefix="uc" generate="FirstTimeOnly" />
     <userControl name="NPTOrderTemplate" prefix="uc" generate="FirstTimeOnly" />

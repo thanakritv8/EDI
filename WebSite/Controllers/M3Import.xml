@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataController name="M3Import" conflictDetection="overwriteChanges" label="M3 Import" xmlns="urn:schemas-codeontime-com:data-aquarium">
+  <commands>
+    <command id="command1" type="Text">
+      <text><![CDATA[
+select
+	"M3Import"."AutoId" "AutoId"
+	,"M3Import"."SapCode" "SapCode"
+	,"M3Import"."RokiLoc" "RokiLoc"
+	,"M3Import"."RokiLocLast" "RokiLocLast"
+	,"M3Import"."createDate" "createDate"
+from "dbo"."M3Import" "M3Import"
+]]></text>
+    </command>
+    <command id="AutoIdIdentityCommand" type="Text" event="Inserted">
+      <text><![CDATA[select @@identity]]></text>
+      <output>
+        <fieldOutput fieldName="AutoId" />
+      </output>
+    </command>
+  </commands>
+  <fields>
+    <field name="AutoId" type="Int32" allowNulls="false" isPrimaryKey="true" label="Auto#" readOnly="true" />
+    <field name="SapCode" type="String" label="Sap Code" length="50" showInSummary="true" />
+    <field name="RokiLoc" type="String" label="Roki Loc" length="10" showInSummary="true" />
+    <field name="RokiLocLast" type="String" label="Roki Loc Last" length="10" showInSummary="true" />
+    <field name="createDate" type="DateTime" default="(getdate())" label="create Date" showInSummary="true" />
+  </fields>
+  <views>
+    <view id="grid1" type="Grid" commandId="command1" label="M3 Import">
+      <headerText>$DefaultGridViewDescription</headerText>
+      <dataFields>
+        <dataField fieldName="SapCode" columns="50" />
+        <dataField fieldName="RokiLoc" columns="10" />
+        <dataField fieldName="RokiLocLast" columns="10" />
+        <dataField fieldName="createDate" columns="10" />
+      </dataFields>
+    </view>
+    <view id="editForm1" type="Form" commandId="command1" label="Review M3 Import">
+      <headerText>$DefaultEditViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="M3 Import" flow="NewColumn">
+          <description><![CDATA[$DefaultEditDescription]]></description>
+          <dataFields>
+            <dataField fieldName="SapCode" columns="50" />
+            <dataField fieldName="RokiLoc" columns="10" />
+            <dataField fieldName="RokiLocLast" columns="10" />
+            <dataField fieldName="createDate" columns="10" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+    <view id="createForm1" type="Form" commandId="command1" label="New M3 Import">
+      <headerText>$DefaultCreateViewDescription</headerText>
+      <categories>
+        <category id="c1" headerText="New M3 Import" flow="NewColumn">
+          <description><![CDATA[$DefaultNewDescription]]></description>
+          <dataFields>
+            <dataField fieldName="SapCode" columns="50" />
+            <dataField fieldName="RokiLoc" columns="10" />
+            <dataField fieldName="RokiLocLast" columns="10" />
+            <dataField fieldName="createDate" columns="10" />
+          </dataFields>
+        </category>
+      </categories>
+    </view>
+  </views>
+  <actions>
+    <actionGroup id="ag3" scope="ActionBar" headerText="New" flat="true">
+      <action commandName="Import" headerText="From Excel" id="a100" />
+      <action commandName="Custom" commandArgument="Execute" headerText="Execute" id="a101" />
+      <action commandName="SQL" commandArgument="ClearData" headerText="Clear Data" id="a102">
+        <data><![CDATA[delete from M3Import]]></data>
+      </action>
+    </actionGroup>
+  </actions>
+  <businessRules>
+    <rule id="r100" commandName="Custom" commandArgument="ClearData" type="Sql" phase="Execute"><![CDATA[exec sp_M3Import @Session_UserName]]></rule>
+  </businessRules>
+</dataController>

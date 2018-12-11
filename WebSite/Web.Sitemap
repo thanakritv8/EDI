@@ -57,6 +57,9 @@
       <siteMapNode title="M12" description="View Customer" url="~/Pages/Customer.aspx">
         <siteMapNode title="M12 Import" description="View Customer Import" url="~/Pages/CustomerImport.aspx" />
       </siteMapNode>
+      <siteMapNode title="M3" description="View M3" url="~/Pages/M3.aspx">
+        <siteMapNode title="M3 Import" description="View M3 Import" url="~/Pages/M3Import.aspx" />
+      </siteMapNode>
       <siteMapNode title="Working Date" description="View Working Date" url="~/Pages/WorkingDate.aspx">
         <siteMapNode title="Working Type" description="View Working Type" url="~/Pages/WorkingType.aspx" />
       </siteMapNode>
